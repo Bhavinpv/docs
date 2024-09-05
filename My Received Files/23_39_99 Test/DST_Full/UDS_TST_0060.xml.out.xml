@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Scenario description="In extended session of applicative software, the ECU shall answer according to the 36-02-014 --H [NDS28] to READ the DIDs (F187, F1A1, F191, …)" Date="2023-10-12T22:59:4" ECUname="5DM" dstVersion="4.0.68.0">
+  <test name=" UDS_TST_0060 " methode="2" mode="PointToPoint">
+    <request name="entering in extended session">
+      <Check startbytes="5003003201F4" />
+      <byte min="10" />
+      <byte min="03" />
+    </request>
+    <request name="Read the DID F187" req="REQ_DIAG_Application_0040, REQ_DIAG_Application_0080">
+      <Check startbytes="62F187" length="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="87" />
+    </request>
+    <request name="Read the DID F1A1" req="REQ_DIAG_Application_0170, REQ_DIAG_Application_0210">
+      <Check startbytes="62F1A1" length="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="A1" />
+    </request>
+    <request name="Read the DID F191" req="REQ_DIAG_Application_0420, REQ_DIAG_Application_0460">
+      <Check startbytes="62F191" length="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="91" />
+    </request>
+    <request name="Read the DID F012" req="REQ_DIAG_Application_0670, REQ_DIAG_Application_0710">
+      <Check startbytes="62F012" length="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+      <byte min="22" />
+      <byte min="F0" />
+      <byte min="12" />
+    </request>
+    <request name="Read the DID F010" req="REQ_DIAG_Application_1450, REQ_DIAG_Application_1470">
+      <Check startbytes="62F010" length="19" />
+      <byte min="22" />
+      <byte min="F0" />
+      <byte min="10" />
+    </request>
+    <request name="Read the DID F011" req="REQ_DIAG_Application_1590, REQ_DIAG_Application_1620">
+      <Check startbytes="62F011" lengthmax="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+      <byte min="22" />
+      <byte min="F0" />
+      <byte min="11" />
+    </request>
+    <request name="Read the DID F180" req="REQ_DIAG_Application_1700, REQ_DIAG_Application_1730">
+      <Check codeErr="2048" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="80" />
+    </request>
+    <request name="Read the DID F18A" req="REQ_DIAG_Application_2010, REQ_DIAG_Application_2030">
+      <Check startbytes="62F18A" lengthmax="67" format="UTF-8" regex="^[^\x00-\x1F]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="8A" />
+    </request>
+    <request name="Read the DID F194" req="REQ_DIAG_Application_2130, REQ_DIAG_Application_2130">
+      <Check startbytes="62F194" lengthmax="35" format="UTF-8" regex="^[^\x00-\x1F]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="94" />
+    </request>
+    <request name="Read the DID F195" req="REQ_DIAG_Application_2270, REQ_DIAG_Application_2290">
+      <Check startbytes="62F195" lengthmax="35" format="UTF-8" regex="^[^\x00-\x1F]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="95" />
+    </request>
+    <request name="Read the DID F1A0" req="REQ_DIAG_Application_2410, REQ_DIAG_Application_2420">
+      <Check startbytes="62F1A0" length="4" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="A0" />
+    </request>
+    <request name="Read the DID F18C" req="REQ_DIAG_Application_2520, REQ_DIAG_Application_2560">
+      <Check startbytes="62F18C" length="23" format="ASCII" regex="^[A-Za-z0-9\x20]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="8C" />
+    </request>
+    <request name="Read the DID F190" req="REQ_DIAG_Application_2890, REQ_DIAG_Application_2930">
+      <Check startbytes="62F190" length="20" format="ASCII" regex="^[^\x80-\xFF]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="90" />
+    </request>
+    <request name="Exit extended session">
+      <Check startbytes="5001003201F4" />
+      <byte min="10" />
+      <byte min="01" />
+    </request>
+    <Configuration>
+      <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+      <DSTPack>03. DST newpack</DSTPack>
+      <ECU>
+        <Name>BCB</Name>
+        <Address>103</Address>
+        <Protocol>DiagOnCAN</Protocol>
+        <CANids>
+          <Bus>1</Bus>
+          <Baudrate>500000</Baudrate>
+          <DTOOL-to-ECU>98DADDF1</DTOOL-to-ECU>
+          <ECU-to-DTOOL>98DAF1DD</ECU-to-DTOOL>
+        </CANids>
+      </ECU>
+    </Configuration>
+    <Resultat>
+      <Init time="34" />
+<RequestName>entering in extended session</RequestName>
+<Send time="54" bytes="1003" elapseTime="5">
+<Check startbytes="5003003201F4" />
+<Receive length="6" bytes="5003003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F187</RequestName>
+<Send time="75" bytes="22F187" elapseTime="7">
+<Check startbytes="62F187" length="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+<Receive length="13" bytes="62F18732393241303139393752" string="292A01997R" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F1A1</RequestName>
+<Send time="98" bytes="22F1A1" elapseTime="15">
+<Check startbytes="62F1A1" length="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+<Receive length="13" bytes="62F1A132393241303139393752" string="292A01997R" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F191</RequestName>
+<Send time="127" bytes="22F191" elapseTime="14">
+<Check startbytes="62F191" length="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+<Receive length="13" bytes="62F19132393241303035363952" string="292A00569R" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F012</RequestName>
+<Send time="158" bytes="22F012" elapseTime="16">
+<Check startbytes="62F012" length="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+<Receive length="13" bytes="62F01232393242303930393552" string="292B09095R" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F010</RequestName>
+<Send time="190" bytes="22F010" elapseTime="12">
+<Check startbytes="62F010" length="19" />
+<Receive length="19" bytes="62F01020202020202020202020202020202020" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F011</RequestName>
+<Send time="218" bytes="22F011" elapseTime="13">
+<Check startbytes="62F011" lengthmax="13" format="ASCII" regex="^[^\x80-\xFF]*$" />
+<Receive length="13" bytes="62F01150524F544153594D5632" string="PROTASYMV2" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F180</RequestName>
+<Send time="246" bytes="22F180" elapseTime="13">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F18A</RequestName>
+<Send time="273" bytes="22F18A" elapseTime="8">
+<Check startbytes="62F18A" lengthmax="67" format="UTF-8" regex="^[^\x00-\x1F]*$" />
+<Receive length="8" bytes="62F18A44454C5441" string="DELTA" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F194</RequestName>
+<Send time="298" bytes="22F194" elapseTime="12">
+<Check startbytes="62F194" lengthmax="35" format="UTF-8" regex="^[^\x00-\x1F]*$" />
+<Receive length="7" bytes="62F19430354448" string="05DH" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F195</RequestName>
+<Send time="328" bytes="22F195" elapseTime="13">
+<Check startbytes="62F195" lengthmax="35" format="UTF-8" regex="^[^\x00-\x1F]*$" />
+<Receive length="9" bytes="62F195323333393939" string="233999" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F1A0</RequestName>
+<Send time="356" bytes="22F1A0" elapseTime="14">
+<Check startbytes="62F1A0" length="4" />
+<Receive length="4" bytes="62F1A00C" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F18C</RequestName>
+<Send time="384" bytes="22F18C" elapseTime="10">
+<Check startbytes="62F18C" length="23" format="ASCII" regex="^[A-Za-z0-9\x20]*$" />
+<Receive length="23" bytes="62F18C3239324130313135325254413232313030303139" string="292A01152RTA22100019" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F190</RequestName>
+<Send time="407" bytes="22F190" elapseTime="18">
+<Check startbytes="62F190" length="20" format="ASCII" regex="^[^\x80-\xFF]*$" />
+<Receive length="20" bytes="62F1904142434445464748494A4B4C4D4E4F5051" string="ABCDEFGHIJKLMNOPQ" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Exit extended session</RequestName>
+<Send time="440" bytes="1001" elapseTime="9">
+<Check startbytes="5001003201F4" />
+<Receive length="6" bytes="5001003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Stop time="465" /></Resultat>
+  </test>
+  <IdentificationUDS Diagnostic="12" Supplier="DELTA" Application="05DH" Version="233999" Order="292A01997R" Hardware="292A00569R" Tuning="??" vehicleManufacturerKitAssemblyPartNumber="" configurationFileReferenceLink="292B09095R" IndexSrvData="PROTASYMV2">
+<Diagnostic>
+<Error Code="0" Msg="" Send="22F1A0"><Request Send="22F1A0" Receive="62F1A00C" /></Error>
+</Diagnostic>
+<Supplier>
+<Error Code="0" Msg="" Send="22F18A"><Request Send="22F18A" Receive="62F18A44454C5441" /></Error>
+</Supplier>
+<Application>
+<Error Code="0" Msg="" Send="22F194"><Request Send="22F194" Receive="62F19430354448" /></Error>
+</Application>
+<Version>
+<Error Code="0" Msg="" Send="22F195"><Request Send="22F195" Receive="62F195323333393939" /></Error>
+</Version>
+<Order>
+<Error Code="0" Msg="" Send="22F187"><Request Send="22F187" Receive="62F18732393241303139393752" /></Error>
+</Order>
+<Hardware>
+<Error Code="0" Msg="" Send="22F191"><Request Send="22F191" Receive="62F19132393241303035363952" /></Error>
+</Hardware>
+<Tuning>
+<Error Code="0" Msg="" Send="22F182"><Request Send="22F182" Receive="62F1820100" /></Error>
+</Tuning>
+<vehicleManufacturerKitAssemblyPartNumber Number="">
+<Request Send="22F18E" Receive="7F2231" />
+</vehicleManufacturerKitAssemblyPartNumber>
+<configurationFileReferenceLink>
+<Error Code="0" Msg="" Send="22F188"><Request Send="22F188" Receive="62F18832393242303930393552" /></Error>
+</configurationFileReferenceLink>
+<IndexSrvData>
+<Error Code="0" Msg="" Send="22F011"><Request Send="22F011" Receive="62F01150524F544153594D5632" /></Error>
+</IndexSrvData>
+</IdentificationUDS>
+</Scenario>

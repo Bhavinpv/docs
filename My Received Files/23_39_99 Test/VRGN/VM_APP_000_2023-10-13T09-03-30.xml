@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<UDS-REPROGRAMMING-VALIDATION-RESULT>
+  <Configuration>
+    <Company>Delta </Company>
+    <Author>Alexandru Stanciu</Author>
+    <PDXFile>DES_SW_23_39_99_DDT2000.pdx</PDXFile>
+    <UnlockMode>Local</UnlockMode>
+    <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+    <RFQ>Virgin Mode validation plan 1.9</RFQ>
+    <ECU>
+      <Name>5DH_DCDC</Name>
+      <Address>103</Address>
+      <Protocol>DiagOnCAN</Protocol>
+      <CANids>
+        <Bus>1</Bus>
+        <Baudrate>500000</Baudrate>
+        <DTOOL-to-ECU>98DAF1DD</DTOOL-to-ECU>
+        <ECU-to-DTOOL>98DADDF1</ECU-to-DTOOL>
+      </CANids>
+      <HardwareNumber>292A00569R</HardwareNumber>
+      <BootVersion>
+      </BootVersion>
+      <LogicalBlocks>
+        <LogicalBlock selected="false" withReprogLimit="false" maxReprogrammingCounter="0">FD00</LogicalBlock>
+      </LogicalBlocks>
+      <ReprogramingInPlant>FALSE</ReprogramingInPlant>
+    </ECU>
+  </Configuration>
+  <Test name="VM_APP_000" date="2023-10-13 09-03-26" status="Success">
+    <Trace><![CDATA[
+10/13/2023 9:03:26 AM.806     Begin Test   : VM_APP_000
+10/13/2023 9:03:26 AM.806     RFQ : Virgin Mode validation plan 1.9
+10/13/2023 9:03:26 AM.806           Begin : Check initial condition
+10/13/2023 9:03:26 AM.806                 Check if ECU is in Application
+10/13/2023 9:03:26 AM.806                 => Tester Present...
+10/13/2023 9:03:26 AM.807                 $67 : Tx : 3E00
+10/13/2023 9:03:26 AM.863                 $67 : Rx : 7E00
+10/13/2023 9:03:26 AM.865                 $67 : Tx : 1003
+10/13/2023 9:03:26 AM.874                 $67 : Rx : 5003003201F4
+10/13/2023 9:03:26 AM.876                 ECU is in Application
+10/13/2023 9:03:26 AM.876                 Goto default Session
+10/13/2023 9:03:26 AM.877                 $67 : Tx : 1001
+10/13/2023 9:03:26 AM.883                 $67 : Rx : 5001003201F4
+10/13/2023 9:03:26 AM.887           End : Check initial condition
+10/13/2023 9:03:26 AM.887           waiting 3000 ms...
+10/13/2023 9:03:30 AM.299           Waiting for Tester present
+10/13/2023 9:03:30 AM.299           => Tester Present...
+10/13/2023 9:03:30 AM.300           $67 : Tx : 3E00
+10/13/2023 9:03:30 AM.304           $67 : Rx : 7E00
+10/13/2023 9:03:30 AM.305           Default session (1001)
+10/13/2023 9:03:30 AM.306           $67 : Tx : 1001
+10/13/2023 9:03:30 AM.315           $67 : Rx : 5001003201F4
+10/13/2023 9:03:30 AM.317           Default session, expected [5001003201F4]
+10/13/2023 9:03:30 AM.317           Read databyIdentifier (22F062)
+10/13/2023 9:03:30 AM.317           $67 : Tx : 22F062
+10/13/2023 9:03:30 AM.324           $67 : Rx : 62F06200
+10/13/2023 9:03:30 AM.324           Read databyIdentifier (22F062), expected positive reply [62F062]
+10/13/2023 9:03:30 AM.324           Virgin_flag = [0x00], expected 0x00(VIRGIN)
+10/13/2023 9:03:30 AM.324           Extended Diagnostic session (1003)
+10/13/2023 9:03:30 AM.325           $67 : Tx : 1003
+10/13/2023 9:03:30 AM.333           $67 : Rx : 5003003201F4
+10/13/2023 9:03:30 AM.335           Extended Diagnostic session (1003), expected [5003003201F4]
+10/13/2023 9:03:30 AM.335           Read databyIdentifier (22F062)
+10/13/2023 9:03:30 AM.335           $67 : Tx : 22F062
+10/13/2023 9:03:30 AM.343           $67 : Rx : 62F06200
+10/13/2023 9:03:30 AM.343           Read databyIdentifier (22F062), expected positive reply [62F062]
+10/13/2023 9:03:30 AM.343           Virgin_flag = [0x00], expected 0x00(VIRGIN)
+10/13/2023 9:03:30 AM.343           Default session (1001)
+10/13/2023 9:03:30 AM.344           $67 : Tx : 1001
+10/13/2023 9:03:30 AM.352           $67 : Rx : 5001003201F4
+10/13/2023 9:03:30 AM.354           Default session, expected [5001003201F4]
+10/13/2023 9:03:30 AM.354           Waiting for Tester present
+10/13/2023 9:03:30 AM.354           => Tester Present...
+10/13/2023 9:03:30 AM.355           $67 : Tx : 3E00
+10/13/2023 9:03:30 AM.393           $67 : Rx : 7E00
+10/13/2023 9:03:30 AM.394     End Test   : VM_APP_000
+]]></Trace>
+  </Test>
+  <Information>
+    <Tool>
+      <DDT2000>4.0.68.0</DDT2000>
+      <Name>RTT</Name>
+      <Version>4.0.68.0</Version>
+    </Tool>
+    <Tests current-version="1.9">
+      <Test name="Initial_Condition_VirginMode">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_000">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_001">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_002">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_003">
+        <Versions>
+          <Current>1.7</Current>
+          <History>
+            <Version value="1.7">1.7</Version>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.2">1.2</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_004">
+        <Versions>
+          <Current>1.9</Current>
+          <History>
+            <Version value="1.9">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_000">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_001">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_003">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_004">
+        <Versions>
+          <Current>1.7</Current>
+          <History>
+            <Version value="1.7">1.7</Version>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.2">1.2</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+    </Tests>
+  </Information>
+</UDS-REPROGRAMMING-VALIDATION-RESULT>

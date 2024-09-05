@@ -1,0 +1,69 @@
+External Release 23_39_98
+
+ECU Identification
+22f012	OperationalReference	    292B09095R                     (Operational Ref )
+22f187	VehicleManufacturerSparePartNumber_R	    292A01997R     (Hardware Part Num)
+22f1a1	VehicleManufacturerSparePartNumber_N	    292A01997R
+22f191	VehicleManufacturerECUHardwareNumber	    292A00569R     (ECU Hardware Num )   No change in 23_39_98 from 23_15_00
+22f188	ConfigurationFileReferenceLink	    292B09095R
+
+
+
+Updation needed For Vflashpack and pdx Creation
+
+Hw Sw Compatibility 0007
+
+Change in flash helper file 186 line VehicleManufacturerECUHardwareNumber  as per the need
+
+also change sw version and operational ref in info file and send for digital signing
+DeltaSwVersion: 0x30 0x78 0x32 0x32 0x2e 0x30 0x32 0x2e 0x30 0x30 0x2e 0x30 0x30
+OperationalReference_F012: 0x32 0x39 0x32 0x42 0x30 0x39 0x30 0x39 0x35 0x52
+
+
+307832332e33392e30302e3030 : Delta version
+
+
+292A08514R   32 39 32 41 30 38 35 31 34 52    VehicleManufacturerSparePartNumber_R   22f187 22f1a1
+292B07882R   32 39 32 42 30 37 38 38 32 52    OperationalReference	           22f012 22f188	
+
+
+Result of the above updation in FBL
+SOME DiD is not writing in NVM while reading from FBL
+F187 AND F012
+While F1A1 is getting updated 
+F188 not implemented in FBL (NRC 31)
+
+F187(NOK) and F012(NOK)	 are in Fbl_Shared_Datablock3
+F1A1(OK) in Fbl_Shared_Datablock1
+
+Other Data in Fbl_Shared_Datablock3 are
+DID_F18C  ECU  serial No
+DID_F011   Index srvdata
+DID_F18E    Nothing in APP dcm
+DID_F190   VIN read
+Reprogrammed
+
+Initialy the updation of values in the NVM was not happening in appl side too
+so added 
+
+ memcpy(&(Coding_FBL_DataBlock3_block_st.Coding_appldiag_DID_F012),&(Coding_FBL_DataBlock3_def_block_st.Coding_appldiag_DID_F012),kEepSizeDID_F012);
+   memcpy(&(Coding_FBL_DataBlock1.Coding_appldiag_DID_F188),&(Coding_FBL_DataBlock1_def.Coding_appldiag_DID_F188),kEepSizeDID_F188);
+   memcpy(&(Coding_FBL_DataBlock1.Coding_appldiag_DID_F1A1),&(Coding_FBL_DataBlock1_def.Coding_appldiag_DID_F1A1),kEepSizeDID_F1A1);
+   memcpy(&(Coding_FBL_DataBlock3_block_st.Coding_appldiag_DID_F187),&(Coding_FBL_DataBlock3_def_block_st.Coding_appldiag_DID_F187),kEepSizeDID_F187);
+ 
+In the APPLDIAG_vInit  function
+
+
+Fixed NvM memory update while jumping from appl  to fbl for the DID F187,F012
+Added in ecuext_dcm.c the following change in Dcm_SetProgConditions function
+
+(void) NvM_WriteBlock(NvMConf_NvMBlockDescriptor_Fbl_Shared_Datablock1, &Coding_FBL_DataBlock1);
+          (void) NvM_WriteBlock(NvMConf_NvMBlockDescriptor_Fbl_Shared_Datablock3, &Coding_FBL_DataBlock3_block_st);    
+
+	
+
+
+
+
+
+

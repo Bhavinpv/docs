@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Scenario description="For StartDiagnosticSession Service, refer to ISO 14229-1" Date="2023-10-12T22:38:10" ECUname="5DM" dstVersion="4.0.68.0">
+  <test name=" ISO_TST_0030 " methode="2" mode="PointToPoint">
+    <request name="Session without sub-function">
+      <Check codeErr="2056" />
+      <byte min="10" />
+    </request>
+    <request name="Session with extra bytes">
+      <Check codeErr="2056" />
+      <byte min="10" />
+      <byte min="01" />
+      <byte min="00" />
+    </request>
+    <request name="Entering in session 0x00">
+      <Check codeErr="2034" />
+      <byte min="10" />
+      <byte min="00" />
+    </request>
+    <request name="Entering in default session">
+      <Check startbytes="5001003201F4" />
+      <byte min="10" />
+      <byte min="01" />
+    </request>
+    <request name="Entering in session 0x05-0x3F">
+      <Check codeErr="2034" />
+      <byte min="10" />
+      <byte min="05" max="3F" />
+    </request>
+    <request name="Entering in session 0x7F">
+      <Check codeErr="2034" />
+      <byte min="10" />
+      <byte min="7F" />
+    </request>
+    <Configuration>
+      <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+      <DSTPack>03. DST newpack</DSTPack>
+      <ECU>
+        <Name>BCB</Name>
+        <Address>103</Address>
+        <Protocol>DiagOnCAN</Protocol>
+        <CANids>
+          <Bus>1</Bus>
+          <Baudrate>500000</Baudrate>
+          <DTOOL-to-ECU>98DADDF1</DTOOL-to-ECU>
+          <ECU-to-DTOOL>98DAF1DD</ECU-to-DTOOL>
+        </CANids>
+      </ECU>
+    </Configuration>
+    <Resultat>
+      <Init time="33" />
+<RequestName>Session without sub-function</RequestName>
+<Send time="55" bytes="10" elapseTime="9">
+<Check codeErr="2056" />
+<Error code="2056" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Session with extra bytes</RequestName>
+<Send time="80" bytes="100100" elapseTime="4">
+<Check codeErr="2056" />
+<Error code="2056" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Entering in session 0x00</RequestName>
+<Send time="99" bytes="1000" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Entering in default session</RequestName>
+<Send time="117" bytes="1001" elapseTime="5">
+<Check startbytes="5001003201F4" />
+<Receive length="6" bytes="5001003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Entering in session 0x05-0x3F</RequestName>
+<Send time="137" bytes="1005" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="157" bytes="1006" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="179" bytes="1007" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="196" bytes="1008" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="216" bytes="1009" elapseTime="8">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="245" bytes="100A" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="272" bytes="100B" elapseTime="11">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="301" bytes="100C" elapseTime="11">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="332" bytes="100D" elapseTime="11">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="357" bytes="100E" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="379" bytes="100F" elapseTime="4">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="398" bytes="1010" elapseTime="4">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="418" bytes="1011" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="439" bytes="1012" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="456" bytes="1013" elapseTime="8">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="475" bytes="1014" elapseTime="8">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="505" bytes="1015" elapseTime="8">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="525" bytes="1016" elapseTime="9">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="547" bytes="1017" elapseTime="8">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="570" bytes="1018" elapseTime="4">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="586" bytes="1019" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="606" bytes="101A" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="627" bytes="101B" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="647" bytes="101C" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="667" bytes="101D" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="687" bytes="101E" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="709" bytes="101F" elapseTime="3">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="727" bytes="1020" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="748" bytes="1021" elapseTime="4">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="769" bytes="1022" elapseTime="4">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="785" bytes="1023" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="806" bytes="1024" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="828" bytes="1025" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="847" bytes="1026" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="870" bytes="1027" elapseTime="13">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="897" bytes="1028" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="920" bytes="1029" elapseTime="12">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="946" bytes="102A" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="967" bytes="102B" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="993" bytes="102C" elapseTime="10">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1016" bytes="102D" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1037" bytes="102E" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1057" bytes="102F" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1080" bytes="1030" elapseTime="4">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1099" bytes="1031" elapseTime="4">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1118" bytes="1032" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1137" bytes="1033" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1155" bytes="1034" elapseTime="9">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1177" bytes="1035" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1196" bytes="1036" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1220" bytes="1037" elapseTime="4">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1236" bytes="1038" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1254" bytes="1039" elapseTime="9">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1272" bytes="103A" elapseTime="10">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1297" bytes="103B" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1319" bytes="103C" elapseTime="3">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1335" bytes="103D" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1356" bytes="103E" elapseTime="6">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="1378" bytes="103F" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Entering in session 0x7F</RequestName>
+<Send time="1397" bytes="107F" elapseTime="5">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Stop time="1417" /></Resultat>
+  </test>
+  <IdentificationUDS Diagnostic="12" Supplier="DELTA" Application="05DH" Version="233999" Order="292A01997R" Hardware="292A00569R" Tuning="??" vehicleManufacturerKitAssemblyPartNumber="" configurationFileReferenceLink="292B09095R" IndexSrvData="PROTASYMV2">
+<Diagnostic>
+<Error Code="0" Msg="" Send="22F1A0"><Request Send="22F1A0" Receive="62F1A00C" /></Error>
+</Diagnostic>
+<Supplier>
+<Error Code="0" Msg="" Send="22F18A"><Request Send="22F18A" Receive="62F18A44454C5441" /></Error>
+</Supplier>
+<Application>
+<Error Code="0" Msg="" Send="22F194"><Request Send="22F194" Receive="62F19430354448" /></Error>
+</Application>
+<Version>
+<Error Code="0" Msg="" Send="22F195"><Request Send="22F195" Receive="62F195323333393939" /></Error>
+</Version>
+<Order>
+<Error Code="0" Msg="" Send="22F187"><Request Send="22F187" Receive="62F18732393241303139393752" /></Error>
+</Order>
+<Hardware>
+<Error Code="0" Msg="" Send="22F191"><Request Send="22F191" Receive="62F19132393241303035363952" /></Error>
+</Hardware>
+<Tuning>
+<Error Code="0" Msg="" Send="22F182"><Request Send="22F182" Receive="62F1820100" /></Error>
+</Tuning>
+<vehicleManufacturerKitAssemblyPartNumber Number="">
+<Request Send="22F18E" Receive="7F2231" />
+</vehicleManufacturerKitAssemblyPartNumber>
+<configurationFileReferenceLink>
+<Error Code="0" Msg="" Send="22F188"><Request Send="22F188" Receive="62F18832393242303930393552" /></Error>
+</configurationFileReferenceLink>
+<IndexSrvData>
+<Error Code="0" Msg="" Send="22F011"><Request Send="22F011" Receive="62F01150524F544153594D5632" /></Error>
+</IndexSrvData>
+</IdentificationUDS>
+</Scenario>

@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<UDS-REPROGRAMMING-VALIDATION-RESULT>
+  <Configuration>
+    <Company>Delta Energy Systems</Company>
+    <Author>Alexandru Stanciu</Author>
+    <PDXFile>DES_SW_23_39_99_DDT2000.pdx</PDXFile>
+    <UnlockMode>Local</UnlockMode>
+    <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+    <RFQ>RTT (RFQ12) 3.0</RFQ>
+    <ECU>
+      <Name>5DH_DCDC</Name>
+      <Address>103</Address>
+      <Protocol>DiagOnCAN</Protocol>
+      <CANids>
+        <Bus>1</Bus>
+        <Baudrate>500000</Baudrate>
+        <DTOOL-to-ECU>98DAF1DD</DTOOL-to-ECU>
+        <ECU-to-DTOOL>98DADDF1</ECU-to-DTOOL>
+      </CANids>
+      <HardwareNumber>292A00569R</HardwareNumber>
+      <BootVersion>
+      </BootVersion>
+      <LogicalBlocks>
+        <LogicalBlock selected="true" withReprogLimit="false" maxReprogrammingCounter="0">FD00</LogicalBlock>
+      </LogicalBlocks>
+      <ReprogramingInPlant>FALSE</ReprogramingInPlant>
+    </ECU>
+  </Configuration>
+  <Test name="PRG5_023" date="2023-10-12 19-31-44" status="Success">
+    <Trace><![CDATA[
+10/12/2023 7:31:44 PM.557     Begin Test   : PRG5_023
+10/12/2023 7:31:44 PM.557     RFQ : RTT (RFQ12) 3.0
+10/12/2023 7:31:44 PM.557           Begin : Check initial condition
+10/12/2023 7:31:44 PM.557                 Check if ECU is in Application
+10/12/2023 7:31:44 PM.557                 => Tester Present...
+10/12/2023 7:31:44 PM.560                 $67 : Tx : 3E00
+10/12/2023 7:31:44 PM.751                 $67 : Rx : 7E00
+10/12/2023 7:31:44 PM.756                 $67 : Tx : 1003
+10/12/2023 7:31:44 PM.767                 $67 : Rx : 7F1012
+10/12/2023 7:31:44 PM.771                 ECU is in BOOT, expected : Application
+10/12/2023 7:31:44 PM.771                             Try to go in "Application mode" (Nominal Reprogrammation)
+10/12/2023 7:31:44 PM.771                             => Tester Present...
+10/12/2023 7:31:44 PM.773                             $67 : Tx : 3E00
+10/12/2023 7:31:44 PM.787                             $67 : Rx : 7E00
+10/12/2023 7:31:44 PM.791                             
+10/12/2023 7:31:44 PM.791                             ==========> BEGIN NominalReprog  
+10/12/2023 7:31:44 PM.791                             Start Reprogramming session
+10/12/2023 7:31:44 PM.791                             Read Ecu information DTC
+10/12/2023 7:31:44 PM.797                             $67 : Tx : 1002
+10/12/2023 7:31:44 PM.835                             $67 : Rx : 5002003201F4
+10/12/2023 7:31:44 PM.840                             $67 : Tx : 190A
+10/12/2023 7:31:44 PM.885                             $67 : Rx : 590A11FD005100FD004200FD000610FE004200
+10/12/2023 7:31:44 PM.892                             $67 : Tx : 22FD00
+10/12/2023 7:31:44 PM.951                             $67 : Rx : 62FD00A243FF05E28DBD387E9F0457349B02BBA12EF860965C8423EC06A5F896BD097FC567A817D8CDA221F1A97287CDAB653BB03FF678FEEFD624D4523AC330341B2A8B1951ADCEC8FF6AD123054E64B10552011D8546175262EB7CD8A5274F2E10F684FB2981B5459932371C1844033F8B6D0A5EFFEF910741724BD1F6E9E363C1BA1D1B9FC48BB0F55A2EEB50A89120AB132AE528B1630AF6DF418A4D2DA08BD8394A62C4C8A5928289A45056D21CC4518E1D86AC4B241B2A9BDFA64E9DFB5A9517BFE76FBF912EFDC30FEE79986E386784DB8B444AB95BB4BDF5F803E93F65D602132F8A9005E861A4C9609500BDDE12B82CA4EE9AEE833C8B6EFDAEC343AB4757
+10/12/2023 7:31:44 PM.964                             $67 : Tx : 1914
+10/12/2023 7:31:44 PM.971                             $67 : Rx : 5914FD004200
+10/12/2023 7:31:44 PM.976                             Try to unlock
+10/12/2023 7:31:44 PM.976                             =============================================
+10/12/2023 7:31:44 PM.976                             --> BEGIN : Unlock ECU
+10/12/2023 7:31:44 PM.976                             Read all ecu identifiers
+10/12/2023 7:31:44 PM.976                             $67 : Tx : 22F191
+10/12/2023 7:31:45 PM.022                             $67 : Rx : 62F19132393241303035363952
+10/12/2023 7:31:45 PM.022                             $67 : Tx : 22F011
+10/12/2023 7:31:45 PM.040                             $67 : Rx : 62F01150524F544153594D5632
+10/12/2023 7:31:45 PM.040                             $67 : Tx : 22F18A
+10/12/2023 7:31:45 PM.071                             $67 : Rx : 62F18A313143412020
+10/12/2023 7:31:45 PM.071                             $67 : Tx : 22F190
+10/12/2023 7:31:45 PM.101                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.101                             $67 : Tx : 22F180
+10/12/2023 7:31:45 PM.121                             $67 : Rx : 62F18001323331393031202020202020202020202020202020202020202020202020
+10/12/2023 7:31:45 PM.128                             $67 : Tx : 22F182
+10/12/2023 7:31:45 PM.135                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.135                             $67 : Tx : 22F18C
+10/12/2023 7:31:45 PM.173                             $67 : Rx : 62F18C3239324130313135325254413232313030303139
+10/12/2023 7:31:45 PM.173                             $67 : Tx : 22F18E
+10/12/2023 7:31:45 PM.181                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.182                             $67 : Tx : 22F187
+10/12/2023 7:31:45 PM.203                             $67 : Rx : 62F18732393241303139393752
+10/12/2023 7:31:45 PM.203                             $67 : Tx : 22F194
+10/12/2023 7:31:45 PM.207                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.207                             $67 : Tx : 22F195
+10/12/2023 7:31:45 PM.212                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.212                             $67 : Tx : 22F197
+10/12/2023 7:31:45 PM.216                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.223                             $67 : Tx : 22F196
+10/12/2023 7:31:45 PM.226                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.227                             $67 : Tx : 22F1A0
+10/12/2023 7:31:45 PM.271                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.283                             $67 : Tx : 22F010
+10/12/2023 7:31:45 PM.338                             $67 : Rx : 62F01020202020202020202020202020202020
+10/12/2023 7:31:45 PM.338                             $67 : Tx : 22F012
+10/12/2023 7:31:45 PM.369                             $67 : Rx : 62F01230303030303030303030
+10/12/2023 7:31:45 PM.370                             $67 : Tx : 22F013
+10/12/2023 7:31:45 PM.379                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.380                             $67 : Tx : 22F188
+10/12/2023 7:31:45 PM.416                             $67 : Rx : 7F2231
+10/12/2023 7:31:45 PM.417                             RequestSeed (2701)
+10/12/2023 7:31:45 PM.426                             $67 : Tx : 2701
+10/12/2023 7:31:45 PM.959                             $67 : Rx : 67011E9A31FA21689B1BCBF7044370EE175C414B3ED7338543D0B1619AED82E6616C5000E0AB4AD3F71AD7C0FB5E39AC00F3C4329401E94D1D7919B5CD6812B3A31EB1BD904361F5739DD9C0C2485366B794F12E387DFFF9EF45460485D2B972F865421A6308563D4A7F13E0AB74022F18C8A6BB8D5E5E371CD20652544CBC0D4F470F1CFA1793C9DD1D233037943F5C3DB12BD6067C3F6EE9ECCA4FF46588F28EF5B78D7C3C91EE13C60A661760701FE0B5546D3A63920659926ADE785B82990C9BF8F4C7B820205A1D1B9D49CDB48C269BB897F01F5D5E3735DF49261B8B524D9EAAEDD70B8F23C3658A15E3534985A6E149224E7F71CBC0B42551C03C763B5CB6
+10/12/2023 7:31:45 PM.963                             => Unlock methode : with  "Engineering key"
+10/12/2023 7:31:45 PM.963                             Compile security seed...
+10/12/2023 7:31:45 PM.963                             256 bytes seed detected => Use RSA engeneering keys
+10/12/2023 7:31:45 PM.963                             Try RSA Key #0
+10/12/2023 7:31:46 PM.040                             Compile seed OK
+10/12/2023 7:31:46 PM.040                             Compile seed
+10/12/2023 7:31:46 PM.040                             Try to send key
+10/12/2023 7:31:46 PM.044                             $67 : Tx : 2702CAC356CFEC490FB80611B02C28D6063406383D66864E4E325B98D8BA0D621492AFB731DCAFA72C09CD337C401700F46532B352279EFC760743CDD3B7E1DD6202E2ADA6C48CAC9FBAA3AD5BCEF894A019CEF5EE481095CB8259FF003249E1B1F0A52CAC66DCC599D40088AD2B8F0708404B63C8952181DE271D4A06DC4E2600D2D3FF8D4CA19D172B97D9CEFE4665886C13B69121215EC7D813749E3E163DDE3C676DE01A377E4A2A06B5923986AECE17FB06B149EFEB05CEF2B2A7FF39261BF70CFDDD6EA1D3CA3F5ECE81B9A4750D2C5AD66807B57D759B76895C1E7F36286F5FB0D85281593F2921AF8FC2F9A3E53174FCAD96CCE85F2FA68501D0A32DE686
+10/12/2023 7:31:46 PM.654                             $67 : Rx : 6702
+10/12/2023 7:31:46 PM.658                             Ecu unlocked
+10/12/2023 7:31:46 PM.658                             <-- END : Unlock ECU
+10/12/2023 7:31:46 PM.658                             =============================================
+10/12/2023 7:31:46 PM.658                             Unlock done
+10/12/2023 7:31:46 PM.658                             Some Not tested DTC are present
+10/12/2023 7:31:46 PM.658                             Run not tested FD00
+10/12/2023 7:31:46 PM.661                             $67 : Tx : 3101FF06FD0006
+10/12/2023 7:31:46 PM.674                             $67 : Rx : 7101FF061000
+10/12/2023 7:31:46 PM.678                             DTC for logical block FD00 OK
+10/12/2023 7:31:46 PM.683                             $67 : Tx : 190A
+10/12/2023 7:31:46 PM.724                             $67 : Rx : 590A11FD005100FD004200FD000600FE004200
+10/12/2023 7:31:46 PM.730                             Set BS RoutineControl
+10/12/2023 7:31:46 PM.733                             $67 : Tx : 310102FF10
+10/12/2023 7:31:46 PM.741                             $67 : Rx : 710102FF10
+10/12/2023 7:31:46 PM.744                             BS RoutineControl set to 10
+10/12/2023 7:31:46 PM.750                             Info SESSION:[TOTAL] FILE:[5DH.odx-f]
+10/12/2023 7:31:46 PM.750                             All logical blocks are available on ECU 
+10/12/2023 7:31:46 PM.750                             Evaluate witch Logical Block need to be Update
+10/12/2023 7:31:46 PM.750                             Check Logical Block: FD00 
+10/12/2023 7:31:46 PM.750                             FD00 Hash is the same as Pdx File
+10/12/2023 7:31:46 PM.750                             FD00 doesn't need to be updated,DTC51 or DTC06 status are not False
+10/12/2023 7:31:46 PM.750                             No DTC with FTB 0x06 with Status bit Test failed equal to 1
+10/12/2023 7:31:46 PM.750                             Check if one DTC42 Memory Failure status is Failed for one of Logical block
+10/12/2023 7:31:46 PM.750                             No DTC with FTB 0x42 with Status bit Test failed equal to 1
+10/12/2023 7:31:46 PM.750                             All logical block are up to date
+10/12/2023 7:31:46 PM.750                             No global DTC with FTB 0x06
+10/12/2023 7:31:46 PM.750                             ECU is operational
+10/12/2023 7:31:46 PM.751                             $67 : Tx : 190A
+10/12/2023 7:31:46 PM.795                             $67 : Rx : 590A11FD005100FD004200FD000600FE004200
+10/12/2023 7:31:46 PM.802                             $67 : Tx : 1001
+10/12/2023 7:31:46 PM.893                             $67 : Rx : 5001003201F4
+10/12/2023 7:31:46 PM.901                             Waiting for Tester present
+10/12/2023 7:31:46 PM.901                             => Tester Present...
+10/12/2023 7:31:46 PM.902                             $67 : Tx : 3E00
+10/12/2023 7:31:46 PM.973                             $67 : Rx : 7E00
+10/12/2023 7:31:46 PM.975                             ==========> END of NominalReprog  
+10/12/2023 7:31:46 PM.981                             => Tester Present...
+10/12/2023 7:31:46 PM.983                             $67 : Tx : 3E00
+10/12/2023 7:31:47 PM.033                             $67 : Rx : 7E00
+10/12/2023 7:31:47 PM.048                             Check if ECU is in Application
+10/12/2023 7:31:47 PM.048                             => Tester Present...
+10/12/2023 7:31:47 PM.050                             $67 : Tx : 3E00
+10/12/2023 7:31:47 PM.090                             $67 : Rx : 7E00
+10/12/2023 7:31:47 PM.096                             $67 : Tx : 1003
+10/12/2023 7:31:47 PM.133                             $67 : Rx : 5003003201F4
+10/12/2023 7:31:47 PM.136                             ECU is in Application
+10/12/2023 7:31:47 PM.136                             Goto default Session
+10/12/2023 7:31:47 PM.138                             $67 : Tx : 1001
+10/12/2023 7:31:47 PM.163                             $67 : Rx : 5001003201F4
+10/12/2023 7:31:47 PM.166           End : Check initial condition
+10/12/2023 7:31:47 PM.168           waiting 3000 ms...
+10/12/2023 7:31:50 PM.562           Waiting for Tester present
+10/12/2023 7:31:50 PM.562           => Tester Present...
+10/12/2023 7:31:50 PM.564           $67 : Tx : 3E00
+10/12/2023 7:31:50 PM.574           $67 : Rx : 7E00
+10/12/2023 7:31:50 PM.578           Programming session (1002)
+10/12/2023 7:31:50 PM.579           $67 : Tx : 1002
+10/12/2023 7:31:50 PM.595            -------- Response [7F1033] Contains Nack_33:  Trying to resend request [1002] --------
+10/12/2023 7:31:51 PM.370                  Check for virgin mode...
+10/12/2023 7:31:51 PM.893                  Unlocking...
+10/12/2023 7:31:51 PM.895                  Try to unlock with proto key...
+10/12/2023 7:31:51 PM.898           Request seed ($2701)...
+10/12/2023 7:31:52 PM.010           IndexSrvData ($F011): 50524F544153594D5632
+10/12/2023 7:31:52 PM.032           VIN ($F190): 4142434445464748494A4B4C4D4E4F5051
+10/12/2023 7:31:52 PM.034           256 bytes seed => Try RSA unlocking with proto keys...
+10/12/2023 7:31:52 PM.087           sendSecurityKey ($2702)
+10/12/2023 7:31:52 PM.171           ECU unlocked.
+10/12/2023 7:31:52 PM.393                  Trying to resend UDS request [1002]
+10/12/2023 7:31:53 PM.124           $67 : Rx : 5002003201F4
+10/12/2023 7:31:53 PM.134           Programming session, expected [5002003201F4]
+10/12/2023 7:31:53 PM.134           RequestSeed (2701)
+10/12/2023 7:31:53 PM.140           $67 : Tx : 2701
+10/12/2023 7:31:53 PM.688           $67 : Rx : 67013BAEC4068419886A946D1CB52058DAF883C31B2AFB8C858C3FFA943CE726B404EEEC3914E7D22DB90F0C864B1960A8B1D938DCF6B4B3C7E85692320528F0BE90318DAC899539B41A2AF190E9DDD3A3E94B122C50A1644E611722D3BED7C956828649FD2F4D8872E057523A871C110DFFDF8F5D4970022FA3B886E7B50AED3B701BBCC2E7799D74D3A576061FFEFBC742E318289C5E2CBB37A06300933188DAB6D1246329BDB337C10297E6F18CD2016FF186EA3A00F0F2A1ADE3A7A38647A60C91DAFB27D12071F4D492E3AACCDC448F2101E6E0C8640ED8211D1A406A2F26C76C966C340D405313138C38B0A97CA22A65BE7291218CC930C33F100AEAC2663D
+10/12/2023 7:31:53 PM.691           RequestSeed, expected [6701....seed...]
+10/12/2023 7:31:53 PM.691           Compile security seed...
+10/12/2023 7:31:53 PM.692           256 bytes seed detected => Use RSA engeneering keys
+10/12/2023 7:31:53 PM.692           Try RSA Key #0
+10/12/2023 7:31:53 PM.741           Compile seed OK
+10/12/2023 7:31:53 PM.741           Compile seed
+10/12/2023 7:31:53 PM.741           SendKey (2702)
+10/12/2023 7:31:53 PM.745           $67 : Tx : 27024CC541591B51078FFC4E6B77C0EA27941C428D894EC236B5B1A8F61E987C504286AA364F9F76F05AA303A70D7EE7053047BD98662E813B469CB0411B8FFC253D10B858C3C6081AF28A6663C9B33B7A4F18A0F4A2A0BD438B9BFCD2215DA101C07D87D686B980270ED213B9915A327F039E61039CEA04B9C57517042712D0BF671C44606F4C7B59E0067ED8E401AFE534AFCE50A20EE10E01188989972CFAB02923FD7A7DE72369DB5EB774546C8F5A2F06B19E4A05713A640E02056AF863051B4FF3E17E09E0669E20537971C78EE4AC4156B11B654BA9C6775C02FD77ED84388318A7F4B14AAE36E6DDC6650E8BF3D065284629C6A8EBDF6AD163E13DC4ECD7
+10/12/2023 7:31:54 PM.266           $67 : Rx : 6702
+10/12/2023 7:31:54 PM.270           SendKey, expected [6702]
+10/12/2023 7:31:54 PM.270           Default session (1001)
+10/12/2023 7:31:54 PM.271           $67 : Tx : 1001
+10/12/2023 7:31:54 PM.279           $67 : Rx : 5001003201F4
+10/12/2023 7:31:54 PM.281           Default session, expected [5001003201F4]
+10/12/2023 7:31:54 PM.281           Waiting for Tester present
+10/12/2023 7:31:54 PM.281           => Tester Present...
+10/12/2023 7:31:54 PM.283           $67 : Tx : 3E00
+10/12/2023 7:31:55 PM.289           I/O error
+10/12/2023 7:31:55 PM.289           Waiting for Tester Present, retry 1/10
+10/12/2023 7:31:55 PM.289           => Tester Present...
+10/12/2023 7:31:55 PM.297           $67 : Tx : 3E00
+10/12/2023 7:31:55 PM.340           $67 : Rx : 7E00
+10/12/2023 7:31:55 PM.344           Programming session (1002)
+10/12/2023 7:31:55 PM.346           $67 : Tx : 1002
+10/12/2023 7:31:55 PM.363            -------- Response [7F1033] Contains Nack_33:  Trying to resend request [1002] --------
+10/12/2023 7:31:56 PM.099                  Check for virgin mode...
+10/12/2023 7:31:56 PM.601                  Unlocking...
+10/12/2023 7:31:56 PM.604                  Try to unlock with proto key...
+10/12/2023 7:31:56 PM.606           Request seed ($2701)...
+10/12/2023 7:31:56 PM.706           IndexSrvData ($F011): 50524F544153594D5632
+10/12/2023 7:31:56 PM.718           VIN ($F190): 4142434445464748494A4B4C4D4E4F5051
+10/12/2023 7:31:56 PM.721           256 bytes seed => Try RSA unlocking with proto keys...
+10/12/2023 7:31:56 PM.754           sendSecurityKey ($2702)
+10/12/2023 7:31:56 PM.838           ECU unlocked.
+10/12/2023 7:31:57 PM.060                  Trying to resend UDS request [1002]
+10/12/2023 7:31:57 PM.800           $67 : Rx : 5002003201F4
+10/12/2023 7:31:57 PM.812           Programming session, expected [5002003201F4]
+10/12/2023 7:31:57 PM.812           Write hash (2E) for logical block [FD00]
+10/12/2023 7:31:57 PM.812           $67 : Tx : 2EFD00A243FF05E28DBD387E9F0457349B02BBA12EF860965C8423EC06A5F896BD097FC567A817D8CDA221F1A97287CDAB653BB03FF678FEEFD624D4523AC330341B2A8B1951ADCEC8FF6AD123054E64B10552011D8546175262EB7CD8A5274F2E10F684FB2981B5459932371C1844033F8B6D0A5EFFEF910741724BD1F6E9E363C1BA1D1B9FC48BB0F55A2EEB50A89120AB132AE528B1630AF6DF418A4D2DA08BD8394A62C4C8A5928289A45056D21CC4518E1D86AC4B241B2A9BDFA64E9DFB5A9517BFE76FBF912EFDC30FEE79986E386784DB8B444AB95BB4BDF5F803E93F65D602132F8A9005E861A4C9609500BDDE12B82CA4EE9AEE833C8B6EFDAEC343AB4757
+10/12/2023 7:31:57 PM.861           $67 : Rx : 7F2E33
+10/12/2023 7:31:57 PM.867           Write Hash, expected negative reply [7F2E33]
+10/12/2023 7:31:57 PM.867           RequestSeed (2701)
+10/12/2023 7:31:57 PM.873           $67 : Tx : 2701
+10/12/2023 7:31:58 PM.403           $67 : Rx : 6701B9F55EB643FBA3B1D0F4A249756F077329C527619BCE766FA0A3E7552AAA2F0E04C7E89BA21EC5B7FF00D926D34FC4270FDD44B972F8FE6DFF806A82106760BE1F3D1F965E3410FCB5F4C38D5F753EF573429920251DD375E6C89DFE6DC07597B0C2F098BFA6B855C0EA10690861EFF8C33E5F5BD9F61AEA56D174659E1D2C46C60648A29B10D52361577A729DA082207E866ABC58CE2FA0E862A810C603BF10612189E10429638BF724B5609BA8E50F95ED9A2B59DA2D14F7A1954F60972D210AA8AC1FDFF3EAA5A323D87B88DF79D498471AEF0FF76F2389E98164250EA859126F680FF9A8FBF38FC5FDDA6797F1F593EEF7169823D98CC46361A3D425F7DB
+10/12/2023 7:31:58 PM.420           RequestSeed, expected [6701....seed...]
+10/12/2023 7:31:58 PM.420           Compile security seed...
+10/12/2023 7:31:58 PM.420           256 bytes seed detected => Use RSA engeneering keys
+10/12/2023 7:31:58 PM.420           Try RSA Key #0
+10/12/2023 7:31:58 PM.452           Compile seed OK
+10/12/2023 7:31:58 PM.452           Compile seed
+10/12/2023 7:31:58 PM.452           SendKey (2702)
+10/12/2023 7:31:58 PM.454           $67 : Tx : 2702498445894177E66A9848BF71D961F94CEE0B8152E4F8F644DBFE2838B7192FCCA6658824AFC95AFC538834324877F37A1857EDA27B89FEB112D54D7470F59A73A6FDE60FC12F0BD8CCEF4CC6B9B94AFF4F3C155339BAEF773FFE7BB2704F92F9F2066262ABFA412F11876090E2B71500F8B9875405025DC70979D14F2DF697B8280D4048E42B2AEB1DEC23015A0D07DBBB84D5732859323DE6273AF20C65A773FD3E534D4EBAD9A24152AFF0D9F138ECF86D95B37D178011598A308B1507570CD9F9BC241AE9678D2BC3369FF76C8E33A9409615AA1B9F6A0C72A22937329620244E59CB13CAC4BF24B4E1CEB77C54FA9176C36268AD9CB94C7D963918B794C3
+10/12/2023 7:31:58 PM.962           $67 : Rx : 6702
+10/12/2023 7:31:58 PM.964           SendKey, expected [6702]
+10/12/2023 7:31:58 PM.964           Default session (1001)
+10/12/2023 7:31:58 PM.965           $67 : Tx : 1001
+10/12/2023 7:31:58 PM.977           $67 : Rx : 5001003201F4
+10/12/2023 7:31:58 PM.979           Default session, expected [5001003201F4]
+10/12/2023 7:31:58 PM.979           Waiting for Tester present
+10/12/2023 7:31:58 PM.979           => Tester Present...
+10/12/2023 7:31:58 PM.980           $67 : Tx : 3E00
+10/12/2023 7:31:59 PM.986           I/O error
+10/12/2023 7:31:59 PM.986           Waiting for Tester Present, retry 1/10
+10/12/2023 7:31:59 PM.986           => Tester Present...
+10/12/2023 7:31:59 PM.988           $67 : Tx : 3E00
+10/12/2023 7:31:59 PM.992           $67 : Rx : 7E00
+10/12/2023 7:31:59 PM.994           Programming session (1002)
+10/12/2023 7:31:59 PM.995           $67 : Tx : 1002
+10/12/2023 7:32:00 PM.003            -------- Response [7F1033] Contains Nack_33:  Trying to resend request [1002] --------
+10/12/2023 7:32:00 PM.738                  Check for virgin mode...
+10/12/2023 7:32:01 PM.249                  Unlocking...
+10/12/2023 7:32:01 PM.251                  Try to unlock with proto key...
+10/12/2023 7:32:01 PM.253           Request seed ($2701)...
+10/12/2023 7:32:01 PM.357           IndexSrvData ($F011): 50524F544153594D5632
+10/12/2023 7:32:01 PM.379           VIN ($F190): 4142434445464748494A4B4C4D4E4F5051
+10/12/2023 7:32:01 PM.381           256 bytes seed => Try RSA unlocking with proto keys...
+10/12/2023 7:32:01 PM.433           sendSecurityKey ($2702)
+10/12/2023 7:32:01 PM.522           ECU unlocked.
+10/12/2023 7:32:01 PM.747                  Trying to resend UDS request [1002]
+10/12/2023 7:32:02 PM.592           $67 : Rx : 5002003201F4
+10/12/2023 7:32:02 PM.654           Programming session, expected [5002003201F4]
+10/12/2023 7:32:02 PM.654           Write hash (2E) for logical block [FD00]
+10/12/2023 7:32:02 PM.655           $67 : Tx : 2EFD005DBC00FA1D7242C78160FBA8CB64FD445ED1079F69A37BDC13F95A076942F6803A9857E827325DDE0E568D7832549AC44FC00987011029DB2BADC53CCFCBE4D574E6AE52313700952EDCFAB19B4EFAADFEE27AB9E8AD9D1483275AD8B0D1EF097B04D67E4ABA66CDC8E3E7BBFCC07492F5A100106EF8BE8DB42E09161C9C3E45E2E4603B744F0AA5D114AF576EDF54ECD51AD74E9CF50920BE75B2D25F7427C6B59D3B375A6D7D765BAFA92DE33BAE71E27953B4DBE4D5642059B16204A56AE8401890406ED1023CF011866791C7987B2474BBB546A44B420A07FC16C09A29FDECD0756FFA179E5B369F6AFF4221ED47D35B1165117CC3749102513CBC54B8A8
+10/12/2023 7:32:02 PM.746           $67 : Rx : 7F2E33
+10/12/2023 7:32:02 PM.753           Write Hash, expected negative reply [7F2E33]
+10/12/2023 7:32:02 PM.753           Default session (1001)
+10/12/2023 7:32:02 PM.756           $67 : Tx : 1001
+10/12/2023 7:32:02 PM.761           $67 : Rx : 5001003201F4
+10/12/2023 7:32:02 PM.764           Default session, expected [5001003201F4]
+10/12/2023 7:32:02 PM.764           Waiting for Tester present
+10/12/2023 7:32:02 PM.764           => Tester Present...
+10/12/2023 7:32:02 PM.766           $67 : Tx : 3E00
+10/12/2023 7:32:03 PM.797           I/O error
+10/12/2023 7:32:03 PM.797           Waiting for Tester Present, retry 1/10
+10/12/2023 7:32:03 PM.797           => Tester Present...
+10/12/2023 7:32:03 PM.798           $67 : Tx : 3E00
+10/12/2023 7:32:03 PM.810           $67 : Rx : 7E00
+10/12/2023 7:32:03 PM.818     End Test   : PRG5_023
+]]></Trace>
+  </Test>
+  <Information>
+    <Tool>
+      <DDT2000>4.0.68.0</DDT2000>
+      <Name>RTT</Name>
+      <Version>4.0.68.0</Version>
+    </Tool>
+    <Tests current-version="3.0">
+      <Test name="PRG5_056">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ12</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_050">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ12</Version>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_051">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ12</Version>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_052">
+        <Versions>
+          <Current>2.2</Current>
+          <History>
+            <Version value="2.2"> RFQ12</Version>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0">Remove read 0xF188 and 0xF190</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_053">
+        <Versions>
+          <Current>2.2</Current>
+          <History>
+            <Version value="2.2"> RFQ12</Version>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0">Remove read 0xF188 and 0xF190</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_054">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_055">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_060">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ7.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_064">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ12</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_065">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ12</Version>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_002">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0">Original version </Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_003">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ10</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_006">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_009">
+        <Versions>
+          <Current>1.3</Current>
+          <History>
+            <Version value="1.3"> RFQ11</Version>
+            <Version value="1.2"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_011">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_012">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_013">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_014">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_015">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_017">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_018">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_020">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_022">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_024">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_026">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_042">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_043">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_044">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_005">
+        <Versions>
+          <Current>1.3</Current>
+          <History>
+            <Version value="1.3"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_059">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0">Time check is deleted because check is not relevent and Network layer validation checks if BS is correctly changed</Version>
+            <Version value="2.0"> RFQ10</Version>
+            <Version value="1.0"> RFQ7.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_001">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_007">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_008">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_023">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_028">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_032">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_033">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_036">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_045">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_040">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0"> RFQ10</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_004">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_041">
+        <Versions>
+          <Current>3.1</Current>
+          <History>
+            <Version value="3.1"> RFQ11</Version>
+            <Version value="3.0"> RFQ10</Version>
+            <Version value="2.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_000">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0">Original version RFQ7.0</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_061">
+        <Versions>
+          <Current>3.1</Current>
+          <History>
+            <Version value="3.1"> RFQ12</Version>
+            <Version value="3.0"> RFQ11</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_063">
+        <Versions>
+          <Current>2.2</Current>
+          <History>
+            <Version value="2.2"> RFQ12</Version>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_029">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_030">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_031">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_035">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_021">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_039">
+        <Versions>
+          <Current>4.2</Current>
+          <History>
+            <Version value="4.2"> RFQ12</Version>
+            <Version value="4.1"> RFQ11</Version>
+            <Version value="4.0"> RFQ10</Version>
+            <Version value="3.0"> RFQ9.0</Version>
+            <Version value="2.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_025">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_058">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0"> RFQ10</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_062">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_070">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0"> RFQ11</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_019">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+    </Tests>
+  </Information>
+</UDS-REPROGRAMMING-VALIDATION-RESULT>

@@ -1,0 +1,21 @@
+!SESSION 2024-01-30 14:06:12.992 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-01-30 14:08:45.879
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-01-30 14:08:45.909
+!MESSAGE Log4j2 initialized with config file D:\Deltabox\OneDrive - Delta Electronics, Inc\Documents\Driver Dev Course\MCU1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-01-30 14:08:56.562
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-30 14:16:02.531
+!MESSAGE Indexed '001HelloWorld' (3 sources, 53 headers) in 4.23 sec: 1,950 declarations; 2,832 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-30 14:18:54.071
+!MESSAGE Indexed '001HelloWorld' (3 sources, 53 headers) in 0.37 sec: 1,950 declarations; 2,831 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)

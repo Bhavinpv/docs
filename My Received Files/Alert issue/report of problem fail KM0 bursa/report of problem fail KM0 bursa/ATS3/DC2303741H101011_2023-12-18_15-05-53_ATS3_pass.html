@@ -1,0 +1,4303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>5DH</title>
+    <style type="text/css">
+      
+       
+      
+      @media screen
+      {
+        body
+        {
+          background-color: rgb(255, 255, 255);
+          font-family:      arial, verdana, trebuchet, officina, sans-serif;
+        }
+      }
+  
+      
+      @media print
+      {
+        
+        body
+        {
+          background-color: rgb(255, 255, 255);
+          font-family:      arial, verdana, trebuchet, officina, sans-serif;
+        }
+        
+        
+        a
+        {
+          text-decoration: none;
+        }
+        
+        
+        .HeadingTable, .SubHeadingTable, .GroupHeadingTable , .GroupEndTable
+        {
+          border-width: 2px;
+          border-style: solid;
+          border-color: rgb(150,150,150);
+        }
+        
+        .ResultBlockHeading
+        {
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(150,150,150);
+        }
+        
+        table.ResultTable, table.OverviewTable, table.CheckStatisticsTable
+        {
+          border-collapse: collapse;
+        }
+        
+        td.DefaultCell, td.DefineCell, td.NumberCell, td.NumberCellPositiveResult, td.NumberCellNegativeResult, 
+        td.NumberCellErrorResult, td.NumberCellInconclusiveResult, td.NumberCellNoneResult, td.NumberCellNoColor,
+        td.PositiveResultCell, td.NegativeResultCell, td.WarningCell, td.NoneResultCell, td.InconclusiveResultCell,
+        td.ErrorResultCell, th.TableHeadingCell
+        {
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(150,150,150);
+        }
+        
+        .PatternSeparator
+        {
+          
+          border-style: none;
+        }
+        
+        .PositiveResult
+        {
+          
+          border-bottom: 2px solid;
+        }
+        
+        .NegativeResult
+        {
+          
+          border-bottom: 2px solid;
+        }
+        
+        .NoneResult
+        {
+          
+          border-bottom: 2px solid;
+        }
+        
+        .InconclusiveResult
+        {
+          
+          border-bottom: 2px solid;
+        }
+        
+        .ErrorResult
+        {
+          
+          border-bottom: 2px solid;
+        }
+
+        
+        .TestcaseHeadingDefaultResult
+        {
+          
+          border-bottom: 2px solid;
+        }
+        
+        .TestcaseHeadingPositiveResult
+        {
+          
+          border-bottom: 2px solid;
+        }
+        
+        .TestcaseHeadingNegativeResult
+        {
+          
+          border-bottom: 2px solid;
+        }
+        
+        table.ScreenOnly, a.Undecorated, .LinkCell
+        {
+          display: none;
+        }
+      }
+      
+      a.Undecorated:hover 
+      {
+        color:red;
+      }
+      a.Undecorated
+      { 
+        text-decoration: none; 
+      }
+      
+      .NavStyle
+      {
+        background-color: rgb(220, 221, 222);
+      }
+      
+      td.LinkCell, td.UpCell
+      {
+        
+        width:              1px;
+        white-space:        nowrap;
+      }
+
+      
+      table
+      {
+        margin-bottom:    10px;
+        vertical-align:   top; 
+        border:           0;
+        border-spacing:   1px;
+        padding:          2px;
+      }
+      table.ScreenOnly
+      {
+        vertical-align: top; 
+        margin-bottom:  10px;
+      }
+      .NoMarginBottom
+      {
+        margin-bottom:    0px;
+      }
+      .HeadingTable
+      {
+        width:            100%;
+        text-align:       center;
+        margin-top:       15px;
+        margin-bottom:    30px;
+        margin-left:      auto;
+        margin-right:     auto;
+        background-color: rgb(220, 221, 222);
+      }
+      
+      .SubHeadingTable
+      {
+        width:            100%;
+        text-align:       center;
+        margin-top:       15px;
+        margin-bottom:    25px;
+        background-color: rgb(220, 221, 222);
+      }
+      
+      .GroupHeadingTable, .GroupEndTable
+      {
+        width:            100%;
+        text-align:       center;
+        margin-top:       15px;
+        padding-right:    20px;
+        background-color: rgb(220, 221, 222);
+      }
+      
+      .DefaultTable
+      {
+        padding:        0px;
+        border-spacing: 0px;
+      }
+      
+      .CheckStatisticsTable
+      {
+        margin-bottom: 8px;
+        padding-right:  20px;
+      }
+  
+      .OverviewTable
+      {
+        text-align:     left;
+      }
+      
+      .OverviewResultTable
+      {
+        width:          100%;
+        margin-bottom:  0px;
+        border-spacing: 0px;
+        padding:        0px;
+        text-align:     center;
+      }
+      
+      .ResultTable
+      {
+        width:          100%;
+        text-align:     left;
+        padding-right:  20px;
+      }
+      
+      .ResultTableInner
+      {
+        width:          100%;
+        text-align:     left;
+        padding-right:  0px;
+      }
+  
+      table.ResultTable td, table.ChildLinkTable td
+      {
+        vertical-align: top;
+      }
+      .ChildLinkTable
+      {
+        width:          1px;
+        text-align:     left;
+      }
+      .InfoTable
+      {
+        text-align:     left;
+        padding-right:  0px;
+        margin-bottom:  0px;
+        border-spacing: 0px;
+      }
+      .InfoTableExpand
+      {
+        width:          100%;
+        text-align:     left;
+        padding-right:  0px;
+        margin-bottom:  0px;
+        border-spacing: 0px;
+      }
+      .OverallResultTable
+      {
+        width:         50%;
+        text-align:    center;
+        margin-bottom: 20px;
+        margin-left:   auto;
+        margin-right:  auto;
+        font-weight:   bold;
+      }
+      
+      .TableHeadingCell
+      {
+        background-color: rgb(179, 179, 179);
+        font-family:      arial, verdana, trebuchet, officina, sans-serif;
+        font-weight:      bold;
+        text-align:       center;
+      }
+  
+      .CellNoColor
+      {
+        text-align:     left;
+        vertical-align: top;
+      }   
+      
+      .DefineCell
+      {
+        background-color: rgb(179, 179, 179);
+        text-align:       left;
+      }
+      
+      .DefaultCell, .DefaultCellBold
+      {
+        background-color: rgb(229, 229, 229);
+        text-align:       left;
+      }
+      
+      .DefaultCellBold
+      {
+        font-weight:      bold;
+      }
+        
+      .NumberCell
+      {
+        background-color: rgb(229, 229, 229);
+        text-align:       center;
+        min-width:        50px;
+      }
+      
+      .NumberCellNegativeResult
+      {
+        background-color: rgb(240, 0, 0);
+        text-align:       center;
+        min-width:        50px;
+      }
+      
+      .NumberCellPositiveResult
+      {
+        background-color: rgb(25, 165, 88);
+        text-align:       center;
+        min-width:        50px;
+      }
+      
+      .NumberCellNoneResult
+      {
+        background-color: rgb(105, 105, 105);
+        text-align:       center;
+        min-width:        50px;
+      }
+      
+      .NumberCellInconclusiveResult
+      {
+        background-color: rgb(255, 165, 0);
+        text-align:       center;
+        min-width:        50px;
+      }
+      
+      .NumberCellErrorResult
+      {
+        background-color: rgb(205, 0, 0);
+        text-align:       center;
+        min-width:        50px;
+      }
+      
+      .NumberCellNoColor
+      {        
+        text-align: center;
+      }
+      
+      .PositiveResultCell
+      {
+        background-color: rgb(25, 165, 88);
+      }
+    
+      .NegativeResultCell
+      {
+        background-color: rgb(240, 0, 0);
+      }
+      
+      .NoneResultCell
+      {
+        background-color: rgb(105, 105, 105);
+      }
+      
+      .InconclusiveResultCell
+      {
+        background-color: rgb(255, 165, 0);
+      }
+      
+      .ErrorResultCell
+      {
+        background-color: rgb(205, 0, 0);
+        white-space:        nowrap;
+      }
+
+      .WarningCell
+      {
+        background-color: rgb(255, 255, 0);
+      }
+
+      .TestcaseHeadingDefaultResult
+      {
+        background-color: rgb(179, 179, 179);
+      }
+      .TestcaseHeadingPositiveResult
+      {
+        background-color: rgb(25, 165, 88);
+      }      
+      .TestcaseHeadingNegativeResult
+      {
+        background-color: rgb(240, 0, 0);
+      }      
+      .TestcaseHeadingNoneResult
+      {
+        background-color: rgb(105, 105, 105);
+      }
+      .TestcaseHeadingInconclusiveResult
+      {
+        background-color: rgb(255, 165, 0);
+      }
+      .TestcaseHeadingErrorResult
+      {
+        background-color: rgb(205, 0, 0);
+      }
+      
+      .PatternSeparator
+      {
+        height: 0.2em;
+      }
+      
+      .NegativeResult
+      {
+        background-color: rgb(240, 0, 0);
+        text-align:       center;
+        font-weight:      bold;
+      }
+      .PositiveResult
+      {
+        background-color: rgb(25, 165, 88);
+        text-align:       center;
+        font-weight:      bold;
+      }
+      .NoneResult
+      {
+        background-color: rgb(105, 105, 105);
+        text-align:       center;
+        font-weight:      bold;
+      }
+      .InconclusiveResult
+      {
+        background-color: rgb(255, 165, 0);
+        text-align:       center;
+        font-weight:      bold;
+      }
+      .ErrorResult
+      {
+        background-color: rgb(205, 0, 0);
+        text-align:       center;
+        font-weight:      bold;
+      }
+      
+      
+      
+      .Heading1
+      {
+        font-family: arial, sans-serif;
+        font-weight: bold;
+        font-size:   26px;
+      }
+      
+      .Heading2
+      {
+        font-family: arial, sans-serif;
+        font-weight: bold;
+        font-size:   20px;
+      }
+      
+      .Heading3
+      {
+        font-family:   arial, sans-serif;
+        font-weight:   bold;
+        font-size:     18px;
+        margin-bottom: 20px;
+        margin-top:    20px;
+      }
+      
+      .Heading4
+      {
+        font-family:   arial, sans-serif;
+        font-weight:   bold;
+        font-size:     16px;
+        margin-top:    10px;
+        margin-bottom: 10px;
+      }
+      
+      
+      img
+      {
+        Margin-bottom: 10px;
+        Margin-right:  10px;
+      }
+      
+      
+      p
+      {
+        Margin-bottom: 20px;
+      }
+      
+      
+      .DefaultTableBackground
+      {
+        background-color: rgb(229, 229, 229);
+        border-spacing:   0px;
+        padding:          0px;
+      }
+      
+      .NegativeResultBackground
+      {
+        background-color: rgb(240, 0, 0);
+        border-spacing:   0px;
+        padding:          0px;
+      }
+      
+      .PositiveResultBackground
+      {
+        background-color: rgb(25, 165, 88);
+        border-spacing:   0px;
+        padding:          0px;
+      }
+      
+      .WarningResultBackground
+      {
+        background-color: rgb(255, 255, 0);
+        border-spacing:   0px;
+        padding:          0px;
+      }
+      
+      .NoneResultBackground
+      {
+        background-color: rgb(105, 105, 105);
+        border-spacing:   0px;
+        padding:          0px;
+      }
+      
+      .InconclusiveResultBackground
+      {
+        background-color: rgb(255, 165, 0);
+        border-spacing:   0px;
+        padding:          0px;
+      }
+      
+      .ErrorResultBackground
+      {
+        background-color: rgb(205, 0, 0);
+        border-spacing:   0px;
+        padding:          0px;
+      }
+      
+      .TestGroupHeadingBackground
+      {
+        background-color: rgb(179, 179, 179);
+      }
+    
+      
+      .Indentation
+      {
+        margin-left:  20px;
+      }
+    </style>
+    <script type="text/javascript">
+      var EXPANDED = '[−]';
+      var COLLAPSED = '[+]';
+      var VISIBLE = 'Visible';
+      var HIDDEN = 'Hidden';
+      var NONE = 'none';
+      var BLOCK = '';
+      function getDivId(id) { return 'div_' + id; }
+      function getLinkId(id) { return 'lnk_' + id; }
+      function getTableId(id) { return 'tbl_' + id; }
+      function getTbl2Id(id) { return 'tbl_t' + id; }
+      
+      
+      function switchText(oldText) { return oldText == COLLAPSED ? EXPANDED : COLLAPSED ; }
+      function getStyleFromText(linkText) { return linkText == COLLAPSED ? HIDDEN : VISIBLE; }
+      
+      function getElements(tagName, elementId)
+      {
+        this.elements = [];
+        var index = 0;
+        var elm = document.getElementsByTagName(tagName);
+        var len = elm.length;
+        for (var i = 0; i < len; i++) 
+        {
+          var id = elm[i].id;
+          if (id && id.indexOf(elementId) == 0)
+          {
+            this.elements[index] = elm[i];
+            index++;
+          }
+        }
+        return this.elements;
+      }
+      function matchElements(tagName, matchId)
+      {
+        this.elements = [];
+        var index = 0;
+        var elm = document.getElementsByTagName(tagName);
+        for (var i = 0; i < elm.length; i++) 
+        {
+          var id = elm[i].id;
+          var tc = id.replace(/s[0-9]+\./, "");
+          if (tc && tc == matchId)
+          {
+            this.elements[index] = elm[i];
+            index++;
+          }
+        }
+        return this.elements;  
+      }
+      function onoff(elm, style)
+      {
+        if(elm.style.display == NONE)
+        {
+          if(style == null || style == VISIBLE)
+            elm.style.display = BLOCK;
+        }
+        else
+        {
+          if(style == null || style == HIDDEN)
+            elm.style.display = NONE;
+        }
+      }
+      function switchTagStyle(tag, id, style)
+      {
+        var divs = getElements(tag, id);
+        for(var i = 0; i < divs.length; i++)
+          onoff(divs[i], style);
+      }
+      function switchRowStyle(tbl, style)
+      {
+        var rows = tbl.rows.length;
+        for(var rowIndex=0; rowIndex < rows; rowIndex++)
+        {
+          var row = tbl.rows[rowIndex];
+          if (row.id != "on")
+            onoff(row, style);
+        }
+      }
+      function switchTableRowStyle(tableId, style)
+      {
+        var tables = getElements('table', tableId);
+        for(var i = 0; i < tables.length; i++)
+          switchRowStyle(tables[i], style);
+      }
+      function switchLinkText(linkId, newText)
+      {
+        var link = getElements('a', linkId);
+        var len = link.length;
+        for(var i = 0; i < len; i++)
+        {
+          var lnk = link[i];
+          if(newText == null)
+          {
+            var oldText = lnk.text;
+            newText = switchText(oldText)
+          }
+          lnk.text = newText;
+        }
+      }
+      function switchTag(tag, id, text)
+      {
+        var style = getStyleFromText(text);
+        switchTagStyle(tag, id, style);
+      }
+      function switchTable(id)
+      {
+        switchLinkText(getTableId(id));
+        switchTableRowStyle(getTableId(id));
+      }
+      function switchDiv(id, linkText)
+      {
+        var text = switchText(linkText);
+        switchLinkText(getLinkId(id), text);
+        switchTag('div', getDivId(id), text);
+      }      
+      function switchAll(id, linkText)
+      {
+        var text = switchText(linkText);
+        switchLinkText(getLinkId(id), text);
+        switchTag('div', getDivId(id), text);
+        var style = getStyleFromText(text);
+        switchTableRowStyle(getTbl2Id(id), style);
+      }
+      function showTable(id)
+      {
+        var tableId = getTableId(id);
+        switchLinkText(tableId, EXPANDED);
+        switchTableRowStyle(tableId, VISIBLE);
+      }
+      function hideTable(id)
+      {
+        var tableId = getTableId(id);
+        switchTableRowStyle(tableId, HIDDEN);
+        switchLinkText(tableId, COLLAPSED);
+      }
+      function showDiv(id)
+      {
+        switchLinkText(getLinkId(id), EXPANDED);
+        switchTag('div', getDivId(id), EXPANDED);
+      }
+      function showTC(id)
+      {
+        var divId = getDivId(id);
+        var elms = matchElements('div', divId); 
+        if(elms != null && elms.length > 0)
+        {
+          id = elms[0].id.replace(getDivId(''), '');
+          showDiv(id);
+        }
+      }
+      
+    </script>
+  </head>
+  <body>
+    <a name="TOP"></a>
+    <table class="HeadingTable">
+      <tr>
+        <td>
+          <big class="Heading1">Report: 5DH</big>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="OverallResultTable">
+        <tr>
+          <td class="PositiveResult">Test passed</td>
+        </tr>
+      </table>
+    </center>
+    <a name="GeneralTestInfo"></a>
+    <table class="SubHeadingTable">
+      <tr>
+        <td>
+          <div class="Heading2">General Test Information</div>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation">
+      <div class="Heading4">System Under Test</div>
+      <div class="Indentation">
+        <table>
+          <tr>
+            <td class="CellNoColor">Delta Serial Number from internal barcode: </td>
+            <td class="CellNoColor">DC2303741H101011</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">SW_RENAULT : </td>
+            <td class="CellNoColor">292B05532R</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">SW Year : </td>
+            <td class="CellNoColor">De</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">SW Week : </td>
+            <td class="CellNoColor">au</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">SW Version : </td>
+            <td class="CellNoColor">t </td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">VehicleManufacturerSparePartNumber: </td>
+            <td class="CellNoColor">292A01977R</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">ECUSerialNumberDataIdentifier: </td>
+            <td class="CellNoColor">292A01977RTA33520230</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">VehicleManufacturerECUHardwareNumber: </td>
+            <td class="CellNoColor">292A09468R</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading4">Test Setup</div>
+      <div class="Indentation">
+        <table>
+          <tr>
+            <td class="CellNoColor">Version: </td>
+            <td class="CellNoColor">CANoe.AMD/XCP /pex 11.0.96 (SP4)</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Configuration: </td>
+            <td class="CellNoColor">D:\TEST PROGRAM\5DH\Config\ATS3_ECD25010014.CFG</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Database EXTCAN_5DH on DUT1: </td>
+            <td class="CellNoColor">D:\TEST PROGRAM\5DH\Config\Databases\EXTCAN_5DH.dbc (2022-12-25 14:58:35)</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Database EXTCAN_5DH on DUT1: </td>
+            <td class="CellNoColor">D:\TEST PROGRAM\5DH\Config\Databases\EXTCAN_5DH.dbc (2022-12-25 14:58:35)</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Database EXTCAN_5DH on DUT1: </td>
+            <td class="CellNoColor">D:\TEST PROGRAM\5DH\Config\Databases\EXTCAN_5DH.dbc (2022-12-25 14:58:35)</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Diagnostic Description of RNA_5DH_DCDC: </td>
+            <td class="CellNoColor">BDV_3, en-US, D:\TEST PROGRAM\5DH\Config\Databases\RNA_5DH_DCDC.cdd (1.0.1, 2020-12-15 17:17:24+05:30)</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Test Configuration: </td>
+            <td class="CellNoColor">5DH</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Nodelayer Module J1939TestServiceLibraryNL: </td>
+            <td class="CellNoColor">J1939 Test Service Library for CANoe, Version 11.0.96.0, C:\Program Files\Vector CANoe 11.0\Exec32\J1939TestServiceLibraryNL.dll</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Nodelayer Module CANstress_NL: </td>
+            <td class="CellNoColor">CANstress NodeLayer for CANoe Version 3.0.15, C:\Program Files\Vector CANoe 11.0\Exec32\CANstress_NL.dll</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Nodelayer Module FRStressNL: </td>
+            <td class="CellNoColor">FRstress NL Version 1.0.27, C:\Program Files\Vector CANoe 11.0\Exec32\FRStressNL.dll</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Nodelayer Module C2X_IL: </td>
+            <td class="CellNoColor">Car2x Interaction Layer for Vector CANalyzer.Car2x/CANoe.Car2x, Version 11.0.96, C:\Program Files\Vector CANoe 11.0\Exec32\C2X_IL.dll</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading4">Hardware</div>
+      <div class="Indentation">
+        <div class="Heading4">CAN Channel Interfaces</div>
+        <div class="Indentation">
+          <table>
+            <tr>
+              <th class="TableHeadingCell">Channel</th>
+              <th class="TableHeadingCell">Device</th>
+              <th class="TableHeadingCell">Serial number</th>
+              <th class="TableHeadingCell">Driver DLL version</th>
+              <th class="TableHeadingCell">Driver version</th>
+            </tr>
+            <tr>
+              <td class="NumberCell">1</td>
+              <td class="NumberCell">VN1610</td>
+              <td class="NumberCell">520292</td>
+              <td class="NumberCell">20.30.16</td>
+              <td class="NumberCell">20.30.14</td>
+            </tr>
+            <tr>
+              <td class="NumberCell">2</td>
+              <td class="NumberCell">Virtual CAN Bus</td>
+              <td class="NumberCell">0</td>
+              <td class="NumberCell">20.30.16</td>
+              <td class="NumberCell">20.30.16</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="Indentation">
+        <div class="Heading4">I/O Interfaces</div>
+        <div class="Indentation">
+          <table>
+            <tr>
+              <th class="TableHeadingCell">Channel</th>
+              <th class="TableHeadingCell">Device</th>
+              <th class="TableHeadingCell">Serial number</th>
+              <th class="TableHeadingCell">Driver DLL version</th>
+              <th class="TableHeadingCell">Driver version</th>
+            </tr>
+            <tr>
+              <td class="NumberCell">DAIO1</td>
+              <td class="NumberCell">VN1630</td>
+              <td class="NumberCell">55401</td>
+              <td class="NumberCell">20.30.16</td>
+              <td class="NumberCell">20.30.14</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <a name="TestOverview"></a>
+    <table class="SubHeadingTable">
+      <tr>
+        <td>
+          <div class="Heading2">Test Overview</div>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation">
+      <table class="DefaultTable">
+        <tr>
+          <td style="padding-right: 0.5em;" class="CellNoColor">Test begin: </td>
+          <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:38</td>
+          <td class="CellNoColor">(logging timestamp    0.000000)</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 0.5em;" class="CellNoColor">Test end: </td>
+          <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:53</td>
+          <td class="CellNoColor" nowrap>(logging timestamp   14.201229)</td>
+        </tr>
+      </table>
+      <div class="Heading4">Statistics</div>
+      <div class="Indentation">
+        <table class="OverviewTable">
+          <tr>
+            <td class="DefineCell">Executed test cases </td>
+            <td class="NumberCell" width="60">17</td>
+            <td class="DefaultCell"></td>
+          </tr>
+          <tr>
+            <td class="DefineCell">Test cases without verdict</td>
+            <td class="NumberCellNoneResult">6</td>
+            <td class="NumberCellNoneResult">35% of executed test cases</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">Test cases passed </td>
+            <td class="NumberCellPositiveResult">11</td>
+            <td class="NumberCellPositiveResult">65% of executed test cases</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">Test cases inconclusive</td>
+            <td class="NumberCell">0</td>
+            <td class="NumberCell">0% of executed test cases</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">Test cases failed </td>
+            <td class="NumberCell">0</td>
+            <td class="NumberCell">0% of executed test cases</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">Test cases with error in test system </td>
+            <td class="NumberCell">0</td>
+            <td class="NumberCell">0% of executed test cases</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">Number of failures outside of test cases</td>
+            <td class="NumberCell"></td>
+            <td class="NumberCell"></td>
+          </tr>
+          <tr>
+            <td class="DefineCell" style="text-indent: 20px;">Inconclusive</td>
+            <td class="NumberCell">0</td>
+            <td class="NumberCell"></td>
+          </tr>
+          <tr>
+            <td class="DefineCell" style="text-indent: 20px;">Fail</td>
+            <td class="NumberCell">0</td>
+            <td class="NumberCell"></td>
+          </tr>
+          <tr>
+            <td class="DefineCell" style="text-indent: 20px;">Error in test system</td>
+            <td class="NumberCell">0</td>
+            <td class="NumberCell"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading4">Test Results</div>
+      <div class="Indentation">
+        <table class="OverviewTable">
+          <tr>
+            <td class="DefineCell">1</td>
+            <td class="DefineCell">
+              <b>
+                <a href="#i__-713192608_8">ATS3</a>
+              </b>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.1</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_14">
+                <b>Set correct Path for Testreport</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="NoneResultCell" width="100%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.1.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_18">Set correct Path for Testreport</a>
+            </td>
+            <td class="NoneResultCell">none</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.2</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_130">
+                <b>Reset variables</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="NoneResultCell" width="100%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.2.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_134">Reset variables</a>
+            </td>
+            <td class="NoneResultCell">none</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.3</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_246">
+                <b>Pre test</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="PositiveResultCell" width="100%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.3.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_250">Turn on KL30</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.4</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_486">
+                <b>Reset Sync MES</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="NoneResultCell" width="100%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.4.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_490">Reset TESTED Sync IPC To PC</a>
+            </td>
+            <td class="NoneResultCell">none</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.5</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_578">
+                <b>ScanLabelInfo</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="NoneResultCell" width="100%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.5.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_582">Scan Internal Label DET_Auto</a>
+            </td>
+            <td class="NoneResultCell">none</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.6</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_740">
+                <b>ScanLabelInfo_ECU_Auto</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="NoneResultCell" width="50%">1</td>
+                  <td class="PositiveResultCell" width="50%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.6.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_744">FG LABEL</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.6.2</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_1219">Get parameters from Auto FG</a>
+            </td>
+            <td class="NoneResultCell">none</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.7</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_1269">
+                <b>DiagnosticStop</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="NoneResultCell" width="100%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.7.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_1273">Diagnostic Stop</a>
+            </td>
+            <td class="NoneResultCell">none</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.8</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_1323">
+                <b>AccessUnit</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="PositiveResultCell" width="100%">2</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.8.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_1327">DiagnosticStart</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.8.2</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_1457">Delta Start</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.9</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_1575">WriteDeltaInternalAccess</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.10</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_1853">
+                <b>WriteInfo</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="PositiveResultCell" width="100%">4</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.10.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_1857">Test Case</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.10.2</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_2049">Write/Read_VehicleManufacturerSparePartNumber</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.10.3</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_2751">Write/Read_ECUSerialNumber</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.10.4</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_3115">Write/Read_VehicleManufacturerECUHardwareNumber</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.11</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_3485">
+                <b>CheckSW_Version</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="PositiveResultCell" width="100%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.11.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_3489">SystemSupplierECUSoftwareVersion</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="DefineCell">
+              <b>1.12</b>
+            </td>
+            <td class="DefineCell">
+              <a href="#i__-713192608_3751">
+                <b>Post test</b>
+              </a>
+            </td>
+            <td style="padding:0px;" class="DefineCell">
+              <table class="OverviewResultTable">
+                <tr>
+                  <td class="PositiveResultCell" width="100%">1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="DefineCell">1.12.1</td>
+            <td class="DefaultCell">
+              <a href="#i__-713192608_3755">KL30 off</a>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <a name="TestModuleInfo"></a>
+    <table class="SubHeadingTable">
+      <tr>
+        <td>
+          <div class="Heading2">Test Configuration Information</div>
+        </td>
+      </tr>
+    </table>
+    <a name="i__-713192608_1"></a>
+    <table class="SubHeadingTable">
+      <tr>
+        <td>
+          <big class="Heading2">Test Case Details</big>
+        </td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr height="20px"></tr>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1" href="javascript:switchAll('1',document.all['lnk_1'].text)">[−]</a>
+        </td>
+        <td>
+          <big class="Heading3">
+            <a name="i__-713192608_8">1 Test Unit: ATS3</a>
+          </big>
+        </td>
+      </tr>
+      <tr height="20px"></tr>
+    </table>
+    <div id="div_1">
+      <div class="Heading4">General Information</div>
+      <div class="Indentation">
+        <table>
+          <tr>
+            <td class="CellNoColor">Name: </td>
+            <td class="CellNoColor">ATS3</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Description: </td>
+            <td class="CellNoColor"></td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Version: </td>
+            <td class="CellNoColor"></td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">File: </td>
+            <td class="CellNoColor">D:\TEST PROGRAM\5DH\EAP0060070000_ATS3\ATS3\ATS3.vtuexe</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Last modification: </td>
+            <td class="CellNoColor">2023-09-02, 12:04:18</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading4">Variant Properties</div>
+      <div class="Indentation">
+        <table>
+          <tr>
+            <td class="CellNoColor">VFLASH_ATS3: </td>
+            <td class="CellNoColor">ATS3</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">AUTO_GENFG: </td>
+            <td class="CellNoColor">AUTO</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Model: </td>
+            <td class="CellNoColor">ECD25010014</td>
+          </tr>
+          <tr>
+            <td class="CellNoColor">Auto_Manual: </td>
+            <td class="CellNoColor">Auto</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.1" href="javascript:switchAll('1.1',document.all['lnk_1.1'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_14">1.1 Test Group: Set correct Path for Testreport</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="NoneResultCell" width="100%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.1">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.1.1" href="javascript:switchAll('1.1.1',document.all['lnk_1.1.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingNoneResult">
+          <big class="Heading3">1.1.1 <a name="i__-713192608_18">Set correct Path for Testreport</a>: None</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.1.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:38</td>
+            <td class="CellNoColor">(logging timestamp    0.000000)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:38</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    0.000000)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.1.1_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.1.1_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Set: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.000000</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.1.1_i__-713192608_44" href="javascript:switchTable('1.1.1_i__-713192608_44')">[−]</a>
+                    </td>
+                    <td>Stimulation of values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.1.1_i__-713192608_44">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Assigned</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'Testreport_Path'</td>
+                  <td class="DefaultCell">=</td>
+                  <td class="DefaultCell">TempData (Testreport_Path)</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: Set correct Path for Testreport</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.2" href="javascript:switchAll('1.2',document.all['lnk_1.2'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_130">1.2 Test Group: Reset variables</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="NoneResultCell" width="100%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.2">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.2.1" href="javascript:switchAll('1.2.1',document.all['lnk_1.2.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingNoneResult">
+          <big class="Heading3">1.2.1 <a name="i__-713192608_134">Reset variables</a>: None</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.2.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:38</td>
+            <td class="CellNoColor">(logging timestamp    0.000000)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:38</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    0.000000)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.2.1_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.2.1_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Set: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.000000</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.2.1_i__-713192608_160" href="javascript:switchTable('1.2.1_i__-713192608_160')">[−]</a>
+                    </td>
+                    <td>Stimulation of values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.2.1_i__-713192608_160">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Assigned</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'Iin_10mA'</td>
+                  <td class="DefaultCell">=</td>
+                  <td class="DefaultCell">99</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: Reset variables</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.3" href="javascript:switchAll('1.3',document.all['lnk_1.3'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_246">1.3 Test Group: Pre test</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="PositiveResultCell" width="100%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.3">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.3.1" href="javascript:switchAll('1.3.1',document.all['lnk_1.3.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.3.1 <a name="i__-713192608_250">Turn on KL30</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.3.1">
+      <p>Set Voltage and current Linit</p>
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:38</td>
+            <td class="CellNoColor">(logging timestamp    0.000000)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:39</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    0.100298)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.3.1_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.3.1_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Set: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.000000</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.3.1_i__-713192608_276" href="javascript:switchTable('1.3.1_i__-713192608_276')">[−]</a>
+                    </td>
+                    <td>Stimulation of values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.3.1_i__-713192608_276">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Assigned</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'DOUT'</td>
+                  <td class="DefaultCell">=</td>
+                  <td class="DefaultCell">1</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Await Value Match: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.100298</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on sysvar: System variable 'AIN' occurred at    0.100997 Elapsed time=100.298ms (max=10000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.100298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for occurrence of 1 value condition.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.100298</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.3.1_i__-713192608_376" href="javascript:switchTable('1.3.1_i__-713192608_376')">[−]</a>
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.3.1_i__-713192608_376">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'AIN'</td>
+                  <td class="DefaultCell">&gt;</td>
+                  <td class="DefaultCell">1</td>
+                  <td class="DefaultCell">2.024</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: Pre test</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.4" href="javascript:switchAll('1.4',document.all['lnk_1.4'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_486">1.4 Test Group: Reset Sync MES</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="NoneResultCell" width="100%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.4">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.4.1" href="javascript:switchAll('1.4.1',document.all['lnk_1.4.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingNoneResult">
+          <big class="Heading3">1.4.1 <a name="i__-713192608_490">Reset TESTED Sync IPC To PC</a>: None</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.4.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:39</td>
+            <td class="CellNoColor">(logging timestamp    0.100298)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:39</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    0.110298)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation"></div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. CAPL Inline: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.100298</td>
+            <td class="NumberCell">Reset</td>
+            <td class="DefaultCell"> sync reset function</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.110298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 10.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: Reset Sync MES</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.5" href="javascript:switchAll('1.5',document.all['lnk_1.5'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_578">1.5 Test Group: ScanLabelInfo</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="NoneResultCell" width="100%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.5">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.5.1" href="javascript:switchAll('1.5.1',document.all['lnk_1.5.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingNoneResult">
+          <big class="Heading3">1.5.1 <a name="i__-713192608_582">Scan Internal Label DET_Auto</a>: None</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.5.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:39</td>
+            <td class="CellNoColor">(logging timestamp    0.110298)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:40</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    1.110298)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.5.1_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.5.1_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Set: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   0.110298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.5.1_i__-713192608_608" href="javascript:switchTable('1.5.1_i__-713192608_608')">[−]</a>
+                    </td>
+                    <td>Stimulation of values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.5.1_i__-713192608_608">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Assigned</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'Delta_SN'</td>
+                  <td class="DefaultCell">=</td>
+                  <td class="DefaultCell">0</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   1.110298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1.000 s</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3. Get_SNLabel_scanning_DET (): None</big>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: ScanLabelInfo</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.6" href="javascript:switchAll('1.6',document.all['lnk_1.6'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_740">1.6 Test Group: ScanLabelInfo_ECU_Auto</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="NoneResultCell" width="50%">1</td>
+              <td class="PositiveResultCell" width="50%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.6">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.6.1" href="javascript:switchAll('1.6.1',document.all['lnk_1.6.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.6.1 <a name="i__-713192608_744">FG LABEL</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.6.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:40</td>
+            <td class="CellNoColor">(logging timestamp    1.110298)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    3.630298)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.6.1_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.6.1_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. CAPL Inline: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.110298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 2000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="DefaultTableBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3. For (For Scan_loop=1..20, increment=1)</big>
+            </td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="DefaultTableBackground">
+            <td style="text-indent: 40px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3.1. For (For Scan_loop=1..20, increment=1; current Scan_loop = 1)</big>
+            </td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 60px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3.1.1. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 60px;" class="DefineCell">   3.610298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 500.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 60px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3.1.2. CAPL Inline: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 60px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3.1.3. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 60px;" class="DefineCell">   3.620298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 10.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="DefaultTableBackground">
+            <td style="text-indent: 60px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3.1.4. If</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 60px;" class="DefineCell">   3.620298</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.6.1_i__-713192608_912" href="javascript:switchTable('1.6.1_i__-713192608_912')">[−]</a>
+                    </td>
+                    <td>If ( AUTO_FG_STATUS==0 ): true</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.6.1_i__-713192608_912">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'AUTO_FG_STATUS'</td>
+                  <td class="DefaultCell">==</td>
+                  <td class="DefaultCell">0</td>
+                  <td class="DefaultCell">0</td>
+                  <td class="DefaultCell">true</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="DefaultTableBackground">
+            <td style="text-indent: 80px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3.1.4.1. Break</big>
+            </td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">4. CAPL Inline: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.620298</td>
+            <td class="NumberCell">PASS :</td>
+            <td class="DefaultCell">{"RSA_P/N":"292A01977R","SW_RENAULT":"292B05532R","HW_RENAULT":"292A09468R","MFG":"18 12 23","FG":"292A01977RTA33520230"}</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">5. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.630298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 10.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">6. Await Value Match: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.630298</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Immediately resumed on setup of wait condition: System variable 'AUTO_FG_STATUS'</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.630298</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for occurrence of 1 value condition.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.630298</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.6.1_i__-713192608_1120" href="javascript:switchTable('1.6.1_i__-713192608_1120')">[−]</a>
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.6.1_i__-713192608_1120">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'AUTO_FG_STATUS'</td>
+                  <td class="DefaultCell">==</td>
+                  <td class="DefaultCell">0</td>
+                  <td class="DefaultCell">0</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.6.2" href="javascript:switchAll('1.6.2',document.all['lnk_1.6.2'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingNoneResult">
+          <big class="Heading3">1.6.2 <a name="i__-713192608_1219">Get parameters from Auto FG</a>: None</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.6.2">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor">(logging timestamp    3.630298)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    3.630298)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation"></div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Extract_Information_from_DELTA_Barcode (): None</big>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: ScanLabelInfo_ECU_Auto</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.7" href="javascript:switchAll('1.7',document.all['lnk_1.7'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_1269">1.7 Test Group: DiagnosticStop</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="NoneResultCell" width="100%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.7">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.7.1" href="javascript:switchAll('1.7.1',document.all['lnk_1.7.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingNoneResult">
+          <big class="Heading3">1.7.1 <a name="i__-713192608_1273">Diagnostic Stop</a>: None</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.7.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor">(logging timestamp    3.630298)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    3.630298)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation"></div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. CAPL Inline: None</big>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: DiagnosticStop</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.8" href="javascript:switchAll('1.8',document.all['lnk_1.8'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_1323">1.8 Test Group: AccessUnit</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="PositiveResultCell" width="100%">2</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.8">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.8.1" href="javascript:switchAll('1.8.1',document.all['lnk_1.8.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.8.1 <a name="i__-713192608_1327">DiagnosticStart</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.8.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor">(logging timestamp    3.630298)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    3.980026)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation"></div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. CAPL Inline: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.630298</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.630298</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/DELTA_Start/STDS_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.969800</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=339.502ms (max=3000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.969800</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.969800</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.980026</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=10.2263ms (max=3000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.980026</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.8.2" href="javascript:switchAll('1.8.2',document.all['lnk_1.8.2'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.8.2 <a name="i__-713192608_1457">Delta Start</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.8.2">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor">(logging timestamp    3.980026)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    3.984975)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation"></div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.980026</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.980026</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/DELTA_Start/STDS_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.980917</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=0.890511ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.980917</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.980917</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.984975</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=4.05802ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.984975</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: AccessUnit</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.9" href="javascript:switchAll('1.9',document.all['lnk_1.9'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.9 <a name="i__-713192608_1575">WriteDeltaInternalAccess</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.9">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor">(logging timestamp    3.984975)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    4.005372)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.9_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.9_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Set: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.984975</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.9_i__-713192608_1601" href="javascript:switchTable('1.9_i__-713192608_1601')">[−]</a>
+                    </td>
+                    <td>Stimulation of values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.9_i__-713192608_1601">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Assigned</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'SecAccess_Key'</td>
+                  <td class="DefaultCell">=</td>
+                  <td class="DefaultCell">DesR&amp;D</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.984975</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.984975</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/Delta_Internal_Delta_Access_Write/WDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.986627</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=1.65244ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.986627</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.986627</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.994924</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=8.2964ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.994924</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.994924</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.994924</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/Delta_Internal_Debug_Activation_Write/WDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.995830</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=0.90626ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.995830</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   3.995830</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.005372</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=9.54148ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.005372</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.10" href="javascript:switchAll('1.10',document.all['lnk_1.10'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_1853">1.10 Test Group: WriteInfo</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="PositiveResultCell" width="100%">4</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.10">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.10.1" href="javascript:switchAll('1.10.1',document.all['lnk_1.10.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.10.1 <a name="i__-713192608_1857">Test Case</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.10.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor">(logging timestamp    4.005372)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    4.014920)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.10.1_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.10.1_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Set: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.005372</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.10.1_i__-713192608_1883" href="javascript:switchTable('1.10.1_i__-713192608_1883')">[−]</a>
+                    </td>
+                    <td>Stimulation of values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.10.1_i__-713192608_1883">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Assigned</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'SecAccess_Key'</td>
+                  <td class="DefaultCell">=</td>
+                  <td class="DefaultCell">DesQTS</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.005372</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.005372</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/Delta_Internal_Delta_Access_Write/WDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.007666</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=2.29446ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.007666</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.007666</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.014920</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=7.25438ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.014920</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.10.2" href="javascript:switchAll('1.10.2',document.all['lnk_1.10.2'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.10.2 <a name="i__-713192608_2049">Write/Read_VehicleManufacturerSparePartNumber</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.10.2">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:42</td>
+            <td class="CellNoColor">(logging timestamp    4.014920)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:48</td>
+            <td class="CellNoColor" nowrap>(logging timestamp    9.076316)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.10.2_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.10.2_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. VehicleManufacturerSparePartNumber (): Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   4.014920</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Format of scanned Finas Number O.K. 292A01977R</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   5.014920</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   5.014920</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   5.014920</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/VehicleManufacturerSparePartNumber_N_Write/WDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   5.017124</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=2.20316ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   5.017124</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   5.017124</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   5.025086</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=7.96238ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   5.025086</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">4. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.025086</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">5. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.025086</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.025086</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/VehicleManufacturerSparePartNumber_N_Read/RDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.026305</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=1.21922ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.026305</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.026305</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.046250</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=19.9451ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.046250</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   6.046250</td>
+            <td class="NumberCell">Evaluate response</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.10.2_i__-713192608_2313" href="javascript:switchTable('1.10.2_i__-713192608_2313')">[−]</a>
+                    </td>
+                    <td>Check of expected values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.10.2_i__-713192608_2313">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">Diagnostic parameter 'VehicleManufacturerSparePartNumber_N'</td>
+                  <td class="DefaultCell">IdxBytes</td>
+                  <td class="DefaultCell"> byte[0]==Finas_Number_0, byte[1]==Finas_Number_1, byte[2]==Finas_Number_2, byte[3]==Finas_Number_3, byte[4]==Finas_Number_4, byte[5]==Finas_Number_5, byte[6]==Finas_Number_6, byte[7]==Finas_Number_7, byte[8]==Finas_Number_8, byte[9]==Finas_Number_9</td>
+                  <td class="DefaultCell">byte[0]==0x32, byte[1]==0x39, byte[2]==0x32, byte[3]==0x41, byte[4]==0x30, byte[5]==0x31, byte[6]==0x39, byte[7]==0x37, byte[8]==0x37, byte[9]==0x52</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+              </table>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">6. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   7.046250</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">7. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   7.046250</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   7.046250</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/VehicleManufacturerSparePartNumber_R_Write/WDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   7.048152</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=1.90156ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   7.048152</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   7.048152</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   7.055302</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=7.15027ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   7.055302</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">8. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.055302</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">9. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.055302</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.055302</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/VehicleManufacturerSparePartNumber_R_Read/RDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.056997</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=1.69513ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.056997</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.056997</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.076316</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=19.3191ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.076316</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   8.076316</td>
+            <td class="NumberCell">Evaluate response</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.10.2_i__-713192608_2623" href="javascript:switchTable('1.10.2_i__-713192608_2623')">[−]</a>
+                    </td>
+                    <td>Check of expected values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.10.2_i__-713192608_2623">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">Diagnostic parameter 'VehicleManufacturerSparePartNumber_R'</td>
+                  <td class="DefaultCell">IdxBytes</td>
+                  <td class="DefaultCell"> byte[0]==Finas_Number_0, byte[1]==Finas_Number_1, byte[2]==Finas_Number_2, byte[3]==Finas_Number_3, byte[4]==Finas_Number_4, byte[5]==Finas_Number_5, byte[6]==Finas_Number_6, byte[7]==Finas_Number_7, byte[8]==Finas_Number_8, byte[9]==Finas_Number_9</td>
+                  <td class="DefaultCell">byte[0]==0x32, byte[1]==0x39, byte[2]==0x32, byte[3]==0x41, byte[4]==0x30, byte[5]==0x31, byte[6]==0x39, byte[7]==0x37, byte[8]==0x37, byte[9]==0x52</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+              </table>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">10. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   9.076316</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.10.3" href="javascript:switchAll('1.10.3',document.all['lnk_1.10.3'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.10.3 <a name="i__-713192608_2751">Write/Read_ECUSerialNumber</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.10.3">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:48</td>
+            <td class="CellNoColor">(logging timestamp    9.076316)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:50</td>
+            <td class="CellNoColor" nowrap>(logging timestamp   11.135470)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.10.3_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.10.3_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. ECUSerialNumberDataIdentifier (): Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">   9.076316</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Format of scanned Finas Number O.K. 292A01977RTA33520230</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  10.076316</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  10.076316</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  10.076316</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/ECUSerialNumberDataIdentifier_Write/WDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  10.080441</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=4.12513ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  10.080441</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  10.080441</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  10.085728</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=5.28629ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  10.085728</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">4. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.085728</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">5. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.085728</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.085728</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/ECUSerialNumberDataIdentifier_Read/RDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.087412</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=1.68457ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.087412</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.087412</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.135470</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=48.0572ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.135470</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.135470</td>
+            <td class="NumberCell">Evaluate response</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.10.3_i__-713192608_3015" href="javascript:switchTable('1.10.3_i__-713192608_3015')">[−]</a>
+                    </td>
+                    <td>Check of expected values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.10.3_i__-713192608_3015">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">Diagnostic parameter 'ECUSerialNumberDataIdentifier'</td>
+                  <td class="DefaultCell">IdxBytes</td>
+                  <td class="DefaultCell"> byte[0]==Finas_Number_0, byte[1]==Finas_Number_1, byte[2]==Finas_Number_2, byte[3]==Finas_Number_3, byte[4]==Finas_Number_4, byte[5]==Finas_Number_5, byte[6]==Finas_Number_6, byte[7]==Finas_Number_7, byte[8]==Finas_Number_8, byte[9]==Finas_Number_9, byte[10]==Finas_Number_10, byte[11]==Finas_Number_11, byte[12]==Finas_Number_12, byte[13]==Finas_Number_13, byte[14]==Finas_Number_14, byte[15]==Finas_Number_15, byte[16]==Finas_Number_16, byte[17]==Finas_Number_17, byte[18]==Finas_Number_18, byte[19]==Finas_Number_19</td>
+                  <td class="DefaultCell">byte[0]==0x32, byte[1]==0x39, byte[2]==0x32, byte[3]==0x41, byte[4]==0x30, byte[5]==0x31, byte[6]==0x39, byte[7]==0x37, byte[8]==0x37, byte[9]==0x52, byte[10]==0x54, byte[11]==0x41, byte[12]==0x33, byte[13]==0x33, byte[14]==0x35, byte[15]==0x32, byte[16]==0x30, byte[17]==0x32, byte[18]==0x33, byte[19]==0x30</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+              </table>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.10.4" href="javascript:switchAll('1.10.4',document.all['lnk_1.10.4'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.10.4 <a name="i__-713192608_3115">Write/Read_VehicleManufacturerECUHardwareNumber</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.10.4">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:50</td>
+            <td class="CellNoColor">(logging timestamp   11.135470)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:52</td>
+            <td class="CellNoColor" nowrap>(logging timestamp   13.167420)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.10.4_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.10.4_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. VehicleManufacturerECUHardwareNumber (): Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  11.135470</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Format of scanned Finas Number O.K. 292A09468R</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  12.135470</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  12.135470</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  12.135470</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/VehicleManufacturerECUHardwareNumber_Write/WDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  12.137866</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=2.39656ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  12.137866</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  12.137866</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  12.145982</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=8.11629ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  12.145982</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">4. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.145982</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">5. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.145982</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.145982</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/VehicleManufacturerECUHardwareNumber_Read/RDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.147677</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=1.69468ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.147677</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.147677</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.167420</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=19.7431ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.167420</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.167420</td>
+            <td class="NumberCell">Evaluate response</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.10.4_i__-713192608_3379" href="javascript:switchTable('1.10.4_i__-713192608_3379')">[−]</a>
+                    </td>
+                    <td>Check of expected values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.10.4_i__-713192608_3379">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">Diagnostic parameter 'VehicleManufacturerECUHardwareNumber'</td>
+                  <td class="DefaultCell">IdxBytes</td>
+                  <td class="DefaultCell"> byte[0]==Finas_Number_0, byte[1]==Finas_Number_1, byte[2]==Finas_Number_2, byte[3]==Finas_Number_3, byte[4]==Finas_Number_4, byte[5]==Finas_Number_5, byte[6]==Finas_Number_6, byte[7]==Finas_Number_7, byte[8]==Finas_Number_8, byte[9]==Finas_Number_9</td>
+                  <td class="DefaultCell">byte[0]==0x32, byte[1]==0x39, byte[2]==0x32, byte[3]==0x41, byte[4]==0x30, byte[5]==0x39, byte[6]==0x34, byte[7]==0x36, byte[8]==0x38, byte[9]==0x52</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+              </table>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: WriteInfo</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.11" href="javascript:switchAll('1.11',document.all['lnk_1.11'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_3485">1.11 Test Group: CheckSW_Version</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="PositiveResultCell" width="100%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.11">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.11.1" href="javascript:switchAll('1.11.1',document.all['lnk_1.11.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.11.1 <a name="i__-713192608_3489">SystemSupplierECUSoftwareVersion</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.11.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:52</td>
+            <td class="CellNoColor">(logging timestamp   13.167420)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:52</td>
+            <td class="CellNoColor" nowrap>(logging timestamp   13.187406)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.11.1_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.11.1_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Diagnostic Service: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.167420</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Set P2 to 150ms, P2ex to 5100ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.167420</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Sending request '//RNA_5DH_DCDC/BDV_3/SystemSupplierECUSoftwareVersionNumber_Read/RDBI_RQ' ...</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.169102</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics request sent to 'RNA_5DH_DCDC' Elapsed time=1.68228ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.169102</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Request sent successfully</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.169102</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Receiving diagnostic response</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.187406</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on Diagnostics response from 'RNA_5DH_DCDC' Elapsed time=18.3036ms (max=60000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.187406</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">Positive response received.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.187406</td>
+            <td class="NumberCell">Evaluate response</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.11.1_i__-713192608_3583" href="javascript:switchTable('1.11.1_i__-713192608_3583')">[−]</a>
+                    </td>
+                    <td>Check of expected values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.11.1_i__-713192608_3583">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">Diagnostic parameter 'SystemSupplierECUSoftwareVersionNumber/LvAppSw_Year'</td>
+                  <td class="DefaultCell">==</td>
+                  <td class="DefaultCell">20</td>
+                  <td class="DefaultCell">20</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">Diagnostic parameter 'SystemSupplierECUSoftwareVersionNumber/LvAppSw_Week'</td>
+                  <td class="DefaultCell">==</td>
+                  <td class="DefaultCell">40</td>
+                  <td class="DefaultCell">40</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">Diagnostic parameter 'SystemSupplierECUSoftwareVersionNumber/LvAppSw_Version'</td>
+                  <td class="DefaultCell">==</td>
+                  <td class="DefaultCell">00</td>
+                  <td class="DefaultCell">00</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+              </table>
+            </td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: CheckSW_Version</td>
+      </tr>
+    </table>
+    <table class="GroupHeadingTable">
+      <tr>
+        <td class="LinkCell" rowspan="2">
+          <a class="Undecorated" id="lnk_1.12" href="javascript:switchAll('1.12',document.all['lnk_1.12'].text)">[−]</a>
+        </td>
+        <td rowspan="2">
+          <big class="Heading3">
+            <a name="i__-713192608_3751">1.12 Test Group: Post test</a>
+          </big>
+        </td>
+        <td width="1px;" nowrap>Test Case Verdicts</td>
+      </tr>
+      <tr>
+        <td style="padding:0px;" width="1px">
+          <table class="OverviewResultTable">
+            <tr>
+              <td class="PositiveResultCell" width="100%">1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div id="div_1.12">
+      <div class="Indentation"></div>
+    </div>
+    <table>
+      <tr>
+        <td class="LinkCell">
+          <a class="Undecorated" id="lnk_1.12.1" href="javascript:switchAll('1.12.1',document.all['lnk_1.12.1'].text)">[−]</a>
+        </td>
+        <td class="TestcaseHeadingPositiveResult">
+          <big class="Heading3">1.12.1 <a name="i__-713192608_3755">KL30 off</a>: Passed</big>
+        </td>
+      </tr>
+    </table>
+    <div class="Indentation" id="div_1.12.1">
+      <div class="Indentation">
+        <table class="DefaultTable">
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case begin: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:52</td>
+            <td class="CellNoColor">(logging timestamp   13.187406)</td>
+          </tr>
+          <tr>
+            <td style="padding-right: 0.5em;" class="CellNoColor">Test case end: </td>
+            <td style="padding-right: 0.5em;" class="CellNoColor">2023-12-18 15:05:53</td>
+            <td class="CellNoColor" nowrap>(logging timestamp   14.201229)</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Indentation">
+        <table class="ScreenOnly">
+          <tbody>
+            <tr>
+              <td>
+                <a class="Undecorated" href="javascript:showTable('1.12.1_')">[expand test steps]</a>
+              </td>
+              <td width="2px"></td>
+              <td>
+                <a class="Undecorated" href="javascript:hideTable('1.12.1_')">[collapse test steps]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="TestGroupHeadingBackground">
+        <tr>
+          <td>
+            <big class="Heading3">Main Part of Test Case</big>
+          </td>
+        </tr>
+      </table>
+      <div class="Indentation">
+        <table class="ResultTable">
+          <tr>
+            <th class="TableHeadingCell" width="1px">Timestamp</th>
+            <th class="TableHeadingCell" width="1px">Test Step</th>
+            <th class="TableHeadingCell" width="auto">Description</th>
+            <th class="TableHeadingCell" width="1px">Result</th>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">1. Set: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.187406</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.12.1_i__-713192608_3781" href="javascript:switchTable('1.12.1_i__-713192608_3781')">[−]</a>
+                    </td>
+                    <td>Stimulation of values</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.12.1_i__-713192608_3781">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Assigned</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'DOUT'</td>
+                  <td class="DefaultCell">=</td>
+                  <td class="DefaultCell">0</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="PositiveResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">2. Await Value Match: Passed</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.201229</td>
+            <td class="NumberCell">Resume reason</td>
+            <td class="DefaultCell">Resumed on sysvar: System variable 'AIN' occurred at   13.201439 Elapsed time=13.8229ms (max=1000ms)</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.201229</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for occurrence of 1 value condition.</td>
+            <td class="PositiveResultCell">pass</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  13.201229</td>
+            <td class="NumberCell"></td>
+            <td class="DefaultCell">
+              <table class="NoMarginBottom">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="Undecorated" id="tbl_1.12.1_i__-713192608_3881" href="javascript:switchTable('1.12.1_i__-713192608_3881')">[−]</a>
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="InfoTableExpand" id="tbl_1.12.1_i__-713192608_3881">
+                <tr>
+                  <td class="DefineCell" style="text-indent: 0px;">Symbol</td>
+                  <td class="DefineCell">Op.</td>
+                  <td class="DefineCell">Reference value</td>
+                  <td class="DefineCell">Actual</td>
+                  <td class="DefineCell" width="1px">Result</td>
+                </tr>
+                <tr>
+                  <td class="DefaultCell" style="text-indent: 0px;">System variable 'AIN'</td>
+                  <td class="DefaultCell">&lt;</td>
+                  <td class="DefaultCell">0.1</td>
+                  <td class="DefaultCell">0.0528</td>
+                  <td class="PositiveResultCell">pass</td>
+                </tr>
+              </table>
+            </td>
+            <td class="DefaultCell">-</td>
+          </tr>
+          <tr>
+            <td class="PatternSeparator" colspan="4"></td>
+          </tr>
+          <tr class="NoneResultBackground">
+            <td style="text-indent: 20px;" class="ResultBlockHeading" colspan="4">
+              <big class="Heading4">3. Wait: None</big>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-indent: 20px;" class="DefineCell">  14.201229</td>
+            <td class="NumberCell">1</td>
+            <td class="DefaultCell">Waited for 1000.000 ms</td>
+            <td class="DefaultCell">-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Group: Post test</td>
+      </tr>
+    </table>
+    <table class="GroupEndTable">
+      <tr>
+        <td>End of Test Unit: ATS3</td>
+      </tr>
+    </table>
+    <table class="SubHeadingTable">
+      <tr>
+        <td>
+          <div class="Heading2">End of Report</div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

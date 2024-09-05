@@ -1,0 +1,23 @@
+bool Systemvoltagelow(int KL30_Voltage){
+    static int c1=0,c2=0;
+    if (KL30_Voltage < 8.2){
+	c1++;
+	c2=0;
+        if (c1 >70){ 
+	    c1=70;
+            return 1;
+	}
+        
+       
+}
+    c1=0;
+   
+    else if (KL30_Voltage > 8.5){
+	c2++;
+        if (c2 >20) {
+	    c2=20;
+            return 0;
+	}
+        
+}
+}

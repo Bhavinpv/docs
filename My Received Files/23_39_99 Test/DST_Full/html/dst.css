@@ -1,0 +1,164 @@
+BODY
+{
+	FONT-SIZE: smaller;
+	FONT-FAMILY: Verdana;
+	BACKGROUND-COLOR: #0D8FBB;
+}
+DIV.RDiv
+{
+	FONT-FAMILY: Verdana;
+	FONT-SIZE: 10pt;
+	BACKGROUND-COLOR: #F4F4F4;
+}
+
+H1.RH1	
+{ 
+	color: #FFFFFF; 
+	font-size: 14pt; 
+	position: relative; 
+	width: 100%; 
+	text-align: Left; 
+	background-color: #83C6E7; 
+	font-family: Verdana; 	
+	border-style: none; 
+	border-width: 0; 
+}
+
+H2.RH2
+{	
+	FONT-FAMILY: Verdana;
+	FONT-SIZE: 14pt;
+	FONT-WEIGHT: normal;
+}
+H3.RH3
+{
+	FONT-FAMILY: Verdana;
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: normal;
+}
+TABLE.RTableTitle
+{
+	WIDTH: 100%;
+	BACKGROUND-COLOR: black;
+	BORDER-BOTTOM: 1px inset;
+	BORDER-LEFT: 1px inset;
+	BORDER-RIGHT: 1px inset;
+	PADDING-RIGHT: 1px;
+	PADDING-LEFT: 1px;
+	MARGIN: 0px;
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: bold;
+	VERTICAL-ALIGN: baseline;
+	COLOR: white;
+	TEXT-ALIGN: center;
+	FONT-FAMILY: Verdana;
+}
+
+TABLE.RTableDescription
+{
+	WIDTH: 100%;
+	BACKGROUND-COLOR: white;
+	BORDER-TOP: 1px inset;
+	BORDER-BOTTOM: 1px inset;
+	BORDER-LEFT: 1px inset;
+	BORDER-RIGHT: 1px inset;
+	PADDING-RIGHT: 1px;
+	PADDING-LEFT: 1px;
+	MARGIN: 0px;
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: bold;
+	VERTICAL-ALIGN: baseline;
+	COLOR: black;
+	TEXT-ALIGN: center;
+	FONT-FAMILY: Verdana;
+}
+
+TABLE.RTableIdentification
+{
+	width: 100%;
+	font-family: Verdana; 
+	font-size: 10pt; 
+	background-color: white; 	
+	border-style: none; 
+	border-width: 0;
+	text-align: Center;
+}
+
+TABLE.RTableIdentification TH
+{
+	background-color: #83C6E7; 
+	border-style: none; 
+	color: black; 
+	font-weight: bold;
+}
+
+TABLE.RTableIdentification TD
+{
+	font-family: Verdana; 
+	font-size: 10pt; 
+	background-color: white; 	
+	border-style: inset; 
+	border-width: 1;
+	text-align: Center;
+	color: black;
+}
+
+TABLE.RTableCom TH
+{
+	font-family: Verdana; 
+	font-size: 8pt; 
+	background-color: silver; 	
+	border-style: inset; 
+	border-width: 1;
+	text-align: Center;
+	color: black;
+	font-weight: bold;
+}
+
+TABLE.RTableCom TD
+{
+	font-family: Courier New; 
+	font-size: 8pt; 
+	border-style: inset; 
+	border-width: 1;
+	text-align: Left;
+	color: black;
+	font-weight: normal;
+}
+
+TABLE.tabresult TH
+{
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: Arial
+}
+TABLE.tabresult TD
+{
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: Courier New
+}
+
+.errorLine
+{
+	color: white; 	
+	background-color: red; 	
+}
+
+.errorLine a:link, a:visited
+{
+	color: white; 	
+}
+
+.receiveLine
+{
+	background-color: lightgreen; 	
+}
+
+.receiveLine a:link, a:visited
+{
+	color: white; 	
+}
+
+.unknownLine
+{
+	background-color: darkorange; 	
+}

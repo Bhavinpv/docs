@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Scenario description="In the default session of applicative software,  the ECU shall answer negatively to the $2F with all DIDs DAIMLER defined in 36-02-014 --H [NDS28] " Date="2023-10-12T23:1:1" ECUname="5DM" dstVersion="4.0.68.0">
+  <test name=" UDS_TST_0230 " methode="2" mode="PointToPoint">
+    <request name="entering in default session">
+      <Check startbytes="5001003201F4" />
+      <byte min="10" />
+      <byte min="01" />
+    </request>
+    <request name="InputOutput 0xF111">
+      <Check codeErr="2046" codeErr2="2032" />
+      <byte min="2F" />
+      <byte min="F1" />
+      <byte min="11" />
+    </request>
+    <request name="InputOutput 0xF121">
+      <Check codeErr="2046" codeErr2="2032" />
+      <byte min="2F" />
+      <byte min="F1" />
+      <byte min="21" />
+    </request>
+    <request name="InputOutput 0xF131">
+      <Check codeErr="2046" codeErr2="2032" />
+      <byte min="2F" />
+      <byte min="F1" />
+      <byte min="31" />
+    </request>
+    <request name="InputOutput 0xF150">
+      <Check codeErr="2046" codeErr2="2032" />
+      <byte min="2F" />
+      <byte min="F1" />
+      <byte min="50" />
+    </request>
+    <request name="InputOutput 0xF151">
+      <Check codeErr="2046" codeErr2="2032" />
+      <byte min="2F" />
+      <byte min="F1" />
+      <byte min="51" />
+    </request>
+    <request name="InputOutput 0xF153">
+      <Check codeErr="2046" codeErr2="2032" />
+      <byte min="2F" />
+      <byte min="F1" />
+      <byte min="53" />
+    </request>
+    <request name="InputOutput 0xF154">
+      <Check codeErr="2046" codeErr2="2032" />
+      <byte min="2F" />
+      <byte min="F1" />
+      <byte min="54" />
+    </request>
+    <request name="InputOutput 0xF155">
+      <Check codeErr="2046" codeErr2="2032" />
+      <byte min="2F" />
+      <byte min="F1" />
+      <byte min="55" />
+    </request>
+    <Configuration>
+      <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+      <DSTPack>03. DST newpack</DSTPack>
+      <ECU>
+        <Name>BCB</Name>
+        <Address>103</Address>
+        <Protocol>DiagOnCAN</Protocol>
+        <CANids>
+          <Bus>1</Bus>
+          <Baudrate>500000</Baudrate>
+          <DTOOL-to-ECU>98DADDF1</DTOOL-to-ECU>
+          <ECU-to-DTOOL>98DAF1DD</ECU-to-DTOOL>
+        </CANids>
+      </ECU>
+    </Configuration>
+    <Resultat>
+      <Init time="39" />
+<RequestName>entering in default session</RequestName>
+<Send time="82" bytes="1001" elapseTime="7">
+<Check startbytes="5001003201F4" />
+<Receive length="6" bytes="5001003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>InputOutput 0xF111</RequestName>
+<Send time="101" bytes="2FF111" elapseTime="8">
+<Check codeErr="2046" codeErr2="2032" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>InputOutput 0xF121</RequestName>
+<Send time="122" bytes="2FF121" elapseTime="7">
+<Check codeErr="2046" codeErr2="2032" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>InputOutput 0xF131</RequestName>
+<Send time="140" bytes="2FF131" elapseTime="8">
+<Check codeErr="2046" codeErr2="2032" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>InputOutput 0xF150</RequestName>
+<Send time="163" bytes="2FF150" elapseTime="5">
+<Check codeErr="2046" codeErr2="2032" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>InputOutput 0xF151</RequestName>
+<Send time="182" bytes="2FF151" elapseTime="11">
+<Check codeErr="2046" codeErr2="2032" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>InputOutput 0xF153</RequestName>
+<Send time="211" bytes="2FF153" elapseTime="7">
+<Check codeErr="2046" codeErr2="2032" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>InputOutput 0xF154</RequestName>
+<Send time="231" bytes="2FF154" elapseTime="7">
+<Check codeErr="2046" codeErr2="2032" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>InputOutput 0xF155</RequestName>
+<Send time="249" bytes="2FF155" elapseTime="9">
+<Check codeErr="2046" codeErr2="2032" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Stop time="269" /></Resultat>
+  </test>
+  <IdentificationUDS Diagnostic="12" Supplier="DELTA" Application="05DH" Version="233999" Order="292A01997R" Hardware="292A00569R" Tuning="??" vehicleManufacturerKitAssemblyPartNumber="" configurationFileReferenceLink="292B09095R" IndexSrvData="PROTASYMV2">
+<Diagnostic>
+<Error Code="0" Msg="" Send="22F1A0"><Request Send="22F1A0" Receive="62F1A00C" /></Error>
+</Diagnostic>
+<Supplier>
+<Error Code="0" Msg="" Send="22F18A"><Request Send="22F18A" Receive="62F18A44454C5441" /></Error>
+</Supplier>
+<Application>
+<Error Code="0" Msg="" Send="22F194"><Request Send="22F194" Receive="62F19430354448" /></Error>
+</Application>
+<Version>
+<Error Code="0" Msg="" Send="22F195"><Request Send="22F195" Receive="62F195323333393939" /></Error>
+</Version>
+<Order>
+<Error Code="0" Msg="" Send="22F187"><Request Send="22F187" Receive="62F18732393241303139393752" /></Error>
+</Order>
+<Hardware>
+<Error Code="0" Msg="" Send="22F191"><Request Send="22F191" Receive="62F19132393241303035363952" /></Error>
+</Hardware>
+<Tuning>
+<Error Code="0" Msg="" Send="22F182"><Request Send="22F182" Receive="62F1820100" /></Error>
+</Tuning>
+<vehicleManufacturerKitAssemblyPartNumber Number="">
+<Request Send="22F18E" Receive="7F2231" />
+</vehicleManufacturerKitAssemblyPartNumber>
+<configurationFileReferenceLink>
+<Error Code="0" Msg="" Send="22F188"><Request Send="22F188" Receive="62F18832393242303930393552" /></Error>
+</configurationFileReferenceLink>
+<IndexSrvData>
+<Error Code="0" Msg="" Send="22F011"><Request Send="22F011" Receive="62F01150524F544153594D5632" /></Error>
+</IndexSrvData>
+</IdentificationUDS>
+</Scenario>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Scenario description="According to 36-00-011 -- E [NDS27], the services $10, $3E, $19 shall be Mandatory and the service $28 is forbidden.The standard session timeout “S3Server” is 5000 ms. The range [0x50-0x5F] will be reserved for the diagnosis department." Date="2023-10-12T22:59:28" ECUname="5DM" dstVersion="4.0.68.0">
+  <test name=" UDS_TST_0110 " methode="2" mode="PointToPoint" DisableTesterPresent="1">
+    <request name="Entering in default session">
+      <Check startbytes="5001003201F4" />
+      <byte min="10" />
+      <byte min="01" />
+    </request>
+    <request name="Entering in session 0x50-0x5F">
+      <Check codeErr="2034" />
+      <byte min="10" />
+      <byte min="50" max="5F" />
+    </request>
+    <request name="TesterPresent without parameters">
+      <Check codeErr="2056" />
+      <byte min="3E" />
+    </request>
+    <request name="TesterPresent">
+      <Check startbytes="7E00" length="2" />
+      <byte min="3E" />
+      <byte min="00" />
+    </request>
+    <request name="ReadDTC without parameters">
+      <Check codeErr="2056" />
+      <byte min="19" />
+    </request>
+    <request name="ReadDTC">
+      <Check startbytes="5902" />
+      <byte min="19" />
+      <byte min="02" />
+      <byte min="FF" />
+    </request>
+    <request name="CommunicationControl (0x28) is rejected">
+      <Check codeErr="2032" />
+      <byte min="28" />
+      <byte min="00" />
+      <byte min="01" />
+    </request>
+    <request name="Entering in extended session">
+      <Check startbytes="5003003201F4" />
+      <byte min="10" />
+      <byte min="03" />
+    </request>
+    <request name="TesterPresent without parameters">
+      <Check codeErr="2056" />
+      <byte min="3E" />
+    </request>
+    <request name="TesterPresent">
+      <Check startbytes="7E00" length="2" />
+      <byte min="3E" />
+      <byte min="00" />
+    </request>
+    <request name="ReadDTC without parameters">
+      <Check codeErr="2056" />
+      <byte min="19" />
+    </request>
+    <request name="ReadDTC">
+      <Check startbytes="5902" />
+      <byte min="19" />
+      <byte min="02" />
+      <byte min="FF" />
+    </request>
+    <request name="CommunicationControl (0x28) is rejected" delayAfterReply="5000">
+      <Check codeErr="2032" />
+      <byte min="28" />
+      <byte min="00" />
+      <byte min="01" />
+    </request>
+    <request name="SA with sub-function 0x01">
+      <Check codeErr="2046" />
+      <byte min="27" />
+      <byte min="01" />
+    </request>
+    <request name="Exit extended session">
+      <Check startbytes="5001003201F4" />
+      <byte min="10" />
+      <byte min="01" />
+    </request>
+    <Configuration>
+      <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+      <DSTPack>03. DST newpack</DSTPack>
+      <ECU>
+        <Name>BCB</Name>
+        <Address>103</Address>
+        <Protocol>DiagOnCAN</Protocol>
+        <CANids>
+          <Bus>1</Bus>
+          <Baudrate>500000</Baudrate>
+          <DTOOL-to-ECU>98DADDF1</DTOOL-to-ECU>
+          <ECU-to-DTOOL>98DAF1DD</ECU-to-DTOOL>
+        </CANids>
+      </ECU>
+    </Configuration>
+    <Resultat>
+      <Init time="47" />
+<RequestName>Entering in default session</RequestName>
+<Send time="72" bytes="1001" elapseTime="13">
+<Check startbytes="5001003201F4" />
+<Receive length="6" bytes="5001003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Entering in session 0x50-0x5F</RequestName>
+<Send time="105" bytes="1050" elapseTime="60">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="185" bytes="1051" elapseTime="49">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="253" bytes="1052" elapseTime="21">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="295" bytes="1053" elapseTime="8">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="322" bytes="1054" elapseTime="11">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="356" bytes="1055" elapseTime="7">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="382" bytes="1056" elapseTime="13">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="414" bytes="1057" elapseTime="11">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="443" bytes="1058" elapseTime="11">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="473" bytes="1059" elapseTime="32">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="527" bytes="105A" elapseTime="27">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="569" bytes="105B" elapseTime="14">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="604" bytes="105C" elapseTime="99">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="720" bytes="105D" elapseTime="24">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="763" bytes="105E" elapseTime="12">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="793" bytes="105F" elapseTime="22">
+<Check codeErr="2034" />
+<Error code="2034" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>TesterPresent without parameters</RequestName>
+<Send time="848" bytes="3E" elapseTime="27">
+<Check codeErr="2056" />
+<Error code="2056" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>TesterPresent</RequestName>
+<Send time="892" bytes="3E00" elapseTime="12">
+<Check startbytes="7E00" length="2" />
+<Receive length="2" bytes="7E00" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>ReadDTC without parameters</RequestName>
+<Send time="923" bytes="19" elapseTime="11">
+<Check codeErr="2056" />
+<Error code="2056" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>ReadDTC</RequestName>
+<Send time="953" bytes="1902FF" elapseTime="42">
+<Check startbytes="5902" />
+<Receive length="11" bytes="5902FFE14387281AA39650" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>CommunicationControl (0x28) is rejected</RequestName>
+<Send time="1014" bytes="280001" elapseTime="2633">
+<Check codeErr="2032" />
+<Error code="2032" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Entering in extended session</RequestName>
+<Send time="3669" bytes="1003" elapseTime="5">
+<Check startbytes="5003003201F4" />
+<Receive length="6" bytes="5003003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>TesterPresent without parameters</RequestName>
+<Send time="3698" bytes="3E" elapseTime="7">
+<Check codeErr="2056" />
+<Error code="2056" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>TesterPresent</RequestName>
+<Send time="3725" bytes="3E00" elapseTime="10">
+<Check startbytes="7E00" length="2" />
+<Receive length="2" bytes="7E00" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>ReadDTC without parameters</RequestName>
+<Send time="3765" bytes="19" elapseTime="9">
+<Check codeErr="2056" />
+<Error code="2056" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>ReadDTC</RequestName>
+<Send time="3791" bytes="1902FF" elapseTime="18">
+<Check startbytes="5902" />
+<Receive length="11" bytes="5902FFE14387281AA39650" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>CommunicationControl (0x28) is rejected</RequestName>
+<Send time="3835" bytes="280001" elapseTime="2259">
+<Check codeErr="2032" />
+<Error code="2032" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>SA with sub-function 0x01</RequestName>
+<Send time="11146" bytes="2701" elapseTime="9">
+<Check codeErr="2046" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Exit extended session</RequestName>
+<Send time="11173" bytes="1001" elapseTime="12">
+<Check startbytes="5001003201F4" />
+<Receive length="6" bytes="5001003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Stop time="11197" /></Resultat>
+  </test>
+  <IdentificationUDS Diagnostic="12" Supplier="DELTA" Application="05DH" Version="233999" Order="292A01997R" Hardware="292A00569R" Tuning="??" vehicleManufacturerKitAssemblyPartNumber="" configurationFileReferenceLink="292B09095R" IndexSrvData="PROTASYMV2">
+<Diagnostic>
+<Error Code="0" Msg="" Send="22F1A0"><Request Send="22F1A0" Receive="62F1A00C" /></Error>
+</Diagnostic>
+<Supplier>
+<Error Code="0" Msg="" Send="22F18A"><Request Send="22F18A" Receive="62F18A44454C5441" /></Error>
+</Supplier>
+<Application>
+<Error Code="0" Msg="" Send="22F194"><Request Send="22F194" Receive="62F19430354448" /></Error>
+</Application>
+<Version>
+<Error Code="0" Msg="" Send="22F195"><Request Send="22F195" Receive="62F195323333393939" /></Error>
+</Version>
+<Order>
+<Error Code="0" Msg="" Send="22F187"><Request Send="22F187" Receive="62F18732393241303139393752" /></Error>
+</Order>
+<Hardware>
+<Error Code="0" Msg="" Send="22F191"><Request Send="22F191" Receive="62F19132393241303035363952" /></Error>
+</Hardware>
+<Tuning>
+<Error Code="0" Msg="" Send="22F182"><Request Send="22F182" Receive="62F1820100" /></Error>
+</Tuning>
+<vehicleManufacturerKitAssemblyPartNumber Number="">
+<Request Send="22F18E" Receive="7F2231" />
+</vehicleManufacturerKitAssemblyPartNumber>
+<configurationFileReferenceLink>
+<Error Code="0" Msg="" Send="22F188"><Request Send="22F188" Receive="62F18832393242303930393552" /></Error>
+</configurationFileReferenceLink>
+<IndexSrvData>
+<Error Code="0" Msg="" Send="22F011"><Request Send="22F011" Receive="62F01150524F544153594D5632" /></Error>
+</IndexSrvData>
+</IdentificationUDS>
+</Scenario>

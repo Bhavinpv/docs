@@ -1,0 +1,50 @@
+bool Systemvoltagelow(int KL30_Voltage){
+    static int c1=0,c2=0;
+    if (KL30_Voltage < Coding_Appl_Read_parameter_KL30OverVoltThresholdLow()){
+	c1++;
+        if (c1 >70){ 
+                  Demwrap_Appl_Write_error_Cl30_LowErrStat(DT_ERRORSTATUS_FAILED);
+	}
+        
+        else{
+	c2=0;
+Demwrap_Appl_Write_error_Cl30_LowErrStat();
+        
+	}
+}
+    
+   
+    else
+
+ if
+ (KL30_Voltage > 8.5){
+	c2++;
+        if (c2 <20 && c1>70){
+            return 1;
+	}
+
+        else{
+	c1=0;
+        return 0;
+   	}
+}
+
+   else {
+        if (c1>70) {
+        return 1;
+	}
+
+	else if (c2>20) {
+	return 0;
+        }
+
+        else{
+	c1=0;
+	c2=0;
+        return 0;
+	}
+    }
+    
+
+    
+}

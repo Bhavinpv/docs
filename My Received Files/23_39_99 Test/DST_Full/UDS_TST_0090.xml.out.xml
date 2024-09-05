@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Scenario description="In extended session of applicative software, the ECU shall answer according to 36-02-14 --H [NDS28] to READ and WRITE the VIN F190" Date="2023-10-12T22:59:22" ECUname="5DM" dstVersion="4.0.68.0">
+  <test name="UDS_TST_0090" methode="2" mode="PointToPoint">
+    <Session name="entering in extended session">
+      <Check startbytes="5003003201F4" />
+      <byte min="10" />
+      <byte min="03" />
+    </Session>
+    <request name="Read the DID F190" req="REQ_DIAG_Application_3010">
+      <Check startbytes="62F190" length="20" format="ASCII" regex="^[^\x80-\xFF]*$" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="90" />
+    </request>
+    <request name="Write the DID F190 with 0x00 before the SA" req="REQ_DIAG_Application_2980">
+      <Check codeErr="2048" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+    </request>
+    <request name="Write the DID F190 with 0x30 before the SA" req="REQ_DIAG_Application_2980">
+      <Check codeErr="2048" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+    </request>
+    <request name="Write the DID F190 with 0xFF before the SA" req="REQ_DIAG_Application_2980">
+      <Check codeErr="2048" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+    </request>
+    <request name="Write the DID F190 before the SA" req="REQ_DIAG_Application_2970">
+      <Check startbytes="6EF190" length="3" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="56" />
+      <byte min="46" />
+      <byte min="31" />
+      <byte min="32" />
+      <byte min="52" />
+      <byte min="42" />
+      <byte min="44" />
+      <byte min="31" />
+      <byte min="48" />
+      <byte min="34" />
+      <byte min="39" />
+      <byte min="37" />
+      <byte min="37" />
+      <byte min="36" />
+      <byte min="31" />
+      <byte min="35" />
+      <byte min="30" />
+    </request>
+    <request name="Read the DID F190 after a good write" req="REQ_DIAG_Application_2930">
+      <Check startbytes="62F1905646313252424431483439373736313530" length="20" />
+      <byte min="22" />
+      <byte min="F1" />
+      <byte min="90" />
+    </request>
+    <request name="Rewrite the DID F190 without SA" req="REQ_DIAG_Application_3000" disableAutoDiagHardening="1">
+      <Check codeErr="2036" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="B0" />
+      <byte min="B1" />
+      <byte min="B2" />
+      <byte min="B3" />
+      <byte min="B4" />
+      <byte min="B5" />
+      <byte min="B6" />
+      <byte min="B7" />
+      <byte min="B8" />
+      <byte min="B9" />
+      <byte min="BA" />
+      <byte min="BB" />
+      <byte min="BC" />
+      <byte min="BD" />
+      <byte min="BE" />
+      <byte min="BF" />
+      <byte min="C0" />
+    </request>
+    <request name="Rewrite the DID F190 with 0x00" req="REQ_DIAG_Application_2980" disableAutoDiagHardening="1">
+      <Check codeErr="2036" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+    </request>
+    <request name="rewrite the DID F190 with 0x30" req="REQ_DIAG_Application_2980" disableAutoDiagHardening="1">
+      <Check codeErr="2036" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+    </request>
+    <request name="rewrite the DID F190 with 0xFF" req="REQ_DIAG_Application_2980" disableAutoDiagHardening="1">
+      <Check codeErr="2036" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+    </request>
+    <request name="Write the DID F190 with 0x00 after a SA" SA="1" req="REQ_DIAG_Application_2980">
+      <Check codeErr="2048" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="00" />
+    </request>
+    <request name="Write the DID F190 with 0x30 after a SA" req="REQ_DIAG_Application_2980">
+      <Check codeErr="2048" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+      <byte min="30" />
+    </request>
+    <request name="Write the DID F190 with 0xFF after a SA" req="REQ_DIAG_Application_2980">
+      <Check codeErr="2048" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+      <byte min="FF" />
+    </request>
+    <request name="Write the DID F190 after a Security access" req="REQ_DIAG_Application_2990">
+      <Check startbytes="6EF190" length="3" />
+      <byte min="2E" />
+      <byte min="F1" />
+      <byte min="90" />
+      <byte min="56" />
+      <byte min="46" />
+      <byte min="31" />
+      <byte min="32" />
+      <byte min="52" />
+      <byte min="42" />
+      <byte min="44" />
+      <byte min="31" />
+      <byte min="48" />
+      <byte min="34" />
+      <byte min="39" />
+      <byte min="37" />
+      <byte min="37" />
+      <byte min="36" />
+      <byte min="31" />
+      <byte min="35" />
+      <byte min="30" />
+    </request>
+    <Configuration>
+      <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+      <DSTPack>03. DST newpack</DSTPack>
+      <ECU>
+        <Name>BCB</Name>
+        <Address>103</Address>
+        <Protocol>DiagOnCAN</Protocol>
+        <CANids>
+          <Bus>1</Bus>
+          <Baudrate>500000</Baudrate>
+          <DTOOL-to-ECU>98DADDF1</DTOOL-to-ECU>
+          <ECU-to-DTOOL>98DAF1DD</ECU-to-DTOOL>
+        </CANids>
+      </ECU>
+    </Configuration>
+    <Resultat>
+      <Init time="32" />
+<StartDiagSession>
+<Send time="56" bytes="1003" elapseTime="14">
+<Check startbytes="5003003201F4" />
+<Receive length="6" bytes="5003003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+</StartDiagSession><RequestName>Read the DID F190</RequestName>
+<Send time="82" bytes="22F190" elapseTime="11">
+<Check startbytes="62F190" length="20" format="ASCII" regex="^[^\x80-\xFF]*$" />
+<Receive length="20" bytes="62F1904142434445464748494A4B4C4D4E4F5051" string="ABCDEFGHIJKLMNOPQ" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the DID F190 with 0x00 before the SA</RequestName>
+<Send time="110" bytes="2EF1900000000000000000000000000000000000" elapseTime="2251">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the DID F190 with 0x30 before the SA</RequestName>
+<Send time="2384" bytes="2EF1903030303030303030303030303030303030" elapseTime="17">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the DID F190 with 0xFF before the SA</RequestName>
+<Send time="2416" bytes="2EF190FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" elapseTime="13">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the DID F190 before the SA</RequestName>
+<Send time="2443" bytes="2EF1905646313252424431483439373736313530" elapseTime="7">
+<Check startbytes="6EF190" length="3" />
+<Receive length="3" bytes="6EF190" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Read the DID F190 after a good write</RequestName>
+<Send time="2466" bytes="22F190" elapseTime="18">
+<Check startbytes="62F1905646313252424431483439373736313530" length="20" />
+<Receive length="20" bytes="62F1905646313252424431483439373736313530" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Rewrite the DID F190 without SA</RequestName>
+<Send time="2494" bytes="2EF190B0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFC0" elapseTime="15">
+<Check codeErr="2036" />
+<Receive length="3" bytes="6EF190" /><Status>nok</Status>
+<OldStatus>nok</OldStatus>
+</Send>
+<RequestName>Rewrite the DID F190 with 0x00</RequestName>
+<Send time="2520" bytes="2EF1900000000000000000000000000000000000" elapseTime="9">
+<Check codeErr="2036" />
+<Error code="2048" /><Status>nok</Status>
+<OldStatus>nok</OldStatus>
+</Send>
+<RequestName>rewrite the DID F190 with 0x30</RequestName>
+<Send time="2541" bytes="2EF1903030303030303030303030303030303030" elapseTime="9">
+<Check codeErr="2036" />
+<Error code="2048" /><Status>nok</Status>
+<OldStatus>nok</OldStatus>
+</Send>
+<RequestName>rewrite the DID F190 with 0xFF</RequestName>
+<Send time="2563" bytes="2EF190FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" elapseTime="6">
+<Check codeErr="2036" />
+<Error code="2048" /><Status>nok</Status>
+<OldStatus>nok</OldStatus>
+</Send>
+<RequestName>Write the DID F190 with 0x00 after a SA</RequestName>
+<Unlock><Error code="0" desc="ECU unlocked with engeneering key" /></Unlock><Unlock><Error code="0" desc="====&gt; OK : ECU is unlocked" /></Unlock><Send time="2688" bytes="2EF1900000000000000000000000000000000000" elapseTime="13">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the DID F190 with 0x30 after a SA</RequestName>
+<Send time="2712" bytes="2EF1903030303030303030303030303030303030" elapseTime="8">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the DID F190 with 0xFF after a SA</RequestName>
+<Send time="2732" bytes="2EF190FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" elapseTime="8">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the DID F190 after a Security access</RequestName>
+<Send time="2753" bytes="2EF1905646313252424431483439373736313530" elapseTime="7">
+<Check startbytes="6EF190" length="3" />
+<Receive length="3" bytes="6EF190" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Stop time="2773" /></Resultat>
+  </test>
+  <IdentificationUDS Diagnostic="12" Supplier="DELTA" Application="05DH" Version="233999" Order="292A01997R" Hardware="292A00569R" Tuning="??" vehicleManufacturerKitAssemblyPartNumber="" configurationFileReferenceLink="292B09095R" IndexSrvData="PROTASYMV2">
+<Diagnostic>
+<Error Code="0" Msg="" Send="22F1A0"><Request Send="22F1A0" Receive="62F1A00C" /></Error>
+</Diagnostic>
+<Supplier>
+<Error Code="0" Msg="" Send="22F18A"><Request Send="22F18A" Receive="62F18A44454C5441" /></Error>
+</Supplier>
+<Application>
+<Error Code="0" Msg="" Send="22F194"><Request Send="22F194" Receive="62F19430354448" /></Error>
+</Application>
+<Version>
+<Error Code="0" Msg="" Send="22F195"><Request Send="22F195" Receive="62F195323333393939" /></Error>
+</Version>
+<Order>
+<Error Code="0" Msg="" Send="22F187"><Request Send="22F187" Receive="62F18732393241303139393752" /></Error>
+</Order>
+<Hardware>
+<Error Code="0" Msg="" Send="22F191"><Request Send="22F191" Receive="62F19132393241303035363952" /></Error>
+</Hardware>
+<Tuning>
+<Error Code="0" Msg="" Send="22F182"><Request Send="22F182" Receive="62F1820100" /></Error>
+</Tuning>
+<vehicleManufacturerKitAssemblyPartNumber Number="">
+<Request Send="22F18E" Receive="7F2231" />
+</vehicleManufacturerKitAssemblyPartNumber>
+<configurationFileReferenceLink>
+<Error Code="0" Msg="" Send="22F188"><Request Send="22F188" Receive="62F18832393242303930393552" /></Error>
+</configurationFileReferenceLink>
+<IndexSrvData>
+<Error Code="0" Msg="" Send="22F011"><Request Send="22F011" Receive="62F01150524F544153594D5632" /></Error>
+</IndexSrvData>
+</IdentificationUDS>
+</Scenario>

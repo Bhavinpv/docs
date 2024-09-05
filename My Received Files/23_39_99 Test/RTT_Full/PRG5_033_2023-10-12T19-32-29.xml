@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<UDS-REPROGRAMMING-VALIDATION-RESULT>
+  <Configuration>
+    <Company>Delta Energy Systems</Company>
+    <Author>Alexandru Stanciu</Author>
+    <PDXFile>DES_SW_23_39_99_DDT2000.pdx</PDXFile>
+    <UnlockMode>Local</UnlockMode>
+    <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+    <RFQ>RTT (RFQ12) 3.0</RFQ>
+    <ECU>
+      <Name>5DH_DCDC</Name>
+      <Address>103</Address>
+      <Protocol>DiagOnCAN</Protocol>
+      <CANids>
+        <Bus>1</Bus>
+        <Baudrate>500000</Baudrate>
+        <DTOOL-to-ECU>98DAF1DD</DTOOL-to-ECU>
+        <ECU-to-DTOOL>98DADDF1</ECU-to-DTOOL>
+      </CANids>
+      <HardwareNumber>292A00569R</HardwareNumber>
+      <BootVersion>
+      </BootVersion>
+      <LogicalBlocks>
+        <LogicalBlock selected="true" withReprogLimit="false" maxReprogrammingCounter="0">FD00</LogicalBlock>
+      </LogicalBlocks>
+      <ReprogramingInPlant>FALSE</ReprogramingInPlant>
+    </ECU>
+  </Configuration>
+  <Test name="PRG5_033" date="2023-10-12 19-32-20" status="Success">
+    <Trace><![CDATA[
+10/12/2023 7:32:20 PM.449     Begin Test   : PRG5_033
+10/12/2023 7:32:20 PM.449     RFQ : RTT (RFQ12) 3.0
+10/12/2023 7:32:20 PM.449           Begin : Check initial condition
+10/12/2023 7:32:20 PM.449                 Check if ECU is in Application
+10/12/2023 7:32:20 PM.449                 => Tester Present...
+10/12/2023 7:32:20 PM.452                 $67 : Tx : 3E00
+10/12/2023 7:32:20 PM.647                 $67 : Rx : 7E00
+10/12/2023 7:32:20 PM.652                 $67 : Tx : 1003
+10/12/2023 7:32:20 PM.667                 $67 : Rx : 5003003201F4
+10/12/2023 7:32:20 PM.670                 ECU is in Application
+10/12/2023 7:32:20 PM.670                 Goto default Session
+10/12/2023 7:32:20 PM.672                 $67 : Tx : 1001
+10/12/2023 7:32:20 PM.701                 $67 : Rx : 5001003201F4
+10/12/2023 7:32:20 PM.704           End : Check initial condition
+10/12/2023 7:32:20 PM.706           waiting 3000 ms...
+10/12/2023 7:32:24 PM.103           Waiting for Tester present
+10/12/2023 7:32:24 PM.103           => Tester Present...
+10/12/2023 7:32:24 PM.105           $67 : Tx : 3E00
+10/12/2023 7:32:24 PM.128           $67 : Rx : 7E00
+10/12/2023 7:32:24 PM.131           Programming session (1002)
+10/12/2023 7:32:24 PM.138           $67 : Tx : 1002
+10/12/2023 7:32:24 PM.179            -------- Response [7F1033] Contains Nack_33:  Trying to resend request [1002] --------
+10/12/2023 7:32:24 PM.957                  Check for virgin mode...
+10/12/2023 7:32:25 PM.462                  Unlocking...
+10/12/2023 7:32:25 PM.464                  Try to unlock with proto key...
+10/12/2023 7:32:25 PM.466           Request seed ($2701)...
+10/12/2023 7:32:25 PM.590           IndexSrvData ($F011): 50524F544153594D5632
+10/12/2023 7:32:25 PM.634           VIN ($F190): 4142434445464748494A4B4C4D4E4F5051
+10/12/2023 7:32:25 PM.636           256 bytes seed => Try RSA unlocking with proto keys...
+10/12/2023 7:32:25 PM.701           sendSecurityKey ($2702)
+10/12/2023 7:32:25 PM.817           ECU unlocked.
+10/12/2023 7:32:26 PM.039                  Trying to resend UDS request [1002]
+10/12/2023 7:32:26 PM.896           $67 : Rx : 5002003201F4
+10/12/2023 7:32:26 PM.909           Programming session, expected [5002003201F4]
+10/12/2023 7:32:26 PM.909           RequestSeed (2701)
+10/12/2023 7:32:26 PM.913           $67 : Tx : 2701
+10/12/2023 7:32:27 PM.429           $67 : Rx : 67012060C4E21A3268E7E28D4EBD676EFF6951AD34392953239321F88E3765A1283E468DD835039CA8E24DF645760705AA3682BF7F0CF982BB8175DB6816A8EEEC4E6249DAC237C3B3EF3A5BAE2F930DE0779BD13B0EA1773CC5E1346E632F95D855E8DD101DB69B635C902BF7FA190BD84F0759D0C133D82256374A7ABD8123885BF6332795F249F94F0161DB8F46BC5D8A094878A34FDA2ED8D8DB38F322E9466799AEB4D1825C2D69FE5AF9E232B8841CA64CA35D1C0C5C9E5867762D7C1B74318C65D67DD6DCEC53AAFEA1582FF58DCF733BCF0A3F4362E9FF6C541570EC631A795D3D4C56C7F4E96219D91FA2F570A8ED4F4E401731523F4E2011D8B07322B3
+10/12/2023 7:32:27 PM.433           RequestSeed, expected [6701....seed...]
+10/12/2023 7:32:27 PM.433           Compile security seed...
+10/12/2023 7:32:27 PM.433           256 bytes seed detected => Use RSA engeneering keys
+10/12/2023 7:32:27 PM.433           Try RSA Key #0
+10/12/2023 7:32:27 PM.494           Compile seed OK
+10/12/2023 7:32:27 PM.494           Compile seed
+10/12/2023 7:32:27 PM.494           SendKey (2702)
+10/12/2023 7:32:27 PM.498           $67 : Tx : 27029AA3C4D97778F8446728D80306EFED04E847BABD8F600806717F75D95BEF2213800B742A8A8675D6DAC11848F49C52E0E1EDB90B7B2DAD94E78B5DA8F17BAD5F4C408C9E4CDBEE92783C98029E4E845D8402E82FBC3B0275EEB76E3519BD0CE6F60BB7ECF8AF47D8F4F7DA1FB1E154C4C2D1F690DCCC066BF925BD2F3DE3C1042CFD6CDB7F9987C460C0B200059F563BB510E50B77B357C179D0582060AB5B477AE35F3A1C9D6CA8A3E63BCA3A9CAFDA90F65C2442E5E032839673721E23A542ACFF09668835355B3182C3929A4034062154333358566A08C9D2FA547B45DDBFA47B2CAC4F5A1D6A2CE39B8701F9D093B34CC2064F51FF1548F1D4959809AAF0
+10/12/2023 7:32:28 PM.066           $67 : Rx : 6702
+10/12/2023 7:32:28 PM.069           SendKey, expected [6702]
+10/12/2023 7:32:28 PM.069           Default session (1001)
+10/12/2023 7:32:28 PM.071           $67 : Tx : 1001
+10/12/2023 7:32:28 PM.096           $67 : Rx : 5001003201F4
+10/12/2023 7:32:28 PM.100           Default session, expected [5001003201F4]
+10/12/2023 7:32:28 PM.100           Waiting for Tester present
+10/12/2023 7:32:28 PM.100           => Tester Present...
+10/12/2023 7:32:28 PM.103           $67 : Tx : 3E00
+10/12/2023 7:32:29 PM.118           I/O error
+10/12/2023 7:32:29 PM.118           Waiting for Tester Present, retry 1/10
+10/12/2023 7:32:29 PM.118           => Tester Present...
+10/12/2023 7:32:29 PM.120           $67 : Tx : 3E00
+10/12/2023 7:32:29 PM.138           $67 : Rx : 7E00
+10/12/2023 7:32:29 PM.141     End Test   : PRG5_033
+]]></Trace>
+  </Test>
+  <Information>
+    <Tool>
+      <DDT2000>4.0.68.0</DDT2000>
+      <Name>RTT</Name>
+      <Version>4.0.68.0</Version>
+    </Tool>
+    <Tests current-version="3.0">
+      <Test name="PRG5_056">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ12</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_050">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ12</Version>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_051">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ12</Version>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_052">
+        <Versions>
+          <Current>2.2</Current>
+          <History>
+            <Version value="2.2"> RFQ12</Version>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0">Remove read 0xF188 and 0xF190</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_053">
+        <Versions>
+          <Current>2.2</Current>
+          <History>
+            <Version value="2.2"> RFQ12</Version>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0">Remove read 0xF188 and 0xF190</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_054">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_055">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_060">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ7.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_064">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ12</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_065">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ12</Version>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_002">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0">Original version </Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_003">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ10</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_006">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_009">
+        <Versions>
+          <Current>1.3</Current>
+          <History>
+            <Version value="1.3"> RFQ11</Version>
+            <Version value="1.2"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_011">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_012">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_013">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_014">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_015">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_017">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_018">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_020">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_022">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_024">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_026">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_042">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_043">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_044">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_005">
+        <Versions>
+          <Current>1.3</Current>
+          <History>
+            <Version value="1.3"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_059">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0">Time check is deleted because check is not relevent and Network layer validation checks if BS is correctly changed</Version>
+            <Version value="2.0"> RFQ10</Version>
+            <Version value="1.0"> RFQ7.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_001">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_007">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_008">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_023">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_028">
+        <Versions>
+          <Current>1.2</Current>
+          <History>
+            <Version value="1.2"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_032">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_033">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_036">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_045">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_040">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0"> RFQ10</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_004">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_041">
+        <Versions>
+          <Current>3.1</Current>
+          <History>
+            <Version value="3.1"> RFQ11</Version>
+            <Version value="3.0"> RFQ10</Version>
+            <Version value="2.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_000">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0">Original version RFQ7.0</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_061">
+        <Versions>
+          <Current>3.1</Current>
+          <History>
+            <Version value="3.1"> RFQ12</Version>
+            <Version value="3.0"> RFQ11</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_063">
+        <Versions>
+          <Current>2.2</Current>
+          <History>
+            <Version value="2.2"> RFQ12</Version>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_029">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_030">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_031">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_035">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_021">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_039">
+        <Versions>
+          <Current>4.2</Current>
+          <History>
+            <Version value="4.2"> RFQ12</Version>
+            <Version value="4.1"> RFQ11</Version>
+            <Version value="4.0"> RFQ10</Version>
+            <Version value="3.0"> RFQ9.0</Version>
+            <Version value="2.0"> RFQ7.0</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_025">
+        <Versions>
+          <Current>
+          </Current>
+          <History>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_058">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="2.0"> RFQ10</Version>
+            <Version value="1.1"> RFQ7.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_062">
+        <Versions>
+          <Current>2.1</Current>
+          <History>
+            <Version value="2.1"> RFQ11</Version>
+            <Version value="1.0"> RFQ9.0</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_070">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0"> RFQ11</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="PRG5_019">
+        <Versions>
+          <Current>2.0</Current>
+          <History>
+            <Version value="2.0"> RFQ11</Version>
+            <Version value="1.0"> Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+    </Tests>
+  </Information>
+</UDS-REPROGRAMMING-VALIDATION-RESULT>

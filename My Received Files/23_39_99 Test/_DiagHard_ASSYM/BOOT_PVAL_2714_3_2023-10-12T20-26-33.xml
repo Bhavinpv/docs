@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<UDS-REPROGRAMMING-VALIDATION-RESULT>
+  <Configuration>
+    <Company>Delta</Company>
+    <Author>Alexandru Stanciu</Author>
+    <PDXFile>DES_SW_23_39_99_DDT2000.pdx</PDXFile>
+    <UnlockMode>Local</UnlockMode>
+    <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+    <RFQ>Security Access Assym validation plan 1.9</RFQ>
+    <ECU>
+      <Name>5DH_DCDC</Name>
+      <Address>103</Address>
+      <Protocol>DiagOnCAN</Protocol>
+      <CANids>
+        <Bus>1</Bus>
+        <Baudrate>500000</Baudrate>
+        <DTOOL-to-ECU>98DAF1DD</DTOOL-to-ECU>
+        <ECU-to-DTOOL>98DADDF1</ECU-to-DTOOL>
+      </CANids>
+      <HardwareNumber>292A00569R</HardwareNumber>
+      <BootVersion>
+      </BootVersion>
+      <LogicalBlocks>
+        <LogicalBlock selected="false" withReprogLimit="false" maxReprogrammingCounter="0">FD00</LogicalBlock>
+      </LogicalBlocks>
+      <ReprogramingInPlant>FALSE</ReprogramingInPlant>
+    </ECU>
+  </Configuration>
+  <Test name="BOOT_PVAL_2714_3" date="2023-10-12 20-26-24" status="Failed">
+    <Trace><![CDATA[
+10/12/2023 8:26:24 PM.788     Begin Test   : BOOT_PVAL_2714_3
+10/12/2023 8:26:24 PM.788     RFQ : Security Access Assym validation plan 1.9
+10/12/2023 8:26:24 PM.788           Begin : Check initial condition
+10/12/2023 8:26:24 PM.788                 Check if ECU is in Application
+10/12/2023 8:26:24 PM.788                 => Tester Present...
+10/12/2023 8:26:24 PM.789                 $67 : Tx : 3E00
+10/12/2023 8:26:24 PM.882                 $67 : Rx : 7E00
+10/12/2023 8:26:24 PM.885                 $67 : Tx : 1003
+10/12/2023 8:26:24 PM.891                 $67 : Rx : 5003003201F4
+10/12/2023 8:26:24 PM.893                 ECU is in Application
+10/12/2023 8:26:24 PM.893                 Goto default Session
+10/12/2023 8:26:24 PM.893                 $67 : Tx : 1001
+10/12/2023 8:26:24 PM.902                 $67 : Rx : 5001003201F4
+10/12/2023 8:26:24 PM.904           End : Check initial condition
+10/12/2023 8:26:24 PM.905           waiting 3000 ms...
+10/12/2023 8:26:28 PM.264           Waiting for Tester present
+10/12/2023 8:26:28 PM.264           => Tester Present...
+10/12/2023 8:26:28 PM.265           $67 : Tx : 3E00
+10/12/2023 8:26:28 PM.272           $67 : Rx : 7E00
+10/12/2023 8:26:28 PM.273           Extended Diagnostic session (1003)
+10/12/2023 8:26:28 PM.274           $67 : Tx : 1003
+10/12/2023 8:26:28 PM.282           $67 : Rx : 5003003201F4
+10/12/2023 8:26:28 PM.283           Extended Diagnostic session (1003), expected [5003003201F4]
+10/12/2023 8:26:28 PM.283           RequestSeed (2701)
+10/12/2023 8:26:28 PM.285           $67 : Tx : 2701
+10/12/2023 8:26:28 PM.343           $67 : Rx : 67011A72E12CB73FDB62CB685FB72C73B0F606A3D24ECCDA28B17AD8CDD975A714F00EC6105C7257F8FED8A3B48C4A2CFC5CB45F925E68D06FC5EFD07F6C9710B52B5EC7E21C4BE9EB7F7D4E263CEE14C0EFCE10ADA19937A5BF355D6C36F66641C035649B541324D680603F6DD030A9627971C50DBE8BE67EBEE04B047B32CAA2E4777B534B0B53C82C15286C8247F565EBA3993326D7163988250C6B1438C441C2C64B6DCAB4AA63392F5386F0467BF14AD633B14053CE2FA94F0F29E040616D5C0F4F044AF78BDE8DEA028C12179B06DEC88D6870D8C07B08EC80FE0CE9F5E2A162FECC048E89AC9759F7319F9395D5CED7E339B9328F35762D2BE385922E5BD3
+10/12/2023 8:26:28 PM.348           RequestSeed, expected [6701....seed...]
+10/12/2023 8:26:28 PM.348           Compile security seed...
+10/12/2023 8:26:28 PM.348           256 bytes seed detected => Use RSA engeneering keys
+10/12/2023 8:26:28 PM.348           Try RSA Key #0
+10/12/2023 8:26:28 PM.377           Compile seed OK
+10/12/2023 8:26:28 PM.377           Compile seed
+10/12/2023 8:26:28 PM.377           SendKey (2702)
+10/12/2023 8:26:28 PM.379           $67 : Tx : 270207E295F3E83DE81AC3007A3BC0C9793D669E6E9210A02102A94FC4F4FFFC260F0395095968F87AC4F0BEA9388A6397C3622AE5CDF540690226117C014E059974D6B5EA7FBF33DDAE7A2A044D29F92C0F7C94C951945B271C10491F50A29A40CA634DF966365C930EF228A98A106B5610B15587A137F9FB9595B727272034ACDA049EDF7655A250E64F17D7E0E1199BC5D0124930AFAB867AC526ABDF95774AD2FE11FD6EB7CAB61D8A3C812A70D4B54C42247EFE00F92289A9AC850B3CB523B996A48EC278E0864035787B08EED3587275678BD2CC58169AB0864623E7C8263519DC2F54713E3F2FB1EDB1D4E673E56643E473B0829998C13D15F104CA9D21E0
+10/12/2023 8:26:28 PM.464           $67 : Rx : 6702
+10/12/2023 8:26:28 PM.472           SendKey, expected [6702]
+10/12/2023 8:26:28 PM.472           Programming session (1002)
+10/12/2023 8:26:28 PM.473           $67 : Tx : 1002
+10/12/2023 8:26:33 PM.626           No reply for request '1002'Programming session on error, expected reply [5002 0032 01F4]
+10/12/2023 8:26:33 PM.626           PVAL_2714_3: No reply for request '1002'
+10/12/2023 8:26:33 PM.626     End Test   : BOOT_PVAL_2714_3
+10/12/2023 8:26:33 PM.626     Default session (1001)
+10/12/2023 8:26:33 PM.627     $67 : Tx : 1001
+10/12/2023 8:26:33 PM.632     $67 : Rx : 5001003201F4
+10/12/2023 8:26:33 PM.634     Default session, expected [5001003201F4]
+10/12/2023 8:26:33 PM.634     Waiting for Tester present
+10/12/2023 8:26:33 PM.634     => Tester Present...
+10/12/2023 8:26:33 PM.635     $67 : Tx : 3E00
+10/12/2023 8:26:33 PM.652     $67 : Rx : 7E00
+]]></Trace>
+  </Test>
+  <Information>
+    <Tool>
+      <DDT2000>4.0.68.0</DDT2000>
+      <Name>RTT</Name>
+      <Version>4.0.68.0</Version>
+    </Tool>
+    <Tests current-version="1.9">
+      <Test name="Initial_Condition_TEST_SA">
+        <Versions>
+          <Current>1.5</Current>
+          <History>
+            <Version value="1.5">1.5</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2708">
+        <Versions>
+          <Current>1.7</Current>
+          <History>
+            <Version value="1.7">1.7</Version>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2709">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2711">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2714_1">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2714_2">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2714_3">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2714_4">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2715">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2716">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2719_1">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2722">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2726">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2731_2_1">
+        <Versions>
+          <Current>1.4</Current>
+          <History>
+            <Version value="1.4">1.4</Version>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2731_2_3">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2732">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2733">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2731_2_8">
+        <Versions>
+          <Current>1.6</Current>
+          <History>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.4">1.4</Version>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2731_2_9">
+        <Versions>
+          <Current>1.6</Current>
+          <History>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2708">
+        <Versions>
+          <Current>1.7</Current>
+          <History>
+            <Version value="1.7">1.7</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2709">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2711">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2714_1">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2714_2">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2714_3">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2714_4">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2715">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2716">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2719_1">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2722">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2725">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2726">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2731_2_3">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2732">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2733">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="APP_PVAL_2731_2_8">
+        <Versions>
+          <Current>1.6</Current>
+          <History>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.4">1.4</Version>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="BOOT_PVAL_2725">
+        <Versions>
+          <Current>1.1</Current>
+          <History>
+            <Version value="1.1">1.1</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+    </Tests>
+  </Information>
+</UDS-REPROGRAMMING-VALIDATION-RESULT>

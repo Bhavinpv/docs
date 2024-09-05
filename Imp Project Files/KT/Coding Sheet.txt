@@ -1,0 +1,13 @@
+Coding sheet 
+
+It is used to define memory blocks of nvram
+In NVRAM we store the non volatile data like calib data, parameters like constants,DID,DTC fault memory  etc
+So we will be adding parameters in the excel sheet by defining different aspects in the excel then we generate using the coding sheet generator
+and then copy it to 40 appl.
+
+After adding a new parameter we need to reduce the added size of data from the RESERVE kept for that particular block
+Also remove that many default value integer from the reserve row.
+
+So when we generate , the parameters in the coding sheet get added to the c files accordingly.
+
+Note: Take care of space and commas

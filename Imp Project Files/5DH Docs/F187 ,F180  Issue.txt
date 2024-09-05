@@ -1,0 +1,8 @@
+IN boot Only : Default 2E F187 : Sec access denied NRC 33
+
+In Boot + APPL : Default 2E F187 : Service not supported in active session 7F
+		 Extended 2E F187 : Security access denied NRC 33
+
+		Default 22 f180 : Req out of range nrc 31
+
+

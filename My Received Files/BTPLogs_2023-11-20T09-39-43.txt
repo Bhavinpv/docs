@@ -1,0 +1,52 @@
+20/11/2023 9:34:57.981	DDT 4.0.81.2		##0##		
+20/11/2023 9:34:57.982	Check Microsoft .NET version => 4.6 or later		##0##		
+20/11/2023 9:34:58.886	=> Tester Present...		##5##		
+20/11/2023 9:34:58.930	Entering Reprogramming Session		##5##		
+20/11/2023 9:35:07.773	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:35:09.436	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:35:09.521	===================================================		##5##		
+20/11/2023 9:35:09.521	Open first pdx file: 0904_2750_5782_9001S_NoVL_V3.pdx		##5##		
+20/11/2023 9:35:09.616	Entering Reprogramming Session		##5##		
+20/11/2023 9:35:18.364	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:35:19.833	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:36:10.963	=> Tester Present...		##5##		
+20/11/2023 9:36:11.003	Entering Reprogramming Session		##5##		
+20/11/2023 9:36:20.607	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:36:22.312	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:36:30.088	=> Tester Present...		##5##		
+20/11/2023 9:36:30.139	Entering Reprogramming Session		##5##		
+20/11/2023 9:36:39.178	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:36:40.836	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:39:08.195	===================================================		##5##		
+20/11/2023 9:39:08.195	Open first pdx file: DES_SW_23_15_00_DDT2000.pdx		##5##		
+20/11/2023 9:39:08.201	Entering Reprogramming Session		##5##		
+20/11/2023 9:39:16.601	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:39:17.786	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:39:17.787	Entering Reprogramming Session		##5##		
+20/11/2023 9:39:25.992	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:39:27.117	checkAndTestECU: UDS.SecurityAccessDeniedException
+
+Negative response : $7F1033	ABORT	##4##checkAndTestECU	checkAndTestECU	
+20/11/2023 9:39:42.907	Unable to start Nominal Reprog. ABORT: There is no selected session.		##3##		

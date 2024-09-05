@@ -1,0 +1,9 @@
+Different sbc in com and dcdc vs1 and vs2 resp
+MPS connected via Jtag to disable wdi for debugging
+
+
+LOW 600ms
+CW
+Configurable window timing from com using spi
+
+SBC HW change in DCDC Expected

@@ -1,0 +1,32 @@
+In production are they using 3 packages?
+fbl lv
+appl lv +appl hv(dummy)
+combined hv_fbl_appl
+
+are they using combined Hv_FBL_APPL?
+combined and flashed on hv controller
+
+
+Can we get prodcution procedure?
+
+
+
+Did Alexandru test the latest Hv Update from Madhu?
+Tested, he will double check and say
+
+
+Difference between Standalone and Combi_appFbl?
+May be appl and appl merged with fbl
+
+
+Does Hv come with a default FBL from MIcrochip?
+
+
+Part num is updated for lv appl and lv fbl 
+ but  hv controller is carried forward with the old part num 
+ 
+ About hv madhu update is not being carry forward for the 23_39 appl sw update
+ 
+ Alexandru need to share the feedback regarding the implementation of hASH READ
+ 
+ iso 21434

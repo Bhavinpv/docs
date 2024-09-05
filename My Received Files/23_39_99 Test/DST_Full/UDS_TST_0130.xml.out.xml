@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Scenario description="The service of Upload/Download functional unit shall be fobbid in application software" Date="2023-10-12T22:59:47" ECUname="5DM" dstVersion="4.0.68.0">
+  <test name=" UDS_TST_0130 " methode="2" mode="PointToPoint">
+    <request name="Entering in default session">
+      <Check startbytes="5001003201F4" />
+      <byte min="10" />
+      <byte min="01" />
+    </request>
+    <request name="Send a dowload service">
+      <Check codeErr="2032" codeErr2="2046" />
+      <byte min="34" />
+      <byte min="00" />
+      <byte min="33" />
+      <byte min="00" />
+      <byte min="80" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="20" />
+      <byte min="00" />
+    </request>
+    <request name="Send a upload service">
+      <Check codeErr="2032" codeErr2="2046" />
+      <byte min="36" />
+    </request>
+    <request name="Send a TransferData service">
+      <Check codeErr="2032" codeErr2="2046" />
+      <byte min="37" />
+    </request>
+    <request name="Entering in extended session">
+      <Check startbytes="5003003201F4" />
+      <byte min="10" />
+      <byte min="03" />
+    </request>
+    <request name="Send a dowload service">
+      <Check codeErr="2032" codeErr2="2046" />
+      <byte min="34" />
+      <byte min="00" />
+      <byte min="33" />
+      <byte min="00" />
+      <byte min="80" />
+      <byte min="00" />
+      <byte min="00" />
+      <byte min="20" />
+      <byte min="00" />
+    </request>
+    <request name="Send a upload service">
+      <Check codeErr="2032" codeErr2="2046" />
+      <byte min="36" />
+    </request>
+    <request name="Send a TransferData service">
+      <Check codeErr="2032" codeErr2="2046" />
+      <byte min="37" />
+    </request>
+    <request name="Exit extended session">
+      <Check startbytes="5001003201F4" />
+      <byte min="10" />
+      <byte min="01" />
+    </request>
+    <Configuration>
+      <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+      <DSTPack>03. DST newpack</DSTPack>
+      <ECU>
+        <Name>BCB</Name>
+        <Address>103</Address>
+        <Protocol>DiagOnCAN</Protocol>
+        <CANids>
+          <Bus>1</Bus>
+          <Baudrate>500000</Baudrate>
+          <DTOOL-to-ECU>98DADDF1</DTOOL-to-ECU>
+          <ECU-to-DTOOL>98DAF1DD</ECU-to-DTOOL>
+        </CANids>
+      </ECU>
+    </Configuration>
+    <Resultat>
+      <Init time="31" />
+<RequestName>Entering in default session</RequestName>
+<Send time="57" bytes="1001" elapseTime="13">
+<Check startbytes="5001003201F4" />
+<Receive length="6" bytes="5001003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Send a dowload service</RequestName>
+<Send time="83" bytes="340033008000002000" elapseTime="7">
+<Check codeErr="2032" codeErr2="2046" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Send a upload service</RequestName>
+<Send time="103" bytes="36" elapseTime="6">
+<Check codeErr="2032" codeErr2="2046" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Send a TransferData service</RequestName>
+<Send time="125" bytes="37" elapseTime="5">
+<Check codeErr="2032" codeErr2="2046" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Entering in extended session</RequestName>
+<Send time="141" bytes="1003" elapseTime="9">
+<Check startbytes="5003003201F4" />
+<Receive length="6" bytes="5003003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Send a dowload service</RequestName>
+<Send time="165" bytes="340033008000002000" elapseTime="6">
+<Check codeErr="2032" codeErr2="2046" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Send a upload service</RequestName>
+<Send time="185" bytes="36" elapseTime="5">
+<Check codeErr="2032" codeErr2="2046" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Send a TransferData service</RequestName>
+<Send time="204" bytes="37" elapseTime="5">
+<Check codeErr="2032" codeErr2="2046" />
+<Error code="2046" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Exit extended session</RequestName>
+<Send time="222" bytes="1001" elapseTime="10">
+<Check startbytes="5001003201F4" />
+<Receive length="6" bytes="5001003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Stop time="247" /></Resultat>
+  </test>
+  <IdentificationUDS Diagnostic="12" Supplier="DELTA" Application="05DH" Version="233999" Order="292A01997R" Hardware="292A00569R" Tuning="??" vehicleManufacturerKitAssemblyPartNumber="" configurationFileReferenceLink="292B09095R" IndexSrvData="PROTASYMV2">
+<Diagnostic>
+<Error Code="0" Msg="" Send="22F1A0"><Request Send="22F1A0" Receive="62F1A00C" /></Error>
+</Diagnostic>
+<Supplier>
+<Error Code="0" Msg="" Send="22F18A"><Request Send="22F18A" Receive="62F18A44454C5441" /></Error>
+</Supplier>
+<Application>
+<Error Code="0" Msg="" Send="22F194"><Request Send="22F194" Receive="62F19430354448" /></Error>
+</Application>
+<Version>
+<Error Code="0" Msg="" Send="22F195"><Request Send="22F195" Receive="62F195323333393939" /></Error>
+</Version>
+<Order>
+<Error Code="0" Msg="" Send="22F187"><Request Send="22F187" Receive="62F18732393241303139393752" /></Error>
+</Order>
+<Hardware>
+<Error Code="0" Msg="" Send="22F191"><Request Send="22F191" Receive="62F19132393241303035363952" /></Error>
+</Hardware>
+<Tuning>
+<Error Code="0" Msg="" Send="22F182"><Request Send="22F182" Receive="62F1820100" /></Error>
+</Tuning>
+<vehicleManufacturerKitAssemblyPartNumber Number="">
+<Request Send="22F18E" Receive="7F2231" />
+</vehicleManufacturerKitAssemblyPartNumber>
+<configurationFileReferenceLink>
+<Error Code="0" Msg="" Send="22F188"><Request Send="22F188" Receive="62F18832393242303930393552" /></Error>
+</configurationFileReferenceLink>
+<IndexSrvData>
+<Error Code="0" Msg="" Send="22F011"><Request Send="22F011" Receive="62F01150524F544153594D5632" /></Error>
+</IndexSrvData>
+</IdentificationUDS>
+</Scenario>

@@ -1,0 +1,1712 @@
+                           Switch Mode Power Supply
+                                Testing Report
+
+Test Program Name : ECD25010014_204000-FAT-02_DET_06_16       
+Serial No         : DC2303741H101169      System Time  : 2023/12/18 05:12:41 PM 
+Model Name        : ECD25010014           Elapsed Time : 00:02:50 
+Tester Number     :                       Environment  :                      
+Order Number      :                       Inspector    : 5DH_ATE10            
+Customer          :                       Test Result  : PASS  
+
+================================================================================
+STEP.1(UUT Test seq.1) :  ---- (1'953) ------------------------------------ PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.2(UUT Test seq.2) : (Reset All TTL, Relay and set CANB) ---- (2'235) - PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.3(UUT Test seq.3) : (CC Mode Set Load Sense to UUT) ---- (0'016) ----- PASS
+ Load Mode: 0:CC,1:CR,2:CV
+ Voltage Sense: 0:Load,1:UUT
+
+ Load          Load  Voltage  ILoad   VLoad    Von    Rise Rate  Fall Rate
+ Name          Mode   Sense   Max(A)  Max(V)   (V)     (A/us)      (A/us)
+-------------  ----  -------  ------  ------  ------  ---------  ---------
+ Output 1        0      1     300.00   16.00    7.00    0.1000     0.1000 
+
+ Von Action Type (0:None Latch, 1:Latch) = 1 
+
+================================================================================
+STEP.4(UUT Test seq.4) : (Set Load Respond Slow) ---- (0'906) ------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.5(UUT Test seq.5) : (PA1_CH1 setup HV Input) ---- (0'390) ------------ PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.6(UUT Test seq.6) : (DSO Clear) ---- (0'016) ------------------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.7(UUT Test seq.7) : (1.1.2 Pre Test) ---- (0'000) -------------------- PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================
+STEP.8(UUT Test seq.8) : (HV DC Source_On_FK4) ---- (0'110) --------------- PASS
+ Step Test Time (S) :  0'110      
+ Relay           =         4           TTL State           =         1   
+
+================================================================================
+STEP.9(UUT Test seq.9) : (LV DC Source_On_FK5) ---- (0'516) --------------- PASS
+ Step Test Time (S) :  0'516      
+ Relay           =         5           TTL State           =         1   
+
+================================================================================
+STEP.10(UUT Test seq.10) : (1.1.2.5 LV Source 11V/3A) ---- (2'015) -------- PASS
+Step Test Time (S) : 2'015           
+
+Index             : 1  
+Vin               : 11.00    
+Iin               :  3.00     
+State(On=1/Off=0) :  1   
+Delay Time(mS)    : 2000.00 
+ 
+================================================================================
+STEP.11(UUT Test seq.11) : (Stop CAN Message) ---- (0'250) ---------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.12(UUT Test seq.12) : (CAN Message Setting) ---- (8'750) ------------- PASS
+Step Test Time (S) = 8'750                            
+
+Conditions: 
+-------------------------------------------
+UDS Tx ID :   18DADDF1  
+UDS Rx ID :   18DAF1DD 
+
+DCDC::rn18_voltRegulation_v3          :    14    
+DCDC::rn2_voltRegulation              :  14  
+DCDC::rn4_dcActivation                :   1  
+DCDC::rn4_GADE_HV                     :   0  
+DCDC::rn4_HEVC_WakeUpSleepCommand     :   3  
+DCDC::rn6_AbsoluteTimeSince1rstIgn_HV :   0 
+DCDC::rn6_DistanceTotalizer_HV        :   0 
+      
+================================================================================
+STEP.13(UUT Test seq.13) : (Activate Debug Mode) ---- (1'203) ------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.14(UUT Test seq.14) : (1.1.3 Stby Current, Signal and State Check  ) - PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================
+STEP.15(UUT Test seq.15) : (DUT Status check) ---- (0'015) ---------------- PASS
+Step Test Time (S) : 0'015            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  1          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      1        1     
+DCDC_Fault_Type =      1        0 
+
+================================================================================
+STEP.16(UUT Test seq.16) : (((DA002 ) standby current) ---- (2'094) ------- PASS
+Step Test Time (S) =  2'094         
+
+Sleep Current(mA)         :Min     :Reading     :Max     
+----------------------  ---------  ---------  ---------
+Battery Current:          85.000     97.559    120.000 
+
+Message: 0                                         
+
+================================================================================
+STEP.17(UUT Test seq.17) : (1.1.3.4 Check DCDC States) ---- (0'000) ------- PASS
+Step Test Time (S) : 0'000                                
+
+                                         Spec     Reading
+                                        --------  --------
+DCDC_RN2_DCDC_RefusetoSleep           :    2         2             
+DCDC_RN2_DCDC_MajorElecFailureDisplay :    0         0         
+DCDC_RN2_DCDC_ElecSysFailureDisplay   :    0         0      
+
+================================================================================
+STEP.18(UUT Test seq.18) : (1.1.4 Check Firmware Versions ) ---- (0'000) -- PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================
+STEP.19(UUT Test seq.19) : (1.1.4.1 Read Application Version) ---- (0'125)  PASS
+Step Test Time (S) : 0'125           
+
+TX_ID   =   18DADDF1 
+RX_ID   =   18DAF1DD 
+Read_ID =       F195  
+                             Hex:
+-------------------------------------
+Software Version Number =    323034303030 
+LvAppSW_Year            =       3230 
+LvAppSW_Week            =       3430 
+LvAppSW_Version         =       3030 
+   
+                            String:
+-------------------------------------
+LvAppSW_Year_A         =  20  ( 20 )   
+LvAppSW_Week_A         =  40  ( 40 ) 
+LvAppSW_Version_A      =  00  ( 00 )
+
+Message = LvAppSw Year/Week/Version = OK  
+================================================================================
+STEP.20(UUT Test seq.20) : (1.1.4.2 Read Boot Version) ---- (0'172) ------- PASS
+Step Test Time (S) :  0'172       
+  
+TX_ID   =    18DADDF1            
+RX_ID   =    18DAF1DD           
+Read_ID =        F180       
+
+Read Data(Hex) =  
+                                                      013230
+323730302020202020202020202020202020202020202020202020200000
+00000000
+    
+
+FBL_Year_Week_Patch (String) = 202700 ( 202700 )   
+ 
+================================================================================
+STEP.21(UUT Test seq.21) : (1.1.6 Check Temperature Sensors) ---- (0'000) - PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================
+STEP.22(UUT Test seq.22) : (DUT Temperature sensor check) ---- (0'000) ---- PASS
+Step Test Time (S) : 0'000           
+
+Tx ID :   18DADDF1   
+Rx ID :   18DAF1DD 
+
+     Temperature:                    :Min     :Reading     :Max     
+-------------------------------   ---------   ---------   ---------
+DCDC_RN2_DCDCWaterTemp          =    10.00      36.00      60.00                       
+DCDCDev_TxFrame2_DcDc_BoostTemp =    10.00      38.00      60.00 
+DCDCDev_TxFrame2_PrimTemp       =    10.00      37.00      60.00           
+DCDCDev_TxFrame2_RectTemp       =    10.00      37.00      60.00 
+   
+================================================================================
+STEP.23(UUT Test seq.23) : (Send Wakeup) ---- (0'438) --------------------- PASS
+ Step Test Time (S) : 0'438                     
+
+ HEVC_RN4.HEVC_WakeUpSleepCommand :  3 
+ HEVC_RN4.GADE_HV                 :  0 
+ HEVC_RN4.DCDCActivation          :  2 
+
+================================================================================
+STEP.24(UUT Test seq.24) : (CC Mode_Low) ---- (0'000) --------------------- PASS
+ Load Mode: 0:CC,1:CR,2:CV
+ Voltage Sense: 0:Load,1:UUT
+
+ Load          Load  Voltage  ILoad   VLoad    Von    Rise Rate  Fall Rate
+ Name          Mode   Sense   Max(A)  Max(V)   (V)     (A/us)      (A/us)
+-------------  ----  -------  ------  ------  ------  ---------  ---------
+ Output 1        0      1     300.00   16.00    7.00    0.1000     0.1000 
+
+ Von Action Type (0:None Latch, 1:Latch) = 1 
+
+================================================================================
+STEP.25(UUT Test seq.25) : (LV_DC Source 11V/3A) ---- (0'516) ------------- PASS
+Step Test Time (S) : 0'516           
+
+Index             : 1   
+Vin               : 11.00     
+Iin               :  3.00      
+Delay Time(mS)    :  500.00  
+ 
+================================================================================
+STEP.26(UUT Test seq.26) : (Enable debug Mode) ---- (1'156) --------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.27(UUT Test seq.27) : (HV_DC Source 225V/22A) ---- (0'515) ----------- PASS
+Step Test Time (S) : 0'515           
+
+Index          : 2 
+Vin            : 225.00  
+Iin            :  22.00   
+Delay Time(ms) :  500.00 
+ 
+================================================================================
+STEP.28(UUT Test seq.28) : (Set Vout = 14V) ---- (2'266) ------------------ PASS
+Step Test Time (S) : 2'266           
+
+rn4_dcActivation           :  2 
+DCDCState                  :  2 
+rn18_voltRegulation_v3     :  14.00  
+rn18_voltRegulation_v3_Max :  17.17   
+rn18_voltRegulation_v3_Min :  10.80   
+
+DCDCState(Read) =   1  
+
+================================================================================
+STEP.29(UUT Test seq.29) : (1.1.12 Check Temperature Sensors after Calibrat PASS
+ Step Test Time (S) :  2'000            
+
+================================================================================
+STEP.30(UUT Test seq.30) : (DUT Temperature sensor check) ---- (0'000) ---- PASS
+Step Test Time (S) : 0'000           
+
+Tx ID :   18DADDF1   
+Rx ID :   18DAF1DD 
+
+     Temperature:                    :Min     :Reading     :Max     
+-------------------------------   ---------   ---------   ---------
+DCDC_RN2_DCDCWaterTemp          =    10.00      36.00      60.00                       
+DCDCDev_TxFrame2_DcDc_BoostTemp =    10.00      38.00      60.00 
+DCDCDev_TxFrame2_PrimTemp       =    10.00      37.00      60.00           
+DCDCDev_TxFrame2_RectTemp       =    10.00      37.00      60.00 
+   
+================================================================================
+STEP.31(UUT Test seq.31) : (HV_DC Source 225V/22A) ---- (2'016) ----------- PASS
+Step Test Time (S) : 2'016           
+
+Index          : 2 
+Vin            : 225.00  
+Iin            :  22.00   
+Delay Time(ms) : 2000.00 
+ 
+================================================================================
+STEP.32(UUT Test seq.32) : (LV_DC Source 10V/3A) ---- (1'015) ------------- PASS
+Step Test Time (S) : 1'015           
+
+Index             : 1   
+Vin               : 10.00     
+Iin               :  3.00      
+Delay Time(mS)    : 1000.00  
+ 
+================================================================================
+STEP.33(UUT Test seq.33) : (3000ms) ---- (2'000) -------------------------- PASS
+ Step Test Time (S) :  2'000            
+
+================================================================================
+STEP.34(UUT Test seq.34) : (DUT Status check) ---- (0'000) ---------------- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.35(UUT Test seq.35) : (DUT Status check= NO_ALERT) ---- (0'000) ------ PASS
+Step Test Time (S) : 0'000                                
+
+                                         Spec     Reading
+                                        --------  --------
+DCDC_RN2_DCDC_RefusetoSleep           :    1         1             
+DCDC_RN2_DCDC_MajorElecFailureDisplay :    0         0         
+DCDC_RN2_DCDC_ElecSysFailureDisplay   :    0         0      
+
+================================================================================
+STEP.36(UUT Test seq.36) : (1.1.15 Readings: Input=225VDC, Output=14V@160A) PASS
+Step Test Time (S) = 4'640             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   225.00 
+Delay Times    (mS) =   500.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp           160.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        220.00        224.91      230.00                                       
+ Iin      (A)        ******         11.41      ******       
+ Vout     (V)         13.70         13.97       14.30                                            
+ Iout     (A)        ******        160.00      ******       
+ Pin      (W)       *******       2566.00     *******                                                  
+ Pout     (W)       *******       2235.63     *******                                                
+ Eff      (%)        ******         87.13      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     224.50    224.91         -5.00       0.41         5.00                                                                
+ Iin      (A)      11.47     11.41         -2.00      -0.06         2.00                               
+ Vout     (V)      14.00     13.97         -0.30      -0.03         0.30                                                                  
+ Iout     (A)     160.00    160.00        -15.00      -0.00        15.00                                 
+ Pin      (W)     2575.02   2566.00      *******      -9.02      *******                                                                           
+ Pout     (W)     2240.00   2235.63      *******      -4.37      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.37(UUT Test seq.37) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.38(UUT Test seq.38) : (((DA018) Read HV_I_Diff) ---- (0'109) --------- PASS
+
+HV_I_Diff =  -0.061        
+HV_V_Diff =  0.410        
+Eff       =  87.125               
+LV_I_Diff =  -0.003                 
+LV_V_Diff =  -0.027      
+================================================================================
+STEP.39(UUT Test seq.39) : ((DA019) Read HV_V_Diff) ---- (0'109) ---------- PASS
+
+HV_I_Diff =  -0.061        
+HV_V_Diff =  0.410        
+Eff       =  87.125               
+LV_I_Diff =  -0.003                 
+LV_V_Diff =  -0.027      
+================================================================================
+STEP.40(UUT Test seq.40) : ((DA022) Read Efficiency) ---- (0'109) --------- PASS
+
+HV_I_Diff =  -0.061        
+HV_V_Diff =  0.410        
+Eff       =  87.125               
+LV_I_Diff =  -0.003                 
+LV_V_Diff =  -0.027      
+================================================================================
+STEP.41(UUT Test seq.41) : ((DA023) Read LV_V_Diff) ---- (0'109) ---------- PASS
+
+HV_I_Diff =  -0.061        
+HV_V_Diff =  0.410        
+Eff       =  87.125               
+LV_I_Diff =  -0.003                 
+LV_V_Diff =  -0.027      
+================================================================================
+STEP.42(UUT Test seq.42) : ((DA024) Read LV_I_Diff) ---- (0'109) ---------- PASS
+
+HV_I_Diff =  -0.061        
+HV_V_Diff =  0.410        
+Eff       =  87.125               
+LV_I_Diff =  -0.003                 
+LV_V_Diff =  -0.027      
+================================================================================
+STEP.43(UUT Test seq.43) : (1.1.20 Readings: Input=345VDC, Output=14V@17.6A PASS
+Step Test Time (S) = 2'828             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   345.00 
+Delay Times    (mS) =   500.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            17.60  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        343.00        344.89      347.00                                       
+ Iin      (A)          0.20          0.80        1.50       
+ Vout     (V)         13.70         14.07       14.30                                            
+ Iout     (A)         15.00         17.60       20.00       
+ Pin      (W)       *******        275.73     *******                                                  
+ Pout     (W)       *******        247.57     *******                                                
+ Eff      (%)         86.70         89.79       98.00                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     344.70    344.89         -5.00       0.19         5.00                                                                
+ Iin      (A)       0.86      0.80         -2.00      -0.06         2.00                               
+ Vout     (V)      14.00     14.07         -0.30       0.07         0.30                                                                  
+ Iout     (A)      11.00     17.60        -15.00       6.60        15.00                                 
+ Pin      (W)      296.44    275.73      *******     -20.71      *******                                                                           
+ Pout     (W)      154.00    247.57      *******      93.57      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.44(UUT Test seq.44) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.45(UUT Test seq.45) : (1.1.20 Readings: Input=345VDC, Output=14V@52.8A PASS
+Step Test Time (S) = 2'703             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   345.00 
+Delay Times    (mS) =   500.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            52.80  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        343.00        344.89      347.00                                       
+ Iin      (A)          1.00          2.35        3.00       
+ Vout     (V)         13.70         14.04       14.30                                            
+ Iout     (A)         48.00         52.80       55.00       
+ Pin      (W)       *******        811.08     *******                                                  
+ Pout     (W)       *******        741.52     *******                                                
+ Eff      (%)         90.00         91.42       98.00                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     344.70    344.89         -5.00       0.19         5.00                                                                
+ Iin      (A)       2.39      2.35         -2.00      -0.04         2.00                               
+ Vout     (V)      14.00     14.04         -0.30       0.04         0.30                                                                  
+ Iout     (A)      48.00     52.80        -12.00       4.80        12.00                                 
+ Pin      (W)      823.83    811.08      *******     -12.76      *******                                                                           
+ Pout     (W)      672.00    741.52      *******      69.52      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.46(UUT Test seq.46) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.47(UUT Test seq.47) : (1.1.20 Readings: Input=345VDC, Output=14V@105.6 PASS
+Step Test Time (S) = 2'719             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   345.00 
+Delay Times    (mS) =   500.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp           105.60  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        343.00        344.89      347.00                                       
+ Iin      (A)          2.00          4.77        6.00       
+ Vout     (V)         13.70         14.01       14.30                                            
+ Iout     (A)        102.00        105.60      108.00       
+ Pin      (W)       *******       1644.37     *******                                                  
+ Pout     (W)       *******       1479.32     *******                                                
+ Eff      (%)         88.00         89.96       98.00                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     344.70    344.89         -5.00       0.19         5.00                                                                
+ Iin      (A)       4.81      4.77         -2.00      -0.04         2.00                               
+ Vout     (V)      14.00     14.01         -0.30       0.01         0.30                                                                  
+ Iout     (A)      99.00    105.60        -10.00       6.60        10.00                                 
+ Pin      (W)     1658.01   1644.37      *******     -13.64      *******                                                                           
+ Pout     (W)     1386.00   1479.32      *******      93.32      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.48(UUT Test seq.48) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.49(UUT Test seq.49) : (1.1.20 Readings: Input=345VDC, Output=14V@160A) PASS
+Step Test Time (S) = 2'719             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   345.00 
+Delay Times    (mS) =   500.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp           160.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        343.00        344.90      347.00                                       
+ Iin      (A)          4.00          7.39        8.00       
+ Vout     (V)         13.70         13.97       14.30                                            
+ Iout     (A)        155.00        160.00      165.00       
+ Pin      (W)       *******       2549.95     *******                                                  
+ Pout     (W)       *******       2235.60     *******                                                
+ Eff      (%)         86.00         87.67       98.00                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     344.50    344.90         -5.00       0.40         5.00                                                                
+ Iin      (A)       7.42      7.39         -2.00      -0.03         2.00                               
+ Vout     (V)      14.00     13.97         -0.30      -0.03         0.30                                                                  
+ Iout     (A)     160.00    160.00        -10.00      -0.00        10.00                                 
+ Pin      (W)     2556.19   2549.95      *******      -6.24      *******                                                                           
+ Pout     (W)     2240.00   2235.60      *******      -4.40      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.50(UUT Test seq.50) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.51(UUT Test seq.51) : (1.1.23 Set DCDC Output Voltage 15V) ---- (2'250 PASS
+Step Test Time (S) : 2'250           
+
+rn4_dcActivation           :  2 
+DCDCState                  :  2 
+rn18_voltRegulation_v3     :  15.00  
+rn18_voltRegulation_v3_Max :  17.17   
+rn18_voltRegulation_v3_Min :  10.80   
+
+DCDCState(Read) =   2  
+
+================================================================================
+STEP.52(UUT Test seq.52) : (5DH defaultvoltage test) ---- (1'625) --------- PASS
+Step Test Time (S) = 1'625             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   345.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            40.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        343.00        344.90      347.00                                       
+ Iin      (A)        ******          1.90      ******       
+ Vout     (V)         14.70         15.06       15.30                                            
+ Iout     (A)        ******         40.00      ******       
+ Pin      (W)       *******        655.34     *******                                                  
+ Pout     (W)       *******        602.23     *******                                                
+ Eff      (%)        ******         91.90      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     344.70    344.90         -5.00       0.00         5.00                                                                
+ Iin      (A)       1.97      1.90         -2.00       0.00         2.00                               
+ Vout     (V)      15.00     15.06         -0.30       0.00         0.30                                                                  
+ Iout     (A)      29.00     40.00        -15.00       0.00        15.00                                 
+ Pin      (W)      679.06    655.34      *******       0.00      *******                                                                           
+ Pout     (W)      435.00    602.23      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.53(UUT Test seq.53) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.54(UUT Test seq.54) : (1.1.23 Set DCDC Output Voltage 16.2V) ---- (2'2 PASS
+Step Test Time (S) : 2'250           
+
+rn4_dcActivation           :  2 
+DCDCState                  :  2 
+rn18_voltRegulation_v3     :  16.20  
+rn18_voltRegulation_v3_Max :  17.17   
+rn18_voltRegulation_v3_Min :  10.80   
+
+DCDCState(Read) =   2  
+
+================================================================================
+STEP.55(UUT Test seq.55) : (1.1.20 Readings: Input=345VDC, Output=16.2V@40A PASS
+Step Test Time (S) = 1'610             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   345.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            40.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        343.00        344.89      347.00                                       
+ Iin      (A)        ******          1.82      ******       
+ Vout     (V)         14.00         14.35       14.60                                            
+ Iout     (A)        ******         40.00      ******       
+ Pin      (W)       *******        626.56     *******                                                  
+ Pout     (W)       *******        574.14     *******                                                
+ Eff      (%)        ******         91.63      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     344.70    344.89         -5.00       0.00         5.00                                                                
+ Iin      (A)       1.90      1.82         -2.00       0.00         2.00                               
+ Vout     (V)      14.30     14.35         -0.30       0.00         0.30                                                                  
+ Iout     (A)      32.00     40.00        -15.00       0.00        15.00                                 
+ Pin      (W)      654.93    626.56      *******       0.00      *******                                                                           
+ Pout     (W)      457.60    574.14      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.56(UUT Test seq.56) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.57(UUT Test seq.57) : (Load Off) ---- (0'000) ------------------------ PASS
+ Step Test Time (S) :  0'000                    
+ Load Output State  =  0 (0:Off 1:On)
+
+================================================================================
+STEP.58(UUT Test seq.58) : (HV Source140V/22A) ---- (2'032) --------------- PASS
+Step Test Time (S) : 2'032           
+
+Index          : 2 
+Vin            : 140.00  
+Iin            :  25.00   
+Delay Time(ms) : 2000.00 
+ 
+================================================================================
+STEP.59(UUT Test seq.59) : (1.1.19 Readings: Input=140VDC, Output=14V@120A  PASS
+Step Test Time (S) = 1'609             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   140.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp           120.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        139.00        139.90      141.00                                       
+ Iin      (A)        ******         13.90      ******       
+ Vout     (V)         13.70         14.30       14.50                                            
+ Iout     (A)        ******        120.00      ******       
+ Pin      (W)       *******       1944.19     *******                                                  
+ Pout     (W)       *******       1716.00     *******                                                
+ Eff      (%)        ******         88.26      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     139.70    139.90         -2.00       0.00         2.00                                                                
+ Iin      (A)      13.92     13.90         -2.00       0.00         2.00                               
+ Vout     (V)      14.30     14.30         -0.30       0.00         0.30                                                                  
+ Iout     (A)     113.00    120.00        -15.00       0.00        15.00                                 
+ Pin      (W)     1944.62   1944.19      *******       0.00      *******                                                                           
+ Pout     (W)     1615.90   1716.00      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.60(UUT Test seq.60) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.61(UUT Test seq.61) : (1.1.20 Readings: Input=420VDC, Output=14V@155A  PASS
+Step Test Time (S) = 1'610             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   420.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp           155.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        419.00        419.91      421.00                                       
+ Iin      (A)        ******          5.93      ******       
+ Vout     (V)         13.70         14.28       14.50                                            
+ Iout     (A)        ******        155.00      ******       
+ Pin      (W)       *******       2490.70     *******                                                  
+ Pout     (W)       *******       2212.69     *******                                                
+ Eff      (%)        ******         88.84      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     419.60    419.91         -2.00       0.00         2.00                                                                
+ Iin      (A)       5.98      5.93         -2.00       0.00         2.00                               
+ Vout     (V)      14.30     14.28         -0.30       0.00         0.30                                                                  
+ Iout     (A)     153.00    155.00        -15.00       0.00        15.00                                 
+ Pin      (W)     2509.21   2490.70      *******       0.00      *******                                                                           
+ Pout     (W)     2187.90   2212.69      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.62(UUT Test seq.62) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.63(UUT Test seq.63) : (1.1.21 Readings: Input=420VDC, Output=14V@80A   PASS
+Step Test Time (S) = 1'609             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   420.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            80.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        419.00        419.92      421.00                                       
+ Iin      (A)        ******          2.99      ******       
+ Vout     (V)         13.70         14.33       14.50                                            
+ Iout     (A)        ******         80.00      ******       
+ Pin      (W)       *******       1256.06     *******                                                  
+ Pout     (W)       *******       1146.14     *******                                                
+ Eff      (%)        ******         91.25      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     419.70    419.92         -2.00       0.00         2.00                                                                
+ Iin      (A)       3.02      2.99         -2.00       0.00         2.00                               
+ Vout     (V)      14.30     14.33         -0.30       0.00         0.30                                                                  
+ Iout     (A)      72.00     80.00        -15.00       0.00        15.00                                 
+ Pin      (W)     1267.49   1256.06      *******       0.00      *******                                                                           
+ Pout     (W)     1029.60   1146.14      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.64(UUT Test seq.64) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.65(UUT Test seq.65) : (1.1.21 Readings: Input=420VDC, Output=14V@40A   PASS
+Step Test Time (S) = 1'625             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   420.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            40.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        418.00        420.08      422.00                                       
+ Iin      (A)        ******          1.49      ******       
+ Vout     (V)         13.70         14.36       14.50                                            
+ Iout     (A)        ******         40.00      ******       
+ Pin      (W)       *******        623.90     *******                                                  
+ Pout     (W)       *******        574.18     *******                                                
+ Eff      (%)        ******         92.03      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     419.70    420.08         -2.00       0.00         2.00                                                                
+ Iin      (A)       1.55      1.49         -2.00       0.00         2.00                               
+ Vout     (V)      14.30     14.36         -0.30       0.00         0.30                                                                  
+ Iout     (A)      31.00     40.00        -15.00       0.00        15.00                                 
+ Pin      (W)      650.53    623.90      *******       0.00      *******                                                                           
+ Pout     (W)      443.30    574.18      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.66(UUT Test seq.66) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.67(UUT Test seq.67) : (5DH_HV Overvoltage Test) ---- (2'422) --------- PASS
+Step Test Time (S) = 2'422             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   438.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp             0.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        436.00        437.92      440.00                                       
+ Iin      (A)        ******          0.00      ******       
+ Vout     (V)        ******          9.98      ******                                            
+ Iout     (A)        ******          0.00      ******       
+ Pin      (W)       *******          0.24     *******                                                  
+ Pout     (W)       *******          0.00     *******                                                
+ Eff      (%)        ******          0.00      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     437.90    437.92         -2.00       0.00         2.00                                                                
+ Iin      (A)       0.07      0.00         -2.00       0.00         2.00                               
+ Vout     (V)       9.86      9.98         -0.30       0.00         0.30                                                                  
+ Iout     (A)       0.00      0.00        -15.00       0.00        15.00                                 
+ Pin      (W)        0.00      0.24      *******       0.00      *******                                                                           
+ Pout     (W)        0.00      0.00      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.68(UUT Test seq.68) : (DUT Status check DCDCState = 1) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      1        1     
+DCDC_Fault_Type =      1        0 
+
+================================================================================
+STEP.69(UUT Test seq.69) : (Load Off) ---- (0'000) ------------------------ PASS
+ Step Test Time (S) :  0'000                    
+ Load Output State  =  0 (0:Off 1:On)
+
+================================================================================
+STEP.70(UUT Test seq.70) : (HV Source140V/22A) ---- (2'015) --------------- PASS
+Step Test Time (S) : 2'015           
+
+Index          : 2 
+Vin            : 140.00  
+Iin            :  25.00   
+Delay Time(ms) : 2000.00 
+ 
+================================================================================
+STEP.71(UUT Test seq.71) : (1.1.21 Readings: Input=140VDC, Output=14V@40A   PASS
+Step Test Time (S) = 2'422             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   140.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            40.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        138.00        139.89      142.00                                       
+ Iin      (A)        ******          4.68      ******       
+ Vout     (V)         13.70         14.09       14.50                                            
+ Iout     (A)        ******         40.00      ******       
+ Pin      (W)       *******        654.53     *******                                                  
+ Pout     (W)       *******        563.62     *******                                                
+ Eff      (%)        ******         86.11      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     140.30    139.89         -2.00       0.00         2.00                                                                
+ Iin      (A)       4.70      4.68         -2.00       0.00         2.00                               
+ Vout     (V)      14.30     14.09         -0.30       0.00         0.30                                                                  
+ Iout     (A)      31.00     40.00        -15.00       0.00        15.00                                 
+ Pin      (W)      659.41    654.53      *******       0.00      *******                                                                           
+ Pout     (W)      443.30    563.62      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.72(UUT Test seq.72) : (DUT Status check DCDCState = 2) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.73(UUT Test seq.73) : (5DH_HV Undervoltage Test) ---- (2'437) -------- PASS
+Step Test Time (S) = 2'437             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   102.00 
+Delay Times    (mS) =   200.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp             0.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        101.00        101.93      105.00                                       
+ Iin      (A)        ******         -0.00      ******       
+ Vout     (V)        ******          9.98      ******                                            
+ Iout     (A)        ******          0.00      ******       
+ Pin      (W)       *******         -0.27     *******                                                  
+ Pout     (W)       *******          0.00     *******                                                
+ Eff      (%)        ******         -0.00      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     102.30    101.93         -2.00       0.00         2.00                                                                
+ Iin      (A)       0.09     -0.00         -2.00       0.00         2.00                               
+ Vout     (V)       9.86      9.98         -0.30       0.00         0.30                                                                  
+ Iout     (A)       0.00      0.00        -15.00       0.00        15.00                                 
+ Pin      (W)        0.00     -0.27      *******       0.00      *******                                                                           
+ Pout     (W)        0.00      0.00      *******       0.00      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.74(UUT Test seq.74) : (DUT Status check DCDCState = 1) ---- (0'000) -- PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  0          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      1        1     
+DCDC_Fault_Type =      1        0 
+
+================================================================================
+STEP.75(UUT Test seq.75) : (1.1.28 Check Output Overvoltage detection) ---- PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================
+STEP.76(UUT Test seq.76) : (CC Mode _High) ---- (0'000) ------------------- PASS
+ Load Mode: 0:CC,1:CR,2:CV
+ Voltage Sense: 0:Load,1:UUT
+
+ Load          Load  Voltage  ILoad   VLoad    Von    Rise Rate  Fall Rate
+ Name          Mode   Sense   Max(A)  Max(V)   (V)     (A/us)      (A/us)
+-------------  ----  -------  ------  ------  ------  ---------  ---------
+ Output 1        0      1     300.00   80.00    7.00    0.1000     0.1000 
+
+ Von Action Type (0:None Latch, 1:Latch) = 1 
+
+================================================================================
+STEP.77(UUT Test seq.77) : (Load_Off) ---- (0'000) ------------------------ PASS
+ Step Test Time (S) :  0'000                    
+ Load Output State  =  0 (0:Off 1:On)
+
+================================================================================
+STEP.78(UUT Test seq.78) : (1.1.28 Check Output Overvoltage detection) ---- PASS
+ Step Test Time (S) :  1'000            
+
+================================================================================
+STEP.79(UUT Test seq.79) : (Set DCDC Output Voltage 14V) ---- (2'266) ----- PASS
+Step Test Time (S) : 2'266           
+
+rn4_dcActivation           :  2 
+DCDCState                  :  2 
+rn18_voltRegulation_v3     :  14.00  
+rn18_voltRegulation_v3_Max :  17.17   
+rn18_voltRegulation_v3_Min :  10.80   
+
+DCDCState(Read) =   1  
+
+================================================================================
+STEP.80(UUT Test seq.80) : (3000ms) ---- (3'000) -------------------------- PASS
+ Step Test Time (S) :  3'000            
+
+================================================================================
+STEP.81(UUT Test seq.81) : (345V/22A) ---- (1'000) ------------------------ PASS
+Step Test Time (S) : 1'000           
+
+Index          : 2 
+Vin            : 345.00  
+Iin            :  22.00   
+Delay Time(ms) : 1000.00 
+ 
+================================================================================
+STEP.82(UUT Test seq.82) : (*** Read and Verify LV Vout Before_OVP test***) PASS
+Step Test Time (S) = 3'625             
+
+Conditions:
+------------------------------------------------------------
+Vin           (Vdc) =  345.00 
+Delay Times    (mS) =  2000.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp             1.00  
+
+
+Results:
+------------------------------------------------------------
+
+HV Input Voltage:(Vdc)    :Min     :Reading     :Max     
+----------------------  ---------  ---------  ---------
+External Reading =        340.000    344.910    350.000      
+CAN Reading      =                   344.700 
+Difference       =        *******      0.000    ******* 
+
+HV Input Current:(Adc)    :Min     :Reading     :Max   
+----------------------  ---------  ---------  ---------
+External Reading =        *******     0.138     *******   
+CAN Reading      =                    0.200 
+Difference       =        *******     0.000     ******* 
+
+LV Output Voltage:(Vdc)   :Min     :Reading     :Max       
+----------------------  ---------  ---------  ---------
+External Reading =         13.000    13.817      15.000 
+CAN Reading      =                   14.000 
+Difference       =        *******     0.000     ******* 
+
+LV Output Current:(Adc)   :Min      :Reading     :Max   
+----------------------  ---------  ---------  ---------
+External Reading =        *******      0.998     ******* 
+CAN Reading      =                     0.000 
+Difference       =        *******      0.000     ******* 
+       
+================================================================================
+STEP.83(UUT Test seq.83) : (1.1.33.3 Check DCDC States = DirectMode) ---- ( PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  1          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      2        2     
+DCDC_Fault_Type =      2        0 
+
+================================================================================
+STEP.84(UUT Test seq.84) : (1.1.33.4 Check DCDCSignaling = NO_ALERT) ---- ( PASS
+Step Test Time (S) : 0'000                                
+
+                                         Spec     Reading
+                                        --------  --------
+DCDC_RN2_DCDC_RefusetoSleep           :    1         1             
+DCDC_RN2_DCDC_MajorElecFailureDisplay :    0         0         
+DCDC_RN2_DCDC_ElecSysFailureDisplay   :    0         0      
+
+================================================================================
+STEP.85(UUT Test seq.85) : (24.5V/3A) ---- (2'000) ------------------------ PASS
+Step Test Time (S) : 2'000           
+
+Index             : 1   
+Vin               : 24.50     
+Iin               :  3.00      
+Delay Time(mS)    : 2000.00  
+ 
+================================================================================
+STEP.86(UUT Test seq.86) : (1.1.33.6 Read and Verify LVDC Output Voltage 34 PASS
+Step Test Time (S) = 3'594             
+
+Conditions:
+------------------------------------------------------------
+Vin           (Vdc) =  345.00 
+Delay Times    (mS) =  2000.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp             1.00  
+
+
+Results:
+------------------------------------------------------------
+
+HV Input Voltage:(Vdc)    :Min     :Reading     :Max     
+----------------------  ---------  ---------  ---------
+External Reading =        *******    344.920    *******      
+CAN Reading      =                   344.700 
+Difference       =        *******      0.000    ******* 
+
+HV Input Current:(Adc)    :Min     :Reading     :Max   
+----------------------  ---------  ---------  ---------
+External Reading =        *******     0.003     *******   
+CAN Reading      =                    0.100 
+Difference       =        *******     0.000     ******* 
+
+LV Output Voltage:(Vdc)   :Min     :Reading     :Max       
+----------------------  ---------  ---------  ---------
+External Reading =         24.000    24.446      25.000 
+CAN Reading      =                   24.130 
+Difference       =        *******     0.000     ******* 
+
+LV Output Current:(Adc)   :Min      :Reading     :Max   
+----------------------  ---------  ---------  ---------
+External Reading =        *******      0.998     ******* 
+CAN Reading      =                     0.000 
+Difference       =        *******      0.000     ******* 
+       
+================================================================================
+STEP.87(UUT Test seq.87) : (1.1.33.7 Check DCDC States = Stanby) ---- (0'00 PASS
+Step Test Time (S) : 0'000            
+
+DCDCState_Check       =  0   
+DCDC_Fault_Type_Check =  1          
+
+                     Spec    Reading
+                   --------  --------
+DCDCState       =      1        1     
+DCDC_Fault_Type =      1        0 
+
+================================================================================
+STEP.88(UUT Test seq.88) : (1.1.33.8 Check DCDCSignaling = NO_ALERT) ---- ( PASS
+Step Test Time (S) : 0'000                                
+
+                                         Spec     Reading
+                                        --------  --------
+DCDC_RN2_DCDC_RefusetoSleep           :    2         2             
+DCDC_RN2_DCDC_MajorElecFailureDisplay :    0         0         
+DCDC_RN2_DCDC_ElecSysFailureDisplay   :    0         0      
+
+================================================================================
+STEP.89(UUT Test seq.89) : (12V/3A) ---- (2'015) -------------------------- PASS
+Step Test Time (S) : 2'015           
+
+Index             : 1   
+Vin               : 12.00     
+Iin               :  3.00      
+Delay Time(mS)    : 2000.00  
+ 
+================================================================================
+STEP.90(UUT Test seq.90) : (*** Read and Verify LV Vout After_OVP test***)  PASS
+Step Test Time (S) = 3'563             
+
+Conditions:
+------------------------------------------------------------
+Vin           (Vdc) =  345.00 
+Delay Times    (mS) =  2000.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp             1.00  
+
+
+Results:
+------------------------------------------------------------
+
+HV Input Voltage:(Vdc)    :Min     :Reading     :Max     
+----------------------  ---------  ---------  ---------
+External Reading =        *******    344.910    *******      
+CAN Reading      =                   344.700 
+Difference       =        *******      0.000    ******* 
+
+HV Input Current:(Adc)    :Min     :Reading     :Max   
+----------------------  ---------  ---------  ---------
+External Reading =        *******     0.137     *******   
+CAN Reading      =                    0.200 
+Difference       =        *******     0.000     ******* 
+
+LV Output Voltage:(Vdc)   :Min     :Reading     :Max       
+----------------------  ---------  ---------  ---------
+External Reading =         13.000    13.819      15.000 
+CAN Reading      =                   14.000 
+Difference       =        *******     0.000     ******* 
+
+LV Output Current:(Adc)   :Min      :Reading     :Max   
+----------------------  ---------  ---------  ---------
+External Reading =        *******      0.998     ******* 
+CAN Reading      =                     0.000 
+Difference       =        *******      0.000     ******* 
+       
+================================================================================
+STEP.91(UUT Test seq.91) : (1.1.34: Read and verify Input and Bulk Voltage  PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================
+STEP.92(UUT Test seq.92) : (420V/22A) ---- (1'015) ------------------------ PASS
+Step Test Time (S) : 1'015           
+
+Index          : 2 
+Vin            : 420.00  
+Iin            :  22.00   
+Delay Time(ms) : 1000.00 
+ 
+================================================================================
+STEP.93(UUT Test seq.93) : (1.1.34.4 Read and verify Input Voltage 420VDC ) PASS
+Step Test Time (S) = 5'578             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   420.00 
+Delay Times    (mS) =  1000.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            10.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        419.00        419.91      421.00                                       
+ Iin      (A)        ******          0.38      ******       
+ Vout     (V)        ******         14.07      ******                                            
+ Iout     (A)        ******         10.00      ******       
+ Pin      (W)       *******        157.98     *******                                                  
+ Pout     (W)       *******        140.71     *******                                                
+ Eff      (%)        ******         89.07      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     419.70    419.91         -3.00       0.21         3.00                                                                
+ Iin      (A)       0.48      0.38       *******      -0.10      *******                               
+ Vout     (V)      14.00     14.07       *******       0.07      *******                                                                  
+ Iout     (A)       0.00     10.00       *******      10.00      *******                                 
+ Pin      (W)      201.46    157.98      *******     -43.47      *******                                                                           
+ Pout     (W)        0.00    140.71      *******     140.71      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.94(UUT Test seq.94) : (1.1.34.5 Read and verify Bulk Voltage 420VDC )  PASS
+Step Test Time (S) = 5'625             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   420.00 
+Delay Times    (mS) =  1000.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            10.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        419.00        419.91      421.00                                       
+ Iin      (A)        ******          0.38      ******       
+ Vout     (V)        ******         14.08      ******                                            
+ Iout     (A)        ******         10.00      ******       
+ Pin      (W)       *******        157.80     *******                                                  
+ Pout     (W)       *******        140.72     *******                                                
+ Eff      (%)        ******         89.18      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     419.70    419.91         -3.00       0.21         3.00                                                                
+ Iin      (A)       0.47      0.38       *******      -0.09      *******                               
+ Vout     (V)      14.00     14.08       *******       0.08      *******                                                                  
+ Iout     (A)       0.00     10.00       *******      10.00      *******                                 
+ Pin      (W)      197.26    157.80      *******     -39.46      *******                                                                           
+ Pout     (W)        0.00    140.72      *******     140.72      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.95(UUT Test seq.95) : (140V/22A) ---- (2'000) ------------------------ PASS
+Step Test Time (S) : 2'000           
+
+Index          : 2 
+Vin            : 140.00  
+Iin            :  22.00   
+Delay Time(ms) : 2000.00 
+ 
+================================================================================
+STEP.96(UUT Test seq.96) : (1.1.34.9 Read and verify Input Voltage 140VDC ) PASS
+Step Test Time (S) = 5'625             
+
+Conditions:
+-------------------------------------------------------------------------
+Vin           (Vdc) =   140.00 
+Delay Times    (mS) =  1000.00 
+
+Load          Loading
+Name         (A/Ohm/V)
+--------     ----------
+Outp            10.00  
+
+Results:
+---------------------------------------------------------------
+   Reading        Min(System)     System    Max(System)   
+---------------   ----------    ---------  -----------                                        
+ Vin      (V)        139.00        139.90      141.00                                       
+ Iin      (A)        ******          1.17      ******       
+ Vout     (V)        ******         14.07      ******                                            
+ Iout     (A)        ******         10.00      ******       
+ Pin      (W)       *******        163.33     *******                                                  
+ Pout     (W)       *******        140.71     *******                                                
+ Eff      (%)        ******         86.15      ******                        
+---------------------------------------------------------------
+Results:
+----------------------------------------------------
+   Reading        CAN       System         Min     Difference      Max
+---------------  ---------  ---------   ---------  ----------   ---------                                         
+ Vin      (V)     140.30    139.90         -3.00      -0.40         3.00                                                                
+ Iin      (A)       1.26      1.17       *******      -0.09      *******                               
+ Vout     (V)      14.00     14.07       *******       0.07      *******                                                                  
+ Iout     (A)       7.00     10.00       *******       3.00      *******                                 
+ Pin      (W)      176.78    163.33      *******     -13.44      *******                                                                           
+ Pout     (W)       98.00    140.71      *******      42.71      *******                                                                               
+                                                                                              
+ Message: Final                                       
+================================================================================
+STEP.97(UUT Test seq.97) : (1.1.35 Test Group: Check Temperature Sensors At PASS
+ Step Test Time (S) :  1'000            
+
+================================================================================
+STEP.98(UUT Test seq.98) : (DUT Temperature sensor check) ---- (0'000) ---- PASS
+Step Test Time (S) : 0'000           
+
+Tx ID :   18DADDF1   
+Rx ID :   18DAF1DD 
+
+     Temperature:                    :Min     :Reading     :Max     
+-------------------------------   ---------   ---------   ---------
+DCDC_RN2_DCDCWaterTemp          =    10.00      38.00      60.00                       
+DCDCDev_TxFrame2_DcDc_BoostTemp =    10.00      41.00      60.00 
+DCDCDev_TxFrame2_PrimTemp       =    10.00      41.00      60.00           
+DCDCDev_TxFrame2_RectTemp       =    10.00      41.00      60.00 
+   
+================================================================================
+STEP.99(UUT Test seq.99) : (1.1.36 Test Group: Check HVDC Input Passive Dis PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================
+STEP.100(UUT Test seq.100) : (Load_Off) ---- (0'015) ---------------------- PASS
+ Step Test Time (S) :  0'015                    
+ Load Output State  =  0 (0:Off 1:On)
+
+================================================================================
+STEP.101(UUT Test seq.101) : (HV Source_Off) ---- (2'015) ----------------- PASS
+Step Test Time (S) : 2'015           
+
+Index          : 2 
+Vin            : 420.00  
+Iin            :  22.00   
+Delay Time(ms) : 2000.00 
+ 
+================================================================================
+STEP.102(UUT Test seq.102) : (LV DC Source_Off_FK5) ---- (0'110) ---------- PASS
+ Step Test Time (S) :  0'110      
+ Relay           =         5           TTL State           =         0   
+
+================================================================================
+STEP.103(UUT Test seq.103) : (DSO Setup For HV Discharge) ---- (2'657) ---- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.104(UUT Test seq.104) : (420V/22A) ---- (5'016) ---------------------- PASS
+Step Test Time (S) : 5'016           
+
+Index          : 2 
+Vin            : 420.00  
+Iin            :  22.00   
+Delay Time(ms) : 5000.00 
+ 
+================================================================================
+STEP.105(UUT Test seq.105) : (1.1.36.3 Check when HVDC_INput < 60VDC) ----  PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================
+STEP.106(UUT Test seq.106) : (Load_Off) ---- (0'000) ---------------------- PASS
+ Step Test Time (S) :  0'000                    
+ Load Output State  =  0 (0:Off 1:On)
+
+================================================================================
+STEP.107(UUT Test seq.107) : (HV DC Source_Off_FK4) ---- (5'015) ---------- PASS
+ Step Test Time (S) :  5'015      
+ Relay           =         4           TTL State           =         0   
+
+================================================================================
+STEP.108(UUT Test seq.108) : (HVDC_INput < 60VDC) ---- (1'031) ------------ PASS
+Conditions:
+Measurement Type:10  
+
+Result: 
+------------------------------------   
+   Min        Reading      Max
+ ---------   ---------   ---------
+   0.0000      0.4001     60.0000     
+           
+================================================================================
+STEP.109(UUT Test seq.109) : (1.1.15 Test Group: Write Lable Data) ---- (3' PASS
+ Step Test Time (S) :  3'000            
+
+================================================================================
+STEP.110(UUT Test seq.110) : (LV DC Source_On_FK5) ---- (0'515) ----------- PASS
+ Step Test Time (S) :  0'515      
+ Relay           =         5           TTL State           =         1   
+
+================================================================================
+STEP.111(UUT Test seq.111) : (LV Source 11V/3A) ---- (2'031) -------------- PASS
+Step Test Time (S) : 2'031           
+
+Index             : 1  
+Vin               : 11.00    
+Iin               :  3.00     
+State(On=1/Off=0) :  1   
+Delay Time(mS)    : 2000.00 
+ 
+================================================================================
+STEP.112(UUT Test seq.112) : (Enable debug Mode) ---- (1'141) ------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.113(UUT Test seq.113) : (2000ms) ---- (2'016) ------------------------ PASS
+ Step Test Time (S) :  2'016            
+
+================================================================================
+STEP.114(UUT Test seq.114) : (Send Sleep) ---- (0'375) -------------------- PASS
+ Step Test Time (S) : 0'375                     
+
+ HEVC_RN4.HEVC_WakeUpSleepCommand :  0 
+ HEVC_RN4.GADE_HV                 :  0 
+ HEVC_RN4.DCDCActivation          :  1 
+
+================================================================================
+STEP.115(UUT Test seq.115) : (1000ms) ---- (1'000) ------------------------ PASS
+ Step Test Time (S) :  1'000            
+
+================================================================================
+STEP.116(UUT Test seq.116) : (Stop CAN Message) ---- (0'250) -------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.117(UUT Test seq.117) : (Checks Sleep) ---- (5'156) ------------------ PASS
+Step Test Time (S) =  5'156         
+
+Sleep Current(mA)         :Min     :Reading     :Max     
+----------------------  ---------  ---------  ---------
+Battery Current:           0.000      0.000       5.000  
+
+Message: 0                                         
+
+================================================================================
+STEP.118(UUT Test seq.118) : (LV_Off) ---- (0'000) ------------------------ PASS
+Step Test Time (S) : 0'000           
+
+Index             : 1   
+Vin               :  0.00     
+Iin               :  3.00      
+Delay Time(mS)    :    0.00  
+ 
+================================================================================
+STEP.119(UUT Test seq.119) : (3000ms) ---- (3'000) ------------------------ PASS
+ Step Test Time (S) :  3'000            
+
+================================================================================
+STEP.120(UUT Test seq.120) : (LV Source 11V,3A) ---- (1'000) -------------- PASS
+Step Test Time (S) : 1'000           
+
+Index             : 1   
+Vin               : 11.00     
+Iin               :  3.00      
+Delay Time(mS)    : 1000.00  
+ 
+================================================================================
+STEP.121(UUT Test seq.121) : (Send Wakeup) ---- (0'375) ------------------- PASS
+ Step Test Time (S) : 0'375                     
+
+ HEVC_RN4.HEVC_WakeUpSleepCommand :  3 
+ HEVC_RN4.GADE_HV                 :  0 
+ HEVC_RN4.DCDCActivation          :  2 
+
+================================================================================
+STEP.122(UUT Test seq.122) : (2000ms) ---- (2'000) ------------------------ PASS
+ Step Test Time (S) :  2'000            
+
+================================================================================
+STEP.123(UUT Test seq.123) : (Enable debug Mode) ---- (1'203) ------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.124(UUT Test seq.124) : (1.1.37 Test Group: Sleep Current Test    ) -- PASS
+ Step Test Time (S) :  3'000            
+
+================================================================================
+STEP.125(UUT Test seq.125) : (LV DC Source_On_FK5) ---- (2'000) ----------- PASS
+ Step Test Time (S) :  2'000      
+ Relay           =         5           TTL State           =         1   
+
+================================================================================
+STEP.126(UUT Test seq.126) : (Send Sleep Command) ---- (0'437) ------------ PASS
+ Step Test Time (S) : 0'437                     
+
+ HEVC_RN4.HEVC_WakeUpSleepCommand :  0 
+ HEVC_RN4.GADE_HV                 :  0 
+ HEVC_RN4.DCDCActivation          :  1 
+
+================================================================================
+STEP.127(UUT Test seq.127) : (Stop CAN Message) ---- (0'250) -------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.128(UUT Test seq.128) : (((DA001) Read sleep Current < 2mA.) ---- (2'1 PASS
+Step Test Time (S) =  2'141         
+
+Sleep Current(mA)         :Min     :Reading     :Max     
+----------------------  ---------  ---------  ---------
+Battery Current:           0.000      0.000       2.000  
+
+Message: 0                                         
+
+================================================================================
+STEP.129(UUT Test seq.129) : (LV Source_Off) ---- (0'094) ----------------- PASS
+Step Test Time (S) : 0'094           
+
+Index             : 1   
+Vin               :  0.00     
+Iin               :  3.00      
+Delay Time(mS)    :  100.00  
+ 
+================================================================================
+STEP.130(UUT Test seq.130) : (HV Source_Off) ---- (0'500) ----------------- PASS
+Step Test Time (S) : 0'500           
+
+Index          : 2 
+Vin            :   0.00  
+Iin            :  22.00   
+Delay Time(ms) :  500.00 
+ 
+================================================================================
+STEP.131(UUT Test seq.131) : (Reset All TTL, Relay and set CANB) ---- (2'20 PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.132(UUT Test seq.132) : (Set Load Sense to Load) ---- (0'000) -------- PASS
+ Load Mode: 0:CC,1:CR,2:CV
+ Voltage Sense: 0:Load,1:UUT
+
+ Load          Load  Voltage  ILoad   VLoad    Von    Rise Rate  Fall Rate
+ Name          Mode   Sense   Max(A)  Max(V)   (V)     (A/us)      (A/us)
+-------------  ----  -------  ------  ------  ------  ---------  ---------
+ Output 1        0      0     300.00   16.00    7.00    0.1000     0.1000 
+
+ Von Action Type (0:None Latch, 1:Latch) = 0 
+
+================================================================================
+STEP.133(UUT Test seq.133) :  ---- (1'031) -------------------------------- PASS
+(The Report Format of this Sequence was not found)
+
+================================================================================
+STEP.134(UUT Test seq.134) : (1.1.38 Post Test) ---- (0'000) -------------- PASS
+ Step Test Time (S) :  0'000            
+
+================================================================================

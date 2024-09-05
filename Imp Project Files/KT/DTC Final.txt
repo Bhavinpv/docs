@@ -1,0 +1,29 @@
+
+
+
+
+
+void Systemvoltagelow(int OVC_uKl30){
+    static int Sovc14_TurnOnDelay_ti=0
+	static int Sovc14_TurnOnDelay1_ti=0;
+    if (OVC_uKl30 < Coding_Appl_Read_parameter_KL30UnderVoltThresholdLow()){    // 8.2 
+	++Sovc14_TurnOnDelay_ti;
+	Sovc14_TurnOnDelay1_ti=0;
+        if (Sovc14_TurnOnDelay_ti >Coding_Appl_Read_parameter_KL30UnderVoltDebTime()){       // 70
+	    Sovc14_TurnOnDelay_ti=Coding_Appl_Read_parameter_KL30UnderVoltDebTime();
+            Demwrap_Appl_Write_error_Cl30_LowErrStat(DT_ERRORSTATUS_FAILED);
+	}
+        
+       
+}
+    Sovc14_TurnOnDelay_ti=0;
+   
+    else if (OVC_uKl30 >Coding_Appl_Read_parameter_KL30UnderVoltThresholdHigh() ){          // 8.5
+	++Sovc14_TurnOnDelay1_ti;
+        if (Sovc14_TurnOnDelay1_ti >Coding_Appl_Read_parameter_KL30ValidDebTime()) {
+	    Sovc14_TurnOnDelay1_ti=Coding_Appl_Read_parameter_KL30ValidDebTime();
+            Demwrap_Appl_Write_error_Cl30_LowErrStat(DT_ERRORSTATUS_PASSED);
+	}
+        
+}
+}

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Scenario description="The DID defined in the table of chapter §6 in 36-02-014 --H, shall be reserved for the multiplexed network diagnostic." Date="2023-10-12T22:58:58" ECUname="5DM" dstVersion="4.0.68.0">
+  <test name=" UDS_TST_0046 " methode="2" mode="PointToPoint">
+    <request name="entering in extended session">
+      <Check startbytes="5003003201F4" />
+      <byte min="10" />
+      <byte min="03" />
+    </request>
+    <request name="Write the range EF90 - EF9F" req="REQ_DIAG_Application_0030">
+      <Check codeErr="2048" />
+      <byte min="2E" />
+      <byte min="EF" />
+      <byte min="90" max="9F" />
+      <byte min="00" />
+    </request>
+    <request name="Write the range EFBB - EFC0" req="REQ_DIAG_Application_0030">
+      <Check codeErr="2048" />
+      <byte min="2E" />
+      <byte min="EF" />
+      <byte min="BB" max="C0" />
+      <byte min="00" />
+    </request>
+    <request name="Exit extended session">
+      <Check startbytes="5001003201F4" />
+      <byte min="10" />
+      <byte min="01" />
+    </request>
+    <Configuration>
+      <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+      <DSTPack>03. DST newpack</DSTPack>
+      <ECU>
+        <Name>BCB</Name>
+        <Address>103</Address>
+        <Protocol>DiagOnCAN</Protocol>
+        <CANids>
+          <Bus>1</Bus>
+          <Baudrate>500000</Baudrate>
+          <DTOOL-to-ECU>98DADDF1</DTOOL-to-ECU>
+          <ECU-to-DTOOL>98DAF1DD</ECU-to-DTOOL>
+        </CANids>
+      </ECU>
+    </Configuration>
+    <Resultat>
+      <Init time="33" />
+<RequestName>entering in extended session</RequestName>
+<Send time="64" bytes="1003" elapseTime="10">
+<Check startbytes="5003003201F4" />
+<Receive length="6" bytes="5003003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the range EF90 - EF9F</RequestName>
+<Send time="87" bytes="2EEF9000" elapseTime="2259">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2370" bytes="2EEF9100" elapseTime="14">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2405" bytes="2EEF9200" elapseTime="9">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2432" bytes="2EEF9300" elapseTime="12">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2464" bytes="2EEF9400" elapseTime="10">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2490" bytes="2EEF9500" elapseTime="13">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2519" bytes="2EEF9600" elapseTime="4">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2541" bytes="2EEF9700" elapseTime="13">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2568" bytes="2EEF9800" elapseTime="6">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2590" bytes="2EEF9900" elapseTime="4">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2610" bytes="2EEF9A00" elapseTime="16">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2640" bytes="2EEF9B00" elapseTime="5">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2659" bytes="2EEF9C00" elapseTime="6">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2681" bytes="2EEF9D00" elapseTime="13">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2710" bytes="2EEF9E00" elapseTime="4">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2727" bytes="2EEF9F00" elapseTime="38">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Write the range EFBB - EFC0</RequestName>
+<Send time="2778" bytes="2EEFBB00" elapseTime="7">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2798" bytes="2EEFBC00" elapseTime="4">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2819" bytes="2EEFBD00" elapseTime="4">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2840" bytes="2EEFBE00" elapseTime="5">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2859" bytes="2EEFBF00" elapseTime="5">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Send time="2877" bytes="2EEFC000" elapseTime="6">
+<Check codeErr="2048" />
+<Error code="2048" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<RequestName>Exit extended session</RequestName>
+<Send time="2897" bytes="1001" elapseTime="6">
+<Check startbytes="5001003201F4" />
+<Receive length="6" bytes="5001003201F4" /><Status>ok</Status>
+<OldStatus>ok</OldStatus>
+</Send>
+<Stop time="2917" /></Resultat>
+  </test>
+  <IdentificationUDS Diagnostic="12" Supplier="DELTA" Application="05DH" Version="233999" Order="292A01997R" Hardware="292A00569R" Tuning="??" vehicleManufacturerKitAssemblyPartNumber="" configurationFileReferenceLink="292B09095R" IndexSrvData="PROTASYMV2">
+<Diagnostic>
+<Error Code="0" Msg="" Send="22F1A0"><Request Send="22F1A0" Receive="62F1A00C" /></Error>
+</Diagnostic>
+<Supplier>
+<Error Code="0" Msg="" Send="22F18A"><Request Send="22F18A" Receive="62F18A44454C5441" /></Error>
+</Supplier>
+<Application>
+<Error Code="0" Msg="" Send="22F194"><Request Send="22F194" Receive="62F19430354448" /></Error>
+</Application>
+<Version>
+<Error Code="0" Msg="" Send="22F195"><Request Send="22F195" Receive="62F195323333393939" /></Error>
+</Version>
+<Order>
+<Error Code="0" Msg="" Send="22F187"><Request Send="22F187" Receive="62F18732393241303139393752" /></Error>
+</Order>
+<Hardware>
+<Error Code="0" Msg="" Send="22F191"><Request Send="22F191" Receive="62F19132393241303035363952" /></Error>
+</Hardware>
+<Tuning>
+<Error Code="0" Msg="" Send="22F182"><Request Send="22F182" Receive="62F1820100" /></Error>
+</Tuning>
+<vehicleManufacturerKitAssemblyPartNumber Number="">
+<Request Send="22F18E" Receive="7F2231" />
+</vehicleManufacturerKitAssemblyPartNumber>
+<configurationFileReferenceLink>
+<Error Code="0" Msg="" Send="22F188"><Request Send="22F188" Receive="62F18832393242303930393552" /></Error>
+</configurationFileReferenceLink>
+<IndexSrvData>
+<Error Code="0" Msg="" Send="22F011"><Request Send="22F011" Receive="62F01150524F544153594D5632" /></Error>
+</IndexSrvData>
+</IdentificationUDS>
+</Scenario>

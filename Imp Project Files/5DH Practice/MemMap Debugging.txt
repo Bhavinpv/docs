@@ -1,0 +1,36 @@
+// #ifdef ApplDiag_START_SEC_CONST_8_BV
+//     // #define CONST_SEC_OPEN
+//     # pragma section "NEW_BV"
+//     #undef ApplDiag_START_SEC_CONST_8_BV    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+//     #undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+// #endif
+
+// #if defined(ApplDiag_STOP_SEC_CONST_8_BV)
+//     #pragma section 
+//     #undef ApplDiag_STOP_SEC_CONST_8_BV    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+//     #undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+// #endif
+
+
+
+#define ApplDiag_START_SEC_CONST_UNSPECIFIED
+#include "ApplDiag_MemMap.h"
+
+static uint8 BV_test[16] = {0xABu, 0xCDu, 0xEFu, 0x11u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u};
+
+#define ApplDiag_STOP_SEC_CONST_UNSPECIFIED
+#include "ApplDiag_MemMap.h"
+
+
+// #ifdef ApplDiag_START_SEC_CONST_BV
+//     //#define CONST_SEC_OPEN
+//     # pragma section "NEW_BV"
+//     #undef ApplDiag_START_SEC_CONST_BV    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+//     #undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+// #endif
+
+// #ifdef ApplDiag_STOP_SEC_CONST_BV
+// #pragma section
+// # undef ApplDiag_STOP_SEC_CONST_BV
+// # undef MEMMAP_ERROR
+// #endif

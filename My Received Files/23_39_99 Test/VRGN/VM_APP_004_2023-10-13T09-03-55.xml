@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<UDS-REPROGRAMMING-VALIDATION-RESULT>
+  <Configuration>
+    <Company>Delta </Company>
+    <Author>Alexandru Stanciu</Author>
+    <PDXFile>DES_SW_23_39_99_DDT2000.pdx</PDXFile>
+    <UnlockMode>Local</UnlockMode>
+    <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+    <RFQ>Virgin Mode validation plan 1.9</RFQ>
+    <ECU>
+      <Name>5DH_DCDC</Name>
+      <Address>103</Address>
+      <Protocol>DiagOnCAN</Protocol>
+      <CANids>
+        <Bus>1</Bus>
+        <Baudrate>500000</Baudrate>
+        <DTOOL-to-ECU>98DAF1DD</DTOOL-to-ECU>
+        <ECU-to-DTOOL>98DADDF1</ECU-to-DTOOL>
+      </CANids>
+      <HardwareNumber>292A00569R</HardwareNumber>
+      <BootVersion>
+      </BootVersion>
+      <LogicalBlocks>
+        <LogicalBlock selected="false" withReprogLimit="false" maxReprogrammingCounter="0">FD00</LogicalBlock>
+      </LogicalBlocks>
+      <ReprogramingInPlant>FALSE</ReprogramingInPlant>
+    </ECU>
+  </Configuration>
+  <Test name="VM_APP_004" date="2023-10-13 09-03-45" status="Failed">
+    <Trace><![CDATA[
+10/13/2023 9:03:45 AM.727     Begin Test   : VM_APP_004
+10/13/2023 9:03:45 AM.727     RFQ : Virgin Mode validation plan 1.9
+10/13/2023 9:03:45 AM.727           Begin : Check initial condition
+10/13/2023 9:03:45 AM.727                 Check if ECU is in Application
+10/13/2023 9:03:45 AM.727                 => Tester Present...
+10/13/2023 9:03:45 AM.728                 $67 : Tx : 3E00
+10/13/2023 9:03:45 AM.805                 $67 : Rx : 7E00
+10/13/2023 9:03:45 AM.810                 $67 : Tx : 1003
+10/13/2023 9:03:45 AM.826                 $67 : Rx : 5003003201F4
+10/13/2023 9:03:45 AM.829                 ECU is in Application
+10/13/2023 9:03:45 AM.829                 Goto default Session
+10/13/2023 9:03:45 AM.830                 $67 : Tx : 1001
+10/13/2023 9:03:45 AM.835                 $67 : Rx : 5001003201F4
+10/13/2023 9:03:45 AM.837           End : Check initial condition
+10/13/2023 9:03:45 AM.838           waiting 3000 ms...
+10/13/2023 9:03:49 AM.295           Waiting for Tester present
+10/13/2023 9:03:49 AM.295           => Tester Present...
+10/13/2023 9:03:49 AM.296           $67 : Tx : 3E00
+10/13/2023 9:03:49 AM.315           $67 : Rx : 7E00
+10/13/2023 9:03:49 AM.317           Extended Diagnostic session (1003)
+10/13/2023 9:03:49 AM.318           $67 : Tx : 1003
+10/13/2023 9:03:49 AM.335           $67 : Rx : 5003003201F4
+10/13/2023 9:03:49 AM.338           Extended Diagnostic session (1003), expected [5003003201F4]
+10/13/2023 9:03:49 AM.338           RequestSeed (2701)
+10/13/2023 9:03:49 AM.341           $67 : Tx : 2701
+10/13/2023 9:03:49 AM.478           $67 : Rx : 6701CA42BDEE399DB74C9F816ED0A02622D22BCAB3C310C8F778321DB8EECA617363DE506EC322208A2A015A899A3D7C3107B92BD618089AB9006408F0DF5CD4C666A6E5E6A02A700FEA729BD2F4E4576388BAFCBD66E64B965A627406AD004C8F07301976676F9460C41CAC5E407C1F8E25A69D6F31153C4EACB70862101A9A299BF372D90529A075A445E5A81C606C46269207073D26464A7ABDC4F8CC3E55106A6C96C0F09559A30AC6785C359693A441AABF04329D43C9546B8A36A8D0A749C43D2CBC41D7514DB29C0701174ABA57106D260EEFB34C4FAA25D9625D11190576AFF93701A7737EB37304E1EC9E435D6FADA8B2FE48FF8B365F935DE33B8D430A
+10/13/2023 9:03:49 AM.492           RequestSeed, expected [6701....seed...]
+10/13/2023 9:03:49 AM.492           Compile security seed...
+10/13/2023 9:03:49 AM.492           256 bytes seed detected => Use RSA engeneering keys
+10/13/2023 9:03:49 AM.492           Try RSA Key #0
+10/13/2023 9:03:49 AM.557           Compile seed OK
+10/13/2023 9:03:49 AM.558           Compile seed
+10/13/2023 9:03:49 AM.558           SendKey (2702)
+10/13/2023 9:03:49 AM.561           $67 : Tx : 270222C09F0F041ED5DE18F76394B29911F20324C8186B4AF28C751462181F0E4CD33941E81F418E9478A00DC0E6E4081945A01B793590DB3D383C116C526340B630234F146B5C842A85C2824D5E1047CA8E5013E87FD0B755745C7695B56BB49585C94A74F2E2DA82F73CF8297C8223A8C2F4F5F0CC5FFFFA9DBC03F237EEE7918C4E198388BC9AD5DD96966A32681F3A9CEB71DEAB433739D35D09CB3FEF66498D3E14C1CFA0511453433CB8BED50226CB57B7EDFD8CB5DA7454ECEF7AE29541745ACA27EDB876A0C4BC0D2060840633B51B4B5BDAB710554C4C27152A8769F1F064C05234BACA2A6CD7E03C4DBFCFDDCCFB74F9374FA64C0511B6F077AC593665
+10/13/2023 9:03:49 AM.826           $67 : Rx : 6702
+10/13/2023 9:03:49 AM.829           SendKey, expected [6702]
+10/13/2023 9:03:49 AM.829           Programming session (1002)
+10/13/2023 9:03:49 AM.830           $67 : Tx : 1002
+10/13/2023 9:03:54 AM.988           No reply for request '1002'Programming session on error, expected reply [5002 0032 01F4]
+10/13/2023 9:03:54 AM.988           VM_004: No reply for request '1002'
+10/13/2023 9:03:54 AM.988     End Test   : VM_APP_004
+10/13/2023 9:03:54 AM.988     Default session (1001)
+10/13/2023 9:03:54 AM.990     $67 : Tx : 1001
+10/13/2023 9:03:55 AM.044     $67 : Rx : 5001003201F4
+10/13/2023 9:03:55 AM.047     Default session, expected [5001003201F4]
+10/13/2023 9:03:55 AM.047     Waiting for Tester present
+10/13/2023 9:03:55 AM.047     => Tester Present...
+10/13/2023 9:03:55 AM.048     $67 : Tx : 3E00
+10/13/2023 9:03:55 AM.057     $67 : Rx : 7E00
+]]></Trace>
+  </Test>
+  <Information>
+    <Tool>
+      <DDT2000>4.0.68.0</DDT2000>
+      <Name>RTT</Name>
+      <Version>4.0.68.0</Version>
+    </Tool>
+    <Tests current-version="1.9">
+      <Test name="Initial_Condition_VirginMode">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_000">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_001">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_002">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_003">
+        <Versions>
+          <Current>1.7</Current>
+          <History>
+            <Version value="1.7">1.7</Version>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.2">1.2</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_004">
+        <Versions>
+          <Current>1.9</Current>
+          <History>
+            <Version value="1.9">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_000">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_001">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_003">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_004">
+        <Versions>
+          <Current>1.7</Current>
+          <History>
+            <Version value="1.7">1.7</Version>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.2">1.2</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+    </Tests>
+  </Information>
+</UDS-REPROGRAMMING-VALIDATION-RESULT>

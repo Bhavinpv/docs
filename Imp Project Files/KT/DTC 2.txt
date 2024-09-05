@@ -1,0 +1,139 @@
+Given:
+
+"M1:
+KL30 Voltage higher 16.7V [Param: KL30OverVoltThresholdHigh]
+||
+M2:
+KL30 Voltage higher 20.0V [Param: KL30FastOverVoltThresholdHigh]"
+
+"for M1:
+1.5s [Param: KL30OverVoltDebTime]
+||
+for M2:
+0.1s [Param: KL30FastOverVoltDebTime]"
+
+
+DM
+KL30 Voltage lower 16.4V [Param: KL30OverVoltThresholdLow]
+
+0.2s [Param: KL30ValidDebTime]
+
+
+
+
+static int cm1=0;
+static int cm2=0;
+static int cdm=0;
+
+if (KL30 Voltage > =16.7 && KL30 Voltage <20 ) {
+     cm1++;
+	cm2=0;
+	cdm-0;
+	if (cm1 > 150){
+	cm1=150;
+	trigger;
+}
+}
+
+else if (KL30 Voltage > =20) {
+       cm2++;
+	cdm=0;
+     if(cm1!=0){
+	cm1++;
+ 
+       if(cm1>150){
+     cm1=150;
+    trigger;
+}
+}
+     if (cm2>10){
+        cm1=0;
+        cm2=10;
+        trigger:
+}
+}
+
+else if (KL30 Voltage <= 16.4 ){
+	cm1=0;
+	cm2=0;
+	cdm++;
+	if(cdm>20){
+	cdm=20;
+	detrigger;
+}
+}
+
+else{
+cm1=0;
+cm2=0;
+cdm=0;
+}
+
+
+
+
+
+
+Modified
+
+
+
+
+if (OVC_uKl30 >= Coding_Appl_Read_parameter_KL30OverVoltThresholdHigh() && OVC_uKl30 < Coding_Appl_Read_parameter_KL30FastOverVoltThresholdHigh()) 
+{
+   ++Sovc14_TurnOnDelay2_ti;
+	Sovc14_TurnOnDelay4_ti=0;
+	Sovc14_TurnOnDelay3_ti=0;
+	if (Sovc14_TurnOnDelay2_ti > Coding_Appl_Read_parameter_KL30OverVoltDebTime())
+   {
+	Sovc14_TurnOnDelay2_ti=Coding_Appl_Read_parameter_KL30OverVoltDebTime();
+	Demwrap_Appl_Write_error_Cl30_HighErrStat(DT_ERRORSTATUS_FAILED);
+   }
+}
+
+else if (OVC_uKl30 >= Coding_Appl_Read_parameter_KL30FastOverVoltThresholdHigh()) 
+{
+   ++Sovc14_TurnOnDelay4_ti;
+	Sovc14_TurnOnDelay3_ti=0;
+   if(Sovc14_TurnOnDelay2_ti !=0)
+   {
+      ++Sovc14_TurnOnDelay2_ti;
+      if(Sovc14_TurnOnDelay2_ti > Coding_Appl_Read_parameter_KL30OverVoltDebTime())
+      {
+         Sovc14_TurnOnDelay2_ti= Coding_Appl_Read_parameter_KL30OverVoltDebTime();
+         Demwrap_Appl_Write_error_Cl30_HighErrStat(DT_ERRORSTATUS_FAILED);
+
+      }
+   }
+     if (Sovc14_TurnOnDelay4_ti>Coding_Appl_Read_parameter_KL30FastOverVoltDebTime())
+     {
+        Sovc14_TurnOnDelay2_ti=0;
+        Sovc14_TurnOnDelay4_ti=Coding_Appl_Read_parameter_KL30FastOverVoltDebTime();
+        Demwrap_Appl_Write_error_Cl30_HighFastErrStat(DT_ERRORSTATUS_FAILED);
+      }
+}
+
+else if (OVC_uKl30 <= Coding_Appl_Read_parameter_KL30OverVoltThresholdLow() )
+{
+   ++Sovc14_TurnOnDelay3_ti;
+	Sovc14_TurnOnDelay2_ti=0;
+	Sovc14_TurnOnDelay4_ti=0;
+	if(Sovc14_TurnOnDelay3_ti>Coding_Appl_Read_parameter_KL30ValidDebTime())
+   {
+	Sovc14_TurnOnDelay3_ti=Coding_Appl_Read_parameter_KL30ValidDebTime();
+	Demwrap_Appl_Write_error_Cl30_HighErrStat(DT_ERRORSTATUS_PASSED);
+	Demwrap_Appl_Write_error_Cl30_HighFastErrStat(DT_ERRORSTATUS_FAILED);
+   }
+}
+
+else{
+   	Sovc14_TurnOnDelay3_ti=0;
+	Sovc14_TurnOnDelay2_ti=0;
+	Sovc14_TurnOnDelay4_ti=0;
+}
+
+
+
+
+
+

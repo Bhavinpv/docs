@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<UDS-REPROGRAMMING-VALIDATION-RESULT>
+  <Configuration>
+    <Company>Delta </Company>
+    <Author>Alexandru Stanciu</Author>
+    <PDXFile>DES_SW_23_39_99_DDT2000.pdx</PDXFile>
+    <UnlockMode>Local</UnlockMode>
+    <DiagHardening>Diag. Hardening enabled on NRC 0x11, 0x33, 0x7E</DiagHardening>
+    <RFQ>Virgin Mode validation plan 1.9</RFQ>
+    <ECU>
+      <Name>5DH_DCDC</Name>
+      <Address>103</Address>
+      <Protocol>DiagOnCAN</Protocol>
+      <CANids>
+        <Bus>1</Bus>
+        <Baudrate>500000</Baudrate>
+        <DTOOL-to-ECU>98DAF1DD</DTOOL-to-ECU>
+        <ECU-to-DTOOL>98DADDF1</ECU-to-DTOOL>
+      </CANids>
+      <HardwareNumber>292A00569R</HardwareNumber>
+      <BootVersion>
+      </BootVersion>
+      <LogicalBlocks>
+        <LogicalBlock selected="false" withReprogLimit="false" maxReprogrammingCounter="0">FD00</LogicalBlock>
+      </LogicalBlocks>
+      <ReprogramingInPlant>FALSE</ReprogramingInPlant>
+    </ECU>
+  </Configuration>
+  <Test name="VM_BOOT_003" date="2023-10-13 09-06-25" status="Success">
+    <Trace><![CDATA[
+10/13/2023 9:06:25 AM.508     Begin Test   : VM_BOOT_003
+10/13/2023 9:06:25 AM.508     RFQ : Virgin Mode validation plan 1.9
+10/13/2023 9:06:25 AM.508           Begin : Check initial condition
+10/13/2023 9:06:25 AM.508                 Check if ECU is in Boot
+10/13/2023 9:06:25 AM.508                 => Tester Present...
+10/13/2023 9:06:25 AM.511                 $67 : Tx : 3E00
+10/13/2023 9:06:25 AM.573                 $67 : Rx : 7E00
+10/13/2023 9:06:25 AM.577                 $67 : Tx : 1003
+10/13/2023 9:06:25 AM.582                 $67 : Rx : 5003003201F4
+10/13/2023 9:06:25 AM.585                 ECU is in Application, expected : Boot
+10/13/2023 9:06:25 AM.585                 Goto default Session
+10/13/2023 9:06:25 AM.587                 $67 : Tx : 1001
+10/13/2023 9:06:25 AM.592                 $67 : Rx : 5001003201F4
+10/13/2023 9:06:25 AM.595                             Try to go in "Boot mode" (Writing bad hash)
+10/13/2023 9:06:25 AM.595                             => Tester Present...
+10/13/2023 9:06:25 AM.596                             $67 : Tx : 3E00
+10/13/2023 9:06:25 AM.602                             $67 : Rx : 7E00
+10/13/2023 9:06:25 AM.604                             Programming session (1002)
+10/13/2023 9:06:25 AM.606                             $67 : Tx : 1002
+10/13/2023 9:06:25 AM.614                              -------- Response [7F1033] Contains Nack_33:  Trying to resend request [1002] --------
+10/13/2023 9:06:26 AM.402                                    Check for virgin mode...
+10/13/2023 9:06:26 AM.819                                    ECU is virgin, sending Request seed
+10/13/2023 9:06:27 AM.192                                    send New security key (FFFF..) with 256 bytes 
+10/13/2023 9:06:27 AM.248                                    Trying to resend UDS request [1002]
+10/13/2023 9:06:28 AM.028                             $67 : Rx : 5002003201F4
+10/13/2023 9:06:28 AM.081                             Programming session, expected [5002003201F4]
+10/13/2023 9:06:28 AM.081                             RequestSeed (2701)
+10/13/2023 9:06:28 AM.084                             $67 : Tx : 2701
+10/13/2023 9:06:28 AM.159                             $67 : Rx : 6701FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+10/13/2023 9:06:28 AM.163                             RequestSeed, expected [6701....seed...]
+10/13/2023 9:06:28 AM.163                             Compile security seed...
+10/13/2023 9:06:28 AM.163                             256 bytes seed contains only 0xFF => dummy security access!
+10/13/2023 9:06:28 AM.163                             SendKey (2702)
+10/13/2023 9:06:28 AM.166                             $67 : Tx : 2702FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+10/13/2023 9:06:28 AM.242                             $67 : Rx : 6702
+10/13/2023 9:06:28 AM.245                             SendKey, expected [6702]
+10/13/2023 9:06:28 AM.245                             Write BAD hash (2E) for logical block [FD00]
+10/13/2023 9:06:28 AM.246                             $67 : Tx : 2EFD005DBC00FA1D7242C78160FBA8CB64FD445ED1079F69A37BDC13F95A076942F6803A9857E827325DDE0E568D7832549AC44FC00987011029DB2BADC53CCFCBE4D574E6AE52313700952EDCFAB19B4EFAADFEE27AB9E8AD9D1483275AD8B0D1EF097B04D67E4ABA66CDC8E3E7BBFCC07492F5A100106EF8BE8DB42E09161C9C3E45E2E4603B744F0AA5D114AF576EDF54ECD51AD74E9CF50920BE75B2D25F7427C6B59D3B375A6D7D765BAFA92DE33BAE71E27953B4DBE4D5642059B16204A56AE8401890406ED1023CF011866791C7987B2474BBB546A44B420A07FC16C09A29FDECD0756FFA179E5B369F6AFF4221ED47D35B1165117CC3749102513CBC54B8A8
+10/13/2023 9:06:28 AM.317                             $67 : Rx : 6EFD00
+10/13/2023 9:06:28 AM.317                             Write hash, expected [6EFD00]
+10/13/2023 9:06:28 AM.317                             Default session (1001)
+10/13/2023 9:06:28 AM.318                             $67 : Tx : 1001
+10/13/2023 9:06:28 AM.321                             $67 : Rx : 5001003201F4
+10/13/2023 9:06:28 AM.325                             Default session, expected [5001003201F4]
+10/13/2023 9:06:28 AM.325                             => Tester Present...
+10/13/2023 9:06:28 AM.326                             $67 : Tx : 3E00
+10/13/2023 9:06:29 AM.330                             I/O error
+10/13/2023 9:06:29 AM.330                             Waiting for Tester Present, retry 1/10
+10/13/2023 9:06:29 AM.330                             => Tester Present...
+10/13/2023 9:06:29 AM.331                             $67 : Tx : 3E00
+10/13/2023 9:06:29 AM.334                             $67 : Rx : 7E00
+10/13/2023 9:06:29 AM.336                             Check if ECU is in Boot
+10/13/2023 9:06:29 AM.336                             => Tester Present...
+10/13/2023 9:06:29 AM.337                             $67 : Tx : 3E00
+10/13/2023 9:06:29 AM.340                             $67 : Rx : 7E00
+10/13/2023 9:06:29 AM.343                             $67 : Tx : 1003
+10/13/2023 9:06:29 AM.348                             $67 : Rx : 7F1012
+10/13/2023 9:06:29 AM.349                             ECU is in BOOT
+10/13/2023 9:06:29 AM.349                             Goto default Session
+10/13/2023 9:06:29 AM.350                             $67 : Tx : 1001
+10/13/2023 9:06:29 AM.353                             $67 : Rx : 5001003201F4
+10/13/2023 9:06:29 AM.356           End : Check initial condition
+10/13/2023 9:06:29 AM.356           waiting 3000 ms...
+10/13/2023 9:06:32 AM.780           Waiting for Tester present
+10/13/2023 9:06:32 AM.780           => Tester Present...
+10/13/2023 9:06:32 AM.780           $67 : Tx : 3E00
+10/13/2023 9:06:32 AM.783           $67 : Rx : 7E00
+10/13/2023 9:06:32 AM.785           Programming session (1002)
+10/13/2023 9:06:32 AM.785           $67 : Tx : 1002
+10/13/2023 9:06:32 AM.798           $67 : Rx : 5002003201F4
+10/13/2023 9:06:32 AM.799           Programming session, expected [5002003201F4]
+10/13/2023 9:06:32 AM.799           Read databyIdentifier (22F062)
+10/13/2023 9:06:32 AM.799           $67 : Tx : 22F062
+10/13/2023 9:06:32 AM.802           $67 : Rx : 62F06200
+10/13/2023 9:06:32 AM.802           Read databyIdentifier (22F062), expected positive reply [62F062]
+10/13/2023 9:06:32 AM.802           Virgin_flag = [0xFF], expected 0xFF(Normal) or 0x00(Virgin)
+10/13/2023 9:06:32 AM.802           RequestSeed (2701)
+10/13/2023 9:06:32 AM.805           $67 : Tx : 2701
+10/13/2023 9:06:32 AM.872           $67 : Rx : 6701FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+10/13/2023 9:06:32 AM.875           RequestSeed, expected [6701....seed...]
+10/13/2023 9:06:32 AM.875           Compile security seed...
+10/13/2023 9:06:32 AM.875           256 bytes seed contains only 0xFF => dummy security access!
+10/13/2023 9:06:32 AM.875           SendKey (2702)
+10/13/2023 9:06:32 AM.876           $67 : Tx : 2702FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+10/13/2023 9:06:32 AM.953           $67 : Rx : 6702
+10/13/2023 9:06:32 AM.955           SendKey, expected [6702]
+10/13/2023 9:06:32 AM.955           WriteDataByIdentifier (2EF062)
+10/13/2023 9:06:32 AM.955           $67 : Tx : 2EF062FE
+10/13/2023 9:06:32 AM.959           $67 : Rx : 7F2E31
+10/13/2023 9:06:32 AM.959           WriteDataByIdentifier (2EF062), expected negative reply [7F2E31]
+10/13/2023 9:06:32 AM.959           Default session (1001)
+10/13/2023 9:06:32 AM.960           $67 : Tx : 1001
+10/13/2023 9:06:32 AM.963           $67 : Rx : 5001003201F4
+10/13/2023 9:06:32 AM.965           Default session, expected [5001003201F4]
+10/13/2023 9:06:32 AM.965           Waiting for Tester present
+10/13/2023 9:06:32 AM.965           => Tester Present...
+10/13/2023 9:06:32 AM.966           $67 : Tx : 3E00
+10/13/2023 9:06:33 AM.969           I/O error
+10/13/2023 9:06:33 AM.969           Waiting for Tester Present, retry 1/10
+10/13/2023 9:06:33 AM.969           => Tester Present...
+10/13/2023 9:06:33 AM.970           $67 : Tx : 3E00
+10/13/2023 9:06:33 AM.973           $67 : Rx : 7E00
+10/13/2023 9:06:33 AM.974     End Test   : VM_BOOT_003
+]]></Trace>
+  </Test>
+  <Information>
+    <Tool>
+      <DDT2000>4.0.68.0</DDT2000>
+      <Name>RTT</Name>
+      <Version>4.0.68.0</Version>
+    </Tool>
+    <Tests current-version="1.9">
+      <Test name="Initial_Condition_VirginMode">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_000">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_001">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_002">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_003">
+        <Versions>
+          <Current>1.7</Current>
+          <History>
+            <Version value="1.7">1.7</Version>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.2">1.2</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_APP_004">
+        <Versions>
+          <Current>1.9</Current>
+          <History>
+            <Version value="1.9">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_000">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_001">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_003">
+        <Versions>
+          <Current>1.0</Current>
+          <History>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+      <Test name="VM_BOOT_004">
+        <Versions>
+          <Current>1.7</Current>
+          <History>
+            <Version value="1.7">1.7</Version>
+            <Version value="1.6">1.6</Version>
+            <Version value="1.2">1.2</Version>
+            <Version value="1.0">Original version</Version>
+          </History>
+        </Versions>
+      </Test>
+    </Tests>
+  </Information>
+</UDS-REPROGRAMMING-VALIDATION-RESULT>
